@@ -1,4 +1,4 @@
-@extends('layouts.loginpage')
+@extends('layouts.loginandreg')
 
 @section('login')
                                 <form method="POST" action="{{ route('login') }}">
@@ -45,11 +45,11 @@
                                             <button type="submit" class="btn btn-outline-light btn-lg px-5">
                                                 {{ __('Login') }}
                                             </button>
-                                            <p class="small fw-bold mt-2 pt-1 mb-0">
-                                                Don't have an account? 
-                                                <a href="#!" class="link-danger">
-                                                <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                                            </p>
                                         </div>
+                                        @if (Route::has('password.request'))
+                                    <a class="btn btn-link" href="{{ route('password.request') }}" style="color: #E5D9B6">
+                                        {{ __('Forgot Your Password?') }}
+                                    </a>
+                                    @endif
                                         </form>
  @endsection                        
