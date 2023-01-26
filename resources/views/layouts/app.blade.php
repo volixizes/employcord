@@ -15,11 +15,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
     <!-- Scripts -->
+
+    <style>
+        .navbar{
+            background-color: #97cc04;
+        }
+    </style>
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md shadow-sm" >
             <div class="container">
                 <a class="navbar-brand" href="{{ url('home') }}">
                     {{ config('app.name', 'Employcord') }}
