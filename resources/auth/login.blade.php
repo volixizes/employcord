@@ -101,20 +101,14 @@
                                     
                                     <div class="row mb-0">
                                         <div class="col-md-8 offset-md-4">
-                                            @auth
-                                            @if (Route::has('login'))
                                             <button type="submit" class="btn btn-primary">
                                                 {{ __('Login') }}
                                             </button>
-                                            @endif
                                             <p class="small fw-bold mt-2 pt-1 mb-0">
                                                 Don't have an account? 
                                                 <a href="#!" class="link-danger">
-                                                @if (Route::has('register'))
                                                 <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                                                @endif</a>
                                             </p>
-                                            @endauth
                                         </div>
                                     </div>
                                 </form>
