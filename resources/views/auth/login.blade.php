@@ -5,8 +5,6 @@
                                     
                                     @csrf
             
-                                    
-                                        
                                         <!-- <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label> -->
                                         <div class="form-outline form-white mb-4">
                                         <p class="text-center fs-5">Sign in</p>
