@@ -1,5 +1,5 @@
 @extends('layouts.navandfoot')
-
+@section('title', 'Admin Dashboard')
 @section('content')
 <div class="container mt-5" >
     <div class="row justify-content-center">
