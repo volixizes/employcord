@@ -34,8 +34,8 @@
                 </div>
                     <ul class="nav nav-pills justify-content-center fs-5">
                         {{-- just add a route in the href --}}
-                        <li class="nav-item"><a class="nav-link" href="{{ route('home') }}">Dashboard</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ route('employees') }}">Employees</a></li>
+                        <li class="nav-item"><a class="nav-link {{ Request::is('home') ? 'active':'' }}" href="{{ route('home') }}">Dashboard</a></li>
+                        <li class="nav-item"><a class="nav-link {{ Request::is('employees') ? 'active':'' }}" href="{{ route('employees') }}">Employees</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Track Records</a></li>
                     </ul>
                     <h5 class="nav"><a class="nav-link" href="#">Logout</a></h5>
