@@ -23,21 +23,33 @@
     </head>
     <body>
         {{-- nav bar --}}
-        <nav class="navbar" style="background-color: #285430;">
+        <nav class="navbar navbar-expand-lg" style="background-color: #285430;">
             <div class="container-fluid">
 
 
                 {{-- navbar logo --}}
                 <div class="navbar-brand d-flex">
                     <img src="/images/logoicon.png" alt="Logo" class="img-fluid d-none d-xxl-block d-xl-none" style="width: auto; height: 3em;">
-                    <h3 class="mt-3" style="color: #A4BE7B;">EmployCord</h3>
+                    <a class="navbar-brand mt-3" href="#" style="color: #A4BE7B;">EmployCord</a> 
                 </div>
-                    <ul class="nav nav-pills justify-content-center fs-5">
-                        {{-- just add a route in the href --}}
-                        <li class="nav-item"><a class="nav-link {{ Request::is('home') ? 'active':'' }}" href="{{ route('home') }}">Dashboard</a></li>
-                        <li class="nav-item"><a class="nav-link {{ Request::is('employees') ? 'active':'' }}" href="{{ route('employees') }}">Employees</a></li>
-                        <li class="nav-item"><a class="nav-link {{ Request::is('trackrecords') ? 'active':'' }}" href="{{ route('trackrecords') }}">Track Records</a></li>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
+                    <ul class="navbar-nav me-auto ms-5 mb-2 mb-lg-0 fs-5">
+                            {{-- just add a route in the href --}}
+                            <li class="nav-item">
+                                <a class="nav-link {{ Request::is('home') ? 'active':'' }}" href="{{ route('home') }}">Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{ Request::is('employees') ? 'active':'' }}" href="{{ route('employees') }}">Employees</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link {{ Request::is('trackrecords') ? 'active':'' }}" href="{{ route('trackrecords') }}">Track Records</a>
+                            </li>
                     </ul>
+                </div>
+                    
                     
                     <button type="button" class="btn position-relative">🔔
                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
@@ -47,9 +59,11 @@
                     </button>
                     
                     
-                    <h5 class="nav"><a class="nav-link" href="#">Logout</a></h5>
+                    <h5 class="nav ms-2"><a class="nav-link" href="#">Logout</a></h5>
             </div>
         </nav>
+
+</nav>
        <main>
         {{-- yield your content here --}}
             @yield('content')
@@ -57,8 +71,9 @@
 
        <footer style="background-color: #285430;">
             <div class="m-5">
-                <p class="text-center" style="color: #A4BE7B;">Copyright © 2023 Group 9. All Rights reserved</p>
+                <p class="text-center" style="color: #A4BE7B;">Copyright © 2023 Group 9. All Rights Reserved.</p>
             </div>
        </footer>
     </body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 </html>
