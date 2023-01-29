@@ -18,12 +18,14 @@
 
             body {
                 font-family: 'Sofia Sans', sans-serif;
-            }
+            };
+
+            
         </style>
     </head>
     <body>
         {{-- nav bar --}}
-        <nav class="navbar navbar-expand-lg" style="background-color: #285430;">
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #285430;">
             <div class="container-fluid">
 
 
@@ -35,10 +37,10 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
-                    <ul class="navbar-nav me-auto ms-5 mb-2 mb-lg-0 fs-5">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent" > 
+                    <ul class="navbar-nav me-auto ms-5 mb-2 mb-lg-0 fs-5" style="text-shadow: 0 0 5px #A4BE7B; color: white;">
                             {{-- just add a route in the href --}}
-                            <li class="nav-item">
+                            <li class="nav-item" >
                                 <a class="nav-link {{ Request::is('home') ? 'active':'' }}" href="{{ route('home') }}">Dashboard</a>
                             </li>
                             <li class="nav-item">
