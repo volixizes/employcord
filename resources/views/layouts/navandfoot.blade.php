@@ -38,6 +38,15 @@
                         <li class="nav-item"><a class="nav-link {{ Request::is('employees') ? 'active':'' }}" href="{{ route('employees') }}">Employees</a></li>
                         <li class="nav-item"><a class="nav-link" href="#">Track Records</a></li>
                     </ul>
+                    
+                    <button type="button" class="btn position-relative">🔔
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                    99+
+                    <span class="visually-hidden">unread messages</span>
+                    </span>
+                    </button>
+                    
+                    
                     <h5 class="nav"><a class="nav-link" href="#">Logout</a></h5>
             </div>
         </nav>
