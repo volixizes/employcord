@@ -46,7 +46,7 @@
                         <div class="card-body p-5 text-center m-auto">
                             <div class="mb-md-5 mt-md-4 pb-5">
                             <div class="d-flex justify-content-center m-5">
-                                    <img src="https://firebasestorage.googleapis.com/v0/b/product-37997.appspot.com/o/Capture-removebg-preview-removebg-preview.png?alt=media&token=ba71d366-bfb6-4af4-91ab-76db49a0da72" alt="Logo" class="img-fluid d-none d-xxl-block d-xl-none" style="width: auto; height: 5em;">
+                                    <img src="/images/logoicon.png" alt="Logo" class="img-fluid d-none d-xxl-block d-xl-none" style="width: auto; height: 5em;">
                                     <h1 class="mt-3" style="color: #A4BE7B;">EmployCord</h1>
                                 </div>
                                 @yield('login')
