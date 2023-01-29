@@ -29,14 +29,14 @@
 
                 {{-- navbar logo --}}
                 <div class="navbar-brand d-flex">
-                    <img src="https://firebasestorage.googleapis.com/v0/b/product-37997.appspot.com/o/Capture-removebg-preview-removebg-preview.png?alt=media&token=ba71d366-bfb6-4af4-91ab-76db49a0da72" alt="Logo" class="img-fluid d-none d-xxl-block d-xl-none" style="width: auto; height: 3em;">
+                    <img src="/images/logoicon.png" alt="Logo" class="img-fluid d-none d-xxl-block d-xl-none" style="width: auto; height: 3em;">
                     <h3 class="mt-3" style="color: #A4BE7B;">EmployCord</h3>
                 </div>
                     <ul class="nav nav-pills justify-content-center fs-5">
                         {{-- just add a route in the href --}}
                         <li class="nav-item"><a class="nav-link {{ Request::is('home') ? 'active':'' }}" href="{{ route('home') }}">Dashboard</a></li>
                         <li class="nav-item"><a class="nav-link {{ Request::is('employees') ? 'active':'' }}" href="{{ route('employees') }}">Employees</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Track Records</a></li>
+                        <li class="nav-item"><a class="nav-link {{ Request::is('trackrecords') ? 'active':'' }}" href="{{ route('trackrecords') }}">Track Records</a></li>
                     </ul>
                     
                     <button type="button" class="btn position-relative">🔔

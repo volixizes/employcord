@@ -26,3 +26,7 @@ Route::get('/home', function(){
 Route::get('/employees', function(){
     return view('employees');
 })->name('employees');
+
+Route::get('/trackrecords', function(){
+    return view('trackrecords');
+})->name('trackrecords');
