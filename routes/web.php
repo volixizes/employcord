@@ -16,19 +16,6 @@ use App\Http\Controllers\HomeController;
 Route::get('/', function () {
     return view('auth.login');
 });
-
-<<<<<<< HEAD
-Route::get('/MyAccount', function () {
-    return view('myaccounts');
-});
-Route::get('/Dashboard', function () {
-    return view('home');
-});
-
-Auth::routes();
-
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-=======
 Auth::routes();
 
 Route::get('/home', function(){
@@ -42,4 +29,3 @@ Route::get('/employees', function(){
 Route::get('/trackrecords', function(){
     return view('trackrecords');
 })->name('trackrecords');
->>>>>>> 9105594d1bba8a14fd4b8a9ed456925eb5b658a4
