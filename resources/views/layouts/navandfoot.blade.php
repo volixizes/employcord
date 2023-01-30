@@ -72,7 +72,7 @@
             @yield('content')
        </main>
 
-       <footer style="background-color: #285430;">
+       <footer class="d-fixed" style="background-color: #285430; height:100%;">
             <div class="m-5">
                 <p class="text-center" style="color: #A4BE7B;">Copyright © 2023 Group 9. All Rights Reserved.</p>
             </div>
