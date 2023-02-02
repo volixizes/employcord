@@ -12,12 +12,15 @@
         <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@800&display=swap" rel="stylesheet">
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  
-        <!-- Styles -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
         <style>
 
             body {
-                font-family: 'Sofia Sans', sans-serif;
+                font-family: 'Inter', sans-serif;
+                font-family: 'Quicksand', sans-serif;
             };
 
             
@@ -34,7 +37,7 @@
                 {{-- navbar logo --}}
                 <div class="navbar-brand d-flex">
                     <img src="/images/logoicon.png" alt="Logo" class="img-fluid d-none d-xxl-block d-xl-none" style="width: auto; height: 3em;">
-                    <a class="navbar-brand mt-3" href="#" style="color: #A4BE7B;">EmployCord</a> 
+                    <a class="navbar-brand mt-3" href="#" style="color: #A4BE7B; font-family: 'Sofia Sans', sans-serif;">EmployCord</a> 
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -44,13 +47,13 @@
                     <ul class="navbar-nav me-auto ms-5 mb-2 mb-lg-0 fs-5" style="text-shadow: 0 0 5px #A4BE7B; color: white;">
                             {{-- just add a route in the href --}}
                             <li class="nav-item" >
-                                <a class="nav-link {{ Request::is('home') ? 'active':'' }}" href="{{ route('home') }}">Dashboard</a>
+                                <a class="nav-link {{ Request::is('home') ? 'active':'' }} fw-bold" href="{{ route('home') }}">Dashboard</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ Request::is('employees') ? 'active':'' }}" href="{{ route('employees') }}">Employees</a>
+                                <a class="nav-link {{ Request::is('employees') ? 'active':'' }} fw-bold" href="{{ route('employees') }}">Employees</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ Request::is('trackrecords') ? 'active':'' }}" href="{{ route('trackrecords') }}">Track Records</a>
+                                <a class="nav-link {{ Request::is('trackrecords') ? 'active':'' }} fw-bold" href="{{ route('trackrecords') }}">Track Records</a>
                             </li>
                     </ul>
                 </div>
