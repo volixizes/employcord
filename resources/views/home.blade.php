@@ -1,3 +1,4 @@
+
 @extends('layouts.navandfoot')
 @section('title', 'Admin Dashboard')
 @section('content')
@@ -190,3 +191,4 @@
 </div>
 
 @endsection
+
