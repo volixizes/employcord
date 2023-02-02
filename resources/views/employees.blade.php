@@ -71,28 +71,28 @@
   </div>
   <div class="col-md-4">
     <label for="street" class="form-label">Street</label>
-    <input type="text" class="form-control" id="street" placeholder="Last Name" required>
+    <input type="text" class="form-control" id="street" placeholder="Street" required>
     <div class="invalid-feedback">
       Street is required
     </div>
   </div>
   <div class="col-md-4" style="margin-left:18%">
     <label for="brgyVillage" class="form-label">Barangay / Village</label>
-    <input type="text" class="form-control" id="brgyVillage" placeholder="Last Name" required>
+    <input type="text" class="form-control" id="brgyVillage" placeholder="Barangay / Village" required>
     <div class="invalid-feedback">
       Barangay / Village is required
     </div>
   </div>
   <div class="col-md-4">
     <label for="municipalityCity" class="form-label">Municipality / City</label>
-    <input type="text" class="form-control" id="municipalityCity" placeholder="Last Name" required>
+    <input type="text" class="form-control" id="municipalityCity" placeholder="Municipality / City" required>
     <div class="invalid-feedback">
       Municipality / City is required
     </div>
   </div>
   <div class="col-md-4" style="margin-left:18%">
     <label for="province" class="form-label">Province</label>
-    <input type="text" class="form-control" id="province" placeholder="Last Name" required>
+    <input type="text" class="form-control" id="province" placeholder="Province" required>
     <div class="invalid-feedback">
       Province is required
     </div>
@@ -103,7 +103,7 @@
     <label for="datehire" class="form-label">Date Hire</label>
     <div class="input-group mb-3">
         <input type="text" class="form-control" placeholder="mm/dd/yy" id="hirepicker">
-       <button type="button" class="btn btn-success hirebtn" data-toggle="#hirepicker">🗓</button>
+        <button type="button" class="btn btn-success hirebtn" data-toggle="#hirepicker">🗓</button>
     </div>
     <div class="invalid-feedback">
       Date Hire is required
@@ -164,7 +164,7 @@
     </div>
   </div>
   <hr>
-  <h1 class="mt-2"> Employment Record </h1>
+  <h1 class="mt-2"> EmployCord Account </h1>
   <div class="col-md-4" style="margin-right: 40%">
     <label for="email" class="form-label">Email Address</label>
     <input type="text" class="form-control" id="email" required>
