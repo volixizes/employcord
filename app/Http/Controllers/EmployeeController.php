@@ -53,8 +53,9 @@ class EmployeeController extends Controller
         $employees->email = $validatedData['email'];
         $employees->password = $validatedData['password'];
         $employees->save();
+
         // paroute sir kung saan
-        return redirect()->route('index')->with('success', 'New member added!');
+        return redirect()->route('employees')->with('success', 'New member added!');
     }
 
 }

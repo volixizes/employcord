@@ -3,7 +3,8 @@
 @section('content')
 <div class="container mt-5" >
 <h1 class="mt-2 mb-4"> Basic Information </h1>
-<form class="row g-3 needs-validation" novalidate>
+<form class="row g-3 needs-validation" action="{{ route('employees') }}" method="POST" novalidate>
+  @csrf
   <div class="col-md-12">
     <label for="firstname" class="form-label">First name</label>
     <input type="text" class="form-control" id="firstname" placeholder="First Name" required>
@@ -13,7 +14,7 @@
   </div>
   <div class="col-md-12">
     <label for="middlename" class="form-label">Middle Name</label>
-    <input type="text" class="form-control" id="middlename" placeholder="Middle Name" required>
+    <input type="text" class="form-control" id="middlename" placeholder="Middle Name" required >
     <div class="invalid-feedback">
       Middle name is required
     </div>
