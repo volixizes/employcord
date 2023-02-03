@@ -23,7 +23,7 @@
                         <div class="card mt-2" style="border-radius: 20px;">
                             <div class="card-body"> 
                                 <h6>👨 Patrick Angeles</h6> <small class="text-muted float-end">5 minutes ago</small>
-                                <p style="color: blue">General Assembly for the month of February 2023</p>
+                                <p class="fw-bold" style="color: blue">General Assembly for the month of February 2023</p>
                                 
                             </div>
                         </div>
@@ -85,12 +85,19 @@
                         </table>
                         <hr>
                         <p class="fw-bold mt-4 text-muted">Approved Leaves</p>
+
                         <div class="card mt-2" style="border-radius: 20px;">
                             <div class="card-body"> 
-                                <small class="text-muted">TOMORROW (1)</small>
+                                <small class="text-muted float-end">TOMORROW (1)</small>
                                 <p style="color: blue">👨 Patrick Angeles</p>
-                                <small class="text-muted">February 7, 2023</small>
+                            </div>
+                        </div>
+                        <div class="card mt-2" style="border-radius: 20px;">
+                            
+                            <div class="card-body"> 
+                                <small class="text-muted float-end">February 7, 2023</small>
                                 <p style="color: blue">👨 Mick Bautista</p>
+                                
                             </div>
                         </div>
                         
