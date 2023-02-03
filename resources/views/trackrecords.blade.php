@@ -1,4 +1,4 @@
-@extends('layouts.navandfoot')
+@extends('layouts.app')
 @section('title', 'Track Records')
 @section('content')
 <div class="container mt-5" >
