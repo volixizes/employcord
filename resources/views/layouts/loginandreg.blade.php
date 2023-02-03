@@ -50,7 +50,7 @@
                                     <h1 class="mt-3" style="color: #205295;">EmployCord</h1>
                                 </div>
                                 @yield('login')
-                                @yield('regisiterforadmin')
+                                @yield('register')
                                     </div>
                             </div>
                         </div>
