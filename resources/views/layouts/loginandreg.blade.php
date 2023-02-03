@@ -37,9 +37,9 @@
                 </div>
             @endif  --}}
 
-                <section class="vh-100 gradient-custom">
-                    <div class="container-fluid py-5 h-100">
-                      <div class="row d-flex justify-content-center align-items-center h-100">
+                <section class="vh-75 gradient-custom d-flex justify-items-center">
+                    <div class="container-fluid my-5 py-5 h-50">
+                      <div class="row d-flex justify-content-center align-items-center h-50">
                         <div class="col-12 col-md-8 col-lg-6 col-xxl-5">
                           <div class="card text-white" style="border-radius: 1rem; background-color: #97cc04;">
                         
