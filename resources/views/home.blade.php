@@ -22,14 +22,14 @@
                         <p class="fw-bold mt-4 text-muted">Recent Announcements</p>
                         <div class="card mt-2" style="border-radius: 20px;">
                             <div class="card-body"> 
-                                <h6>👨 Patrick Angeles</h6> <small class="text-muted">5 minutes ago</small>
+                                <h6>👨 Patrick Angeles</h6> <small class="text-muted float-end">5 minutes ago</small>
                                 <p style="color: blue">General Assembly for the month of February 2023</p>
                                 
                             </div>
                         </div>
                         <div class="card mt-2" style="border-radius: 20px;">
                             <div class="card-body"> 
-                                <h6>👨 Val Everson Sienes</h6> <small class="text-muted">1h ago</small>
+                                <h6>👨 Val Everson Sienes</h6> <small class="text-muted  float-end">1h ago</small>
                                 <p style="color: blue">ISO Surveillance Audit</p>
                                 
                             </div>
