@@ -1,7 +1,10 @@
 <?php
 
+use App\Http\Controllers\AnnouncementController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Models\Announcement;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,3 +33,5 @@ Route::get('/employees', function(){
 Route::get('/trackrecords', function(){
     return view('trackrecords');
 })->name('trackrecords');
+
+Route::post('announcement', [AnnouncementController::class, 'store'])->name('announcement.store');

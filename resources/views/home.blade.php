@@ -20,20 +20,26 @@
             </div>
             <div class="card-body">
                         <p class="fw-bold text-muted">Create an announcement</p>
-                        <form action="{{ route('home') }}" method="POST">
+                        <form action="{{ route('announcement.store') }}" method="POST">
+                            @csrf
                                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                                     <input class="form-control" placeholder="Type an announcement here..." type="text">
-                                    <button class="btn btn-primary me-md-2" type="button">Post</button>
+                                    <button class="btn btn-primary me-md-2"
+                                    @disabled($errors->isNotEmpty())> {{ __('Post') }} </button>
                                     </div>
                         </form>
                         <p class="fw-bold mt-4 text-muted">Recent Announcements</p>
+                        @foreach($announcement as $announcements)
+                            @if(strtotime($announcements->created_at) >= strtotime('-7days'))
                         <div class="card mt-2" style="border-radius: 20px;">
                             <div class="card-body"> 
-                                <h6>👨 {{  }}</h6> <small class="text-muted float-end">5 minutes ago</small>
-                                <p class="fw-bold" style="color: blue">General Assembly for the month of February 2023</p>
-                                
+                                <h6>👨{{ 'session::get("name")' }} </h6> <small class="text-muted float-end">{{ "$announcements->time_posted->format('Y-m-d H:i:s')" }}</small>
+                                <p class="fw-bold" style="color: blue">{{ '$announcements->announcement' }}</p>
                             </div>
                         </div>
+                        @endif
+                        @endforeach
+
                         <div class="card mt-2" style="border-radius: 20px;">
                             <div class="card-body"> 
                                 <h6>👨 Val Everson Sienes</h6> <small class="text-muted  float-end">1h ago</small>

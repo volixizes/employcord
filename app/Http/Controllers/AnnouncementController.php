@@ -10,8 +10,9 @@ class AnnouncementController extends Controller
 {
     public function store(Request $request)
     {
-        Announcement::create($request->all());
-        session()->flash('announcement', 'Announcement posted');
-        return redirect()->route('home');
+        $announcement = new Announcement();
+        $announcement->announcement = $request->input('announcement');
+        $announcement->save();
+        return view('home', ['announcements'=>$announcement]);        
     }
 }
