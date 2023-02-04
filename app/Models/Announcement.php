@@ -10,5 +10,5 @@ class Announcement extends Model
     use HasFactory;
     
     protected $table = 'announcements';
-    protected $fillabble = ['table', 'body'];
+    protected $fillabble = ['announcement'];
 }
