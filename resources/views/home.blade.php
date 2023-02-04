@@ -41,7 +41,7 @@
         
          <!--Who's On Leave?-->
          <div class="col-md-6"> 
-            <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: 33rem;">
+            <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: auto;">
             <div class="card-header fs-5 fw-bold" style="color: #285430;">
                 🗓️ Who's On Leave
             </div>
