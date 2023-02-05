@@ -35,6 +35,7 @@ return new class extends Migration
             $table->string('department');
             $table->string('email')->unique();
             $table->string('password');
+            $table->timestamps();
         });
     }
 

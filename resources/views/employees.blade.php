@@ -1,9 +1,17 @@
 @extends('layouts.app')
 @section('title', 'Employees')
 @section('content')
+
+
+
+@if(session('success'))
+<div class="alert alert-primary">
+  {{ session('success') }}
+</div>
+@endif
 <div class="container mt-5" >
 <h1 class="mt-2 mb-4"> Basic Information </h1>
-<form class="row g-3 needs-validation" action="{{ route('employees') }}" method="POST" novalidate>
+<form class="row g-3 needs-validation" method="POST" action="{{ route('createemployee') }}"  novalidate>
   @csrf
   <div class="col-md-12">
     <label for="firstname" class="form-label">First name</label>
@@ -29,8 +37,8 @@
   <div class="col-md-4">
     <label for="birthdate" class="form-label">Birthday</label>
     <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="mm/dd/yy" id="datepicker" name="birthday" required>
-       <button type="button" class="btn btn-success datebtn" data-toggle="#datepicker">🗓</button>
+        <input type="date" class="form-control" placeholder="mm/dd/yy" name="birthday" required>
+       <!-- <button type="button" class="btn btn-success datebtn" data-toggle="#datepicker">🗓</button> -->
     </div>
     <div class="invalid-feedback">
       Birthday is required
@@ -64,7 +72,7 @@
     <label for="contactNo" class="form-label">Contact No.</label>
     <div class="input-group has-validation">
       <span class="input-group-text" id="contactStart" value="+639">+639</span>
-      <input type="text" class="form-control" id="contactNo" aria-describedby="inputGroupPrepend" name="contact no" required>
+      <input type="text" class="form-control" id="contactNo" aria-describedby="inputGroupPrepend" name="contact_no" required>
       <div class="invalid-feedback">
         Contact No. is required
       </div>
@@ -103,8 +111,8 @@
   <div class="col-md-4" style="margin-right: 40%">
     <label for="datehire" class="form-label">Date Hire</label>
     <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="mm/dd/yy" id="hirepicker"name="date_hire" required>
-        <button type="button" class="btn btn-success hirebtn" data-toggle="#hirepicker">🗓</button>
+        <input type="date" class="form-control" placeholder="mm/dd/yy" name="date_hire" required>
+        <!-- <button type="button" class="btn btn-success hirebtn" data-toggle="#hirepicker">🗓</button> -->
     </div>
     <div class="invalid-feedback">
       Date Hire is required
@@ -143,8 +151,8 @@
   <div class="col-md-4" style="margin-left: 18%">
     <label for="dateResign" class="form-label">If resigned, specify the separation date:</label>
     <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="mm/dd/yy" id="resignpicker"name="isResigned" required>
-       <button type="button" class="btn btn-success hirebtn" data-toggle="#resignpicker">🗓</button>
+        <input type="date" class="form-control" placeholder="mm/dd/yy" name="isResigned" required>
+       <!-- <button type="button" class="btn btn-success hirebtn" data-toggle="#resignpicker">🗓</button> -->
     </div>
     <div class="invalid-feedback">
       Please provide resignation date, if you have chosen "Resigned"

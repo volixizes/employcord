@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\EmployeeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,3 +31,5 @@ Route::get('/employees', function(){
 Route::get('/trackrecords', function(){
     return view('trackrecords');
 })->name('trackrecords');
+
+Route::post('/createemployee', [EmployeeController::class,'create'])->name('createemployee');
