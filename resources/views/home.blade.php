@@ -1,122 +1,201 @@
-@extends('layouts.navandfoot')
+
+@extends('layouts.app')
 @section('title', 'Admin Dashboard')
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-6">
+<div class="container-fluid">
+    <div class="row mx-3 my-3">
 
-        <!-- announcements -->
-            <div class="card mt-5 shadow">
-             <div class="card-header" style="background-color: #285430">
-                <h1 style="color:#A4BE7B;">📢 Announcements <a href="#" class="btn btn-outline-light float-end mt-2">Make Announcement</a></h1>
+        <!--Announcements-->
+        <div class="col-md-6"> 
+        <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: 33rem;">
+            <div class="card-header fs-5 fw-bold" style="color: #285430;">
+                📢 Announcements
             </div>
             <div class="card-body">
-                <div class="d-flex mb-4" style="border-bottom: .5px solid black;">
-                <img src="https://firebasestorage.googleapis.com/v0/b/product-37997.appspot.com/o/pexels-apunto-group-agencia-de-publicidad-7752846.jpg?alt=media&token=388775a6-aad2-4f65-a2d9-f066012d4adb" alt="" class="rounded-circle" height="50">
-                <div class="flex-grow">
-                <h5 class="ms-3">Patrick Angeles <span class="text-muted ms-3 fs-6">1hr ago</span> </h5>
-                <a href="#"><h6 class="ms-5">General Assembly  For February 2023</h6></a>
-                </div>
-                </div>
-                <div class="d-flex mb-4" style="border-bottom: .5px solid black;">
-                <img src="https://firebasestorage.googleapis.com/v0/b/product-37997.appspot.com/o/pexels-apunto-group-agencia-de-publicidad-7752846.jpg?alt=media&token=388775a6-aad2-4f65-a2d9-f066012d4adb" alt="" class="rounded-circle" height="50">
-                <div class="flex-grow">
-                <h5 class="ms-3">Patrick Angeles <span class="text-muted ms-3 fs-6">1hr ago</span> </h5>
-                <a href="#"><h6 class="ms-5">General Assembly  For February 2023</h6></a>
-                </div>
-                </div>
+                        <p class="fw-bold text-muted">Create an announcement</p>
+                        <form action="#">
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <input class="form-control" placeholder="Type an announcement here..." type="text">
+                                    <button class="btn btn-primary me-md-2" type="button">Post</button>
+                                    </div>
+                        </form>
+                        <p class="fw-bold mt-4 text-muted">Recent Announcements</p>
+                        <div class="card mt-2" style="border-radius: 20px;">
+                            <div class="card-body"> 
+                                <h6>👨 Patrick Angeles</h6> <small class="text-muted float-end">5 minutes ago</small>
+                                <p class="fw-bold" style="color: blue">General Assembly for the month of February 2023</p>
+                                
+                            </div>
+                        </div>
+                        <div class="card mt-2" style="border-radius: 20px;">
+                            <div class="card-body"> 
+                                <h6>👨 Val Everson Sienes</h6> <small class="text-muted  float-end">1h ago</small>
+                                <p style="color: blue">ISO Surveillance Audit</p>
+                                
+                            </div>
+                        </div>
+                        
             </div>
         </div>
-    </div>
-
-    <!-- who's on leave -->
-    <div class="col-6 ">
-            <div class="card mt-5 shadow">
-             <div class="card-header" style="background-color: #285430">
-                <h1 style="color:#A4BE7B;">📆 Who's on leave?</h1>
+        </div>
+        
+         <!--Who's On Leave?-->
+         <div class="col-md-6"> 
+            <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: auto;">
+            <div class="card-header fs-5 fw-bold" style="color: #285430;">
+                🗓️ Who's On Leave
             </div>
             <div class="card-body">
-                <small class="fs-6 text-muted">Today</small>
-                <div class="d-flex mb-4">
-                <img src="https://firebasestorage.googleapis.com/v0/b/product-37997.appspot.com/o/pexels-apunto-group-agencia-de-publicidad-7752846.jpg?alt=media&token=388775a6-aad2-4f65-a2d9-f066012d4adb" alt="" class="rounded-circle" height="50">
-                <div class="flex-grow">
-                <h4 class="ms-3 mt-2">Patrick Angeles <span class="ms-5"><a href="#" class="btn">✅</a><a href="#" class="btn">❎</a></span></h4>
-                </div>
-                </div>
+                        <p class="fw-bold text-muted">Leave Requests</p>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>Last Name</th>
+                                    <th>First Name</th>
+                                    <th>Middle Name</th>
+                                    <th>Date of Leave</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Sienes</td>
+                                    <td>Val Everson</td>
+                                    <td>Cruz</td>
+                                    <td>February 2, 2023</td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">✔</button>
+                                        <button type="button" class="btn btn-danger">✘</button>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Denum</td>
+                                    <td>Mike</td>
+                                    <td>Ibarra</td>
+                                    <td>February 5, 2023</td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">✔</button>
+                                        <button type="button" class="btn btn-danger">✘</button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <hr>
+                        <p class="fw-bold mt-4 text-muted">Approved Leaves</p>
+
+                        <div class="card mt-2" style="border-radius: 20px;">
+                            <div class="card-body"> 
+                                <small class="text-muted float-end">TOMORROW (1)</small>
+                                <p style="color: blue">👨 Patrick Angeles</p>
+                            </div>
+                        </div>
+                        <div class="card mt-2" style="border-radius: 20px;">
+                            
+                            <div class="card-body"> 
+                                <small class="text-muted float-end">February 7, 2023</small>
+                                <p style="color: blue">👨 Mick Bautista</p>
+                                
+                            </div>
+                        </div>
+                        
             </div>
         </div>
-    </div>
+        </div>
+        
 
-    <!-- Birthdays corner -->
-    <div class="col-6 ">
-            <div class="card mt-5 shadow">
-             <div class="card-header" style="background-color: #285430">
-                <h1 style="color:#A4BE7B;">🎂 Birthday's Corner</h1>
+        <!--Birthday Corner-->
+        <div class="col-md-6"> 
+            <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: 33rem;">
+            <div class="card-header fs-5 fw-bold" style="color: #285430;">
+                🎂 Birthday Corner
             </div>
             <div class="card-body">
-                <small class="fs-6 text-muted">🗓️ For February</small>
-                <div class="d-flex mb-4">
-                <img src="https://firebasestorage.googleapis.com/v0/b/product-37997.appspot.com/o/pexels-apunto-group-agencia-de-publicidad-7752846.jpg?alt=media&token=388775a6-aad2-4f65-a2d9-f066012d4adb" alt="" class="rounded-circle" height="50">
-                <div class="flex-grow">
-                <h4 class="ms-3 mt-2">Patrick Angeles 🎉</h4>
-                </div>
-                </div>
-                <div class="d-flex mb-4">
-                <img src="https://firebasestorage.googleapis.com/v0/b/product-37997.appspot.com/o/pexels-apunto-group-agencia-de-publicidad-7752846.jpg?alt=media&token=388775a6-aad2-4f65-a2d9-f066012d4adb" alt="" class="rounded-circle" height="50">
-                <div class="flex-grow">
-                <h4 class="ms-3 mt-2">Fin Sienes 🎉</h4>
-                </div>
-                </div>
-                <div class="d-flex mb-4">
-                <img src="https://firebasestorage.googleapis.com/v0/b/product-37997.appspot.com/o/pexels-apunto-group-agencia-de-publicidad-7752846.jpg?alt=media&token=388775a6-aad2-4f65-a2d9-f066012d4adb" alt="" class="rounded-circle" height="50">
-                <div class="flex-grow">
-                <h4 class="ms-3 mt-2">Mick Bautista 🎉</h4>
-                </div>
-                </div>
-                <div class="d-flex mb-4">
-                <img src="https://firebasestorage.googleapis.com/v0/b/product-37997.appspot.com/o/pexels-apunto-group-agencia-de-publicidad-7752846.jpg?alt=media&token=388775a6-aad2-4f65-a2d9-f066012d4adb" alt="" class="rounded-circle" height="50">
-                <div class="flex-grow">
-                <h4 class="ms-3 mt-2">Mick Bautista 🎉</h4>
-                </div>
-                </div>
-                <div class="d-flex mb-4">
-                <img src="https://firebasestorage.googleapis.com/v0/b/product-37997.appspot.com/o/pexels-apunto-group-agencia-de-publicidad-7752846.jpg?alt=media&token=388775a6-aad2-4f65-a2d9-f066012d4adb" alt="" class="rounded-circle" height="50">
-                <div class="flex-grow">
-                <h4 class="ms-3 mt-2">Mick Bautista 🎉</h4>
-                </div>
-                </div>
-                <div class="d-flex mb-4">
-                <img src="https://firebasestorage.googleapis.com/v0/b/product-37997.appspot.com/o/pexels-apunto-group-agencia-de-publicidad-7752846.jpg?alt=media&token=388775a6-aad2-4f65-a2d9-f066012d4adb" alt="" class="rounded-circle" height="50">
-                <div class="flex-grow">
-                <h4 class="ms-3 mt-2">Mick Bautista 🎉</h4>
-                </div>
-                </div>
-                <div class="d-flex mb-4">
-                <img src="https://firebasestorage.googleapis.com/v0/b/product-37997.appspot.com/o/pexels-apunto-group-agencia-de-publicidad-7752846.jpg?alt=media&token=388775a6-aad2-4f65-a2d9-f066012d4adb" alt="" class="rounded-circle" height="50">
-                <div class="flex-grow">
-                <h4 class="ms-3 mt-2">Mick Bautista 🎉</h4>
-                </div>
-                </div>
+                        <div class="card mt-2" style="border-radius: 20px;">
+                            <div class="card-body"> 
+                               <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Last Name</th>
+                                        <th>First Name</th>
+                                        <th>Middle Name</th>
+                                        <th>Birthday</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Bautista</td>
+                                        <td>Mick</td>
+                                        <td>Lopez</td>
+                                        <td>Fabruary 5, 2023</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bautista</td>
+                                        <td>Mick</td>
+                                        <td>Lopez</td>
+                                        <td>Fabruary 5, 2023</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bautista</td>
+                                        <td>Mick</td>
+                                        <td>Lopez</td>
+                                        <td>Fabruary 5, 2023</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bautista</td>
+                                        <td>Mick</td>
+                                        <td>Lopez</td>
+                                        <td>Fabruary 5, 2023</td>
+                                    </tr>
+                                </tbody>
+                               </table>
+                            </div>
+                        </div>
+                        
             </div>
         </div>
-    </div>
-
-        <!-- Headcounts -->
-        <div class="col-6">
-            <div class="card mt-5 shadow" style="height: 20em;">
-             <div class="card-header" style="background-color: #285430">
-                <h1 style="color:#A4BE7B;">🧑‍💼 Headcount</h1>
+        </div>
+        
+        <!--Headcount-->
+        <div class="col-md-6"> 
+        <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: 33rem;">
+            <div class="card-header fs-5 fw-bold " style="color: #285430;">
+                👨‍💼 Headcount
             </div>
             <div class="card-body">
-                <div class="text-center mt-5">
-                <h1 class="">🗣️ 272</h1>
-                <h5>TOTAL ACTIVE EMPLOYEES</h5>
-                </div>
-                   
+                        <p class="fw-bold text-muted">Create an announcement</p>
+                        <form action="#">
+                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                    <input class="form-control" placeholder="Type an announcement here..." type="text">
+                                    <button class="btn btn-primary me-md-2" type="button">Post</button>
+                                    </div>
+                        </form>
+                        <p class="fw-bold mt-4 text-muted">Recent Announcements</p>
+                        <div class="card mt-2" style="border-radius: 20px;">
+                            <div class="card-body"> 
+                                <h6>👨 Patrick Angeles</h6> <small class="text-muted">5 minutes ago</small>
+                                <p style="color: blue">General Assembly for the month of February 2023</p>
+                                
+                            </div>
+                        </div>
+                        <div class="card mt-2" style="border-radius: 20px;">
+                            <div class="card-body"> 
+                                <h6>👨 Val Everson Sienes</h6> <small class="text-muted">1h ago</small>
+                                <p style="color: blue">ISO Surveillance Audit</p>
+                                
+                            </div>
+                        </div>
+                        
+            </div>
         </div>
+        </div>
+
+        
     </div>
-</div>
-</div>
+    
 </div>
 
 @endsection
+
