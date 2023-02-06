@@ -14,7 +14,7 @@ class AnnouncementController extends Controller
      */
     public function index()
     {
-        //
+        return view ('announcement.index', compact('message'));
     }
 
     /**
@@ -24,9 +24,9 @@ class AnnouncementController extends Controller
      */
     public function create(Request $request)
     {
-        $announcement = new Announcement;
-        $announcement->message = $request->message;
-        $announcement->save();
+        $announcements = new Announcement;
+        $announcements->message = $request->message;
+        $announcements->save();
         return redirect()->route('home')->with('success', 'New announcement has been posted');
     }
 

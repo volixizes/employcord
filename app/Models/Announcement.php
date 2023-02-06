@@ -11,5 +11,5 @@ class Announcement extends Model
 
     protected $table = 'announcements';
 
-    protected $fillable = ['message'];
+    protected $fillable = ['message',];
 }
