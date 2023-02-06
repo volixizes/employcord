@@ -34,4 +34,4 @@ Route::get('/trackrecords', function(){
     return view('trackrecords');
 })->name('trackrecords');
 
-Route::post('announcemets', [AnnouncementController::class, 'store'])->name('announcements.store');
+Route::post('/createannouncement', [AnnouncementController::class, 'create'])->name('createannouncement');

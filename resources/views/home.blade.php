@@ -20,10 +20,10 @@
             </div>
             <div class="card-body">
                         <p class="fw-bold text-muted">Create an announcement</p>
-                        <form action="{{ route('announcements.store') }}" method="POST">
+                        <form action="{{ route('createannouncement') }}" method="POST">
                             @csrf
                                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <input class="form-control" placeholder="Type an announcement here..." type="text">
+                                    <input class="form-control" placeholder="Type an announcement here..." type="text" name="message">
                                     <button class="btn btn-primary me-md-2"> {{ __('Post') }} </button>
                                     </div>
                         </form>

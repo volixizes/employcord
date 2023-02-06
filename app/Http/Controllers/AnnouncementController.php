@@ -14,8 +14,7 @@ class AnnouncementController extends Controller
      */
     public function index()
     {
-        $annoucements = Announcement::orderBy('created_at', 'desc')->get();
-        return view('home', compact('announcements'));
+        //
     }
 
     /**
@@ -23,9 +22,12 @@ class AnnouncementController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $announcement = new Announcement;
+        $announcement->message = $request->message;
+        $announcement->save();
+        return redirect()->route('home')->with('success', 'New announcement has been posted');
     }
 
     /**
@@ -36,15 +38,7 @@ class AnnouncementController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'message' => 'required'
-        ]);
-
-        Announcement::create([
-            'message' => $request->input('announcement')
-        ]);
-
-        return redirect()->back()->with('success', 'Announcement has been posted');
+        //
     }
 
     /**
