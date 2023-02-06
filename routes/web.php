@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AnnouncementController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EmployeeController;
@@ -31,5 +32,7 @@ Route::get('/employees', function(){
 Route::get('/trackrecords', function(){
     return view('trackrecords');
 })->name('trackrecords');
+
+Route::post('/createannouncement', [AnnouncementController::class, 'create'])->name('createannouncement');
 
 Route::post('/createemployee', [EmployeeController::class,'create'])->name('createemployee');
