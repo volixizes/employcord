@@ -17,31 +17,27 @@
     <label for="firstname" class="form-label">First name</label>
     <input type="text" class="form-control" id="firstname" placeholder="First Name" name="first_name" required>
     <div class="invalid-feedback">
-      First name is required
+      <div id="firstname_error"></div>
     </div>
   </div>
   <div class="col-md-12">
     <label for="middlename" class="form-label">Middle Name</label>
     <input type="text" class="form-control" id="middlename" placeholder="Middle Name" name="middle_name" required>
     <div class="invalid-feedback">
-      Middle name is required
+      <div id="middlename_error"></div>
     </div>
   </div>
   <div class="col-md-12">
     <label for="lastname" class="form-label">Last name</label>
     <input type="text" class="form-control" id="lastname" placeholder="Last Name" name="last_name" required>
     <div class="invalid-feedback">
-      Last name is required
+      <div id="lastname_error"></div>
     </div>
   </div>
   <div class="col-md-4">
-    <label for="birthdate" class="form-label">Birthday</label>
+    <label for="birthday" class="form-label">Birthday</label>
     <div class="input-group mb-3">
-        <input type="date" class="form-control" placeholder="mm/dd/yy" name="birthday" required>
-       <!-- <button type="button" class="btn btn-success datebtn" data-toggle="#datepicker">🗓</button> -->
-    </div>
-    <div class="invalid-feedback">
-      Birthday is required
+        <input type="date" class="form-control" placeholder="mm/dd/yy" id="birthday" name="birthday" required>
     </div>
   </div>
   <div class="col-md-4" style="margin-left:18%">
@@ -71,10 +67,10 @@
   <div class="col-md-5" style="margin-left:18%">
     <label for="contactNo" class="form-label">Contact No.</label>
     <div class="input-group has-validation">
-      <span class="input-group-text" id="contactStart" value="+639">+639</span>
+      <span class="input-group-text" id="contactStart" value="+63">+63</span>
       <input type="text" class="form-control" id="contactNo" aria-describedby="inputGroupPrepend" name="contact_no" required>
       <div class="invalid-feedback">
-        Contact No. is required
+        <div id="contactno_error"></div>
       </div>
     </div>
   </div>
@@ -111,11 +107,7 @@
   <div class="col-md-4" style="margin-right: 40%">
     <label for="datehire" class="form-label">Date Hire</label>
     <div class="input-group mb-3">
-        <input type="date" class="form-control" placeholder="mm/dd/yy" name="date_hire" required>
-        <!-- <button type="button" class="btn btn-success hirebtn" data-toggle="#hirepicker">🗓</button> -->
-    </div>
-    <div class="invalid-feedback">
-      Date Hire is required
+        <input type="date" class="form-control" placeholder="mm/dd/yy" id="datehire" name="date_hire" required>
     </div>
   </div>
   <div class="col-md-4">
@@ -145,14 +137,13 @@
     <label for="jobTitle" class="form-label">Job Title</label>
     <input type="text" class="form-control" id="jobTitle" name="Job_Title" required>
     <div class="invalid-feedback">
-      Job Title is required
+        <div id="jobtitle_error"></div>
     </div>
   </div>
-  <div class="col-md-4" style="margin-left: 18%">
+  <div class="col-md-4" style="margin-left: 18%" id="dateResign">
     <label for="dateResign" class="form-label">If resigned, specify the separation date:</label>
     <div class="input-group mb-3">
-        <input type="date" class="form-control" placeholder="mm/dd/yy" name="isResigned" required>
-       <!-- <button type="button" class="btn btn-success hirebtn" data-toggle="#resignpicker">🗓</button> -->
+        <input type="date" class="form-control" placeholder="mm/dd/yy" id="dateResigned" name="isResigned" required>
     </div>
     <div class="invalid-feedback">
       Please provide resignation date, if you have chosen "Resigned"
@@ -162,14 +153,14 @@
     <label for="rank" class="form-label">Rank</label>
     <input type="text" class="form-control" id="rank" name="rank" required>
     <div class="invalid-feedback">
-      Rank is required
+        <div id="rank_error"></div>
     </div>
   </div>
   <div class="col-md-4" style="margin-left: 18%">
     <label for="department" class="form-label">Department</label>
     <input type="text" class="form-control" id="department" name="department" required>
     <div class="invalid-feedback">
-      Department is required
+        <div id="department_error"></div>
     </div>
   </div>
   <hr>
