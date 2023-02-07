@@ -7,9 +7,9 @@
 
         <!--Announcements-->
         <div class="container mt-3">
-            @if (session()->has('announcemet'))
+            @if (session()->has('success'))
                 <div class="alert alert-success")>
-                    {{ session('announcement') }}
+                    {{ session('success') }}
                 </div>
              @endif
         </div>
@@ -28,16 +28,15 @@
                                     </div>
                         </form>
                         <!-- Announcement display -->
-                        @foreach($announcement as $message)
+                        @foreach($announcements as $announcement)
                         <div class="card mt-2" style="border-radius: 20px;">
                             <div class="card-body"> 
-                                <h6>👨 Val Everson Sienes</h6> <small class="text-muted  float-end">{{$message->created_at->diffForHumans()}}</small>
-                                <p style="color: blue">{{ $message->message }}</p>
+                                <h6>👨 Val Everson Sienes</h6> <small class="text-muted  float-end"></small>
+                                <p style="color: blue">{{ $announcements->message }}</p>
                                 
                             </div>
                         </div>
                         @endforeach
-                        
             </div>
         </div>
         </div>
