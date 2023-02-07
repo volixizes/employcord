@@ -36,7 +36,19 @@
                 background: rgb(23,40,223);
                 background: linear-gradient(360deg, rgba(23,40,223,1) 33%, rgba(88,101,242,1) 54%);
             }
-  
+
+            .footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            bottom:0;
+            
+            width: 100%;
+            color: #5404c4;
+            font-weight: bold;
+            }
+
     </style>
 
     @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -113,11 +125,9 @@
         <main class="py-4">
             @yield('content')
         </main>
-        <footer class="d-fixed" style="background-color: #285430; height:100%;">
-            <div class="m-5">
-                <p class="text-center" style="color: #A4BE7B;">Copyright © 2023 Group 9. All Rights Reserved.</p>
-            </div>
-       </footer>
+        <footer class="footer">
+                <p>&copy; 2023 Copyright. All Rights Reserved. Designed by: Mick ● Patrick ● Fin ● Mike </p>
+        </footer>
     </div>
 
    

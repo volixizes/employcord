@@ -28,6 +28,8 @@
                 font-family: 'Inter', sans-serif;
                 font-family: 'Quicksand', sans-serif;
                 background: linear-gradient(360deg, rgba(255,255,255,1) 90%, rgba(84,4,196,1) 100%) no-repeat;
+
+                
                 
              }
 
@@ -132,7 +134,7 @@
             </div>
 
             <footer class="footer">
-                <p>&copy; 2023 Copyright. All Rights Reserved. Designed by: Group no. 9.</p>
-             </footer>
+                <p>&copy; 2023 Copyright. All Rights Reserved. Designed by: Mick ● Patrick ● Fin ● Mike </p>
+            </footer>
     </body>
 </html>
