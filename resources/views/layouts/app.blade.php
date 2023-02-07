@@ -31,6 +31,9 @@
                 font-family: 'Inter', sans-serif;
                 font-family: 'Quicksand', sans-serif;
             };
+            #dateResign {
+                display: none;
+            }
   
     </style>
 
@@ -119,28 +122,257 @@
    
 </body>
 <script>
-        (function() {
-            'use strict';
-            window.addEventListener('load', function() {
-            let forms = document.getElementsByClassName('needs-validation');
-            let validation = Array.prototype.filter.call(forms, function(form) {
-                form.addEventListener('submit', function(event) {
-                if (form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
-                form.classList.add('was-validated');
-                }, false);
+    (function() {
+  'use strict';
+  window.addEventListener('load', function() {
+    let forms = document.getElementsByClassName('needs-validation');
+    let validation = Array.prototype.filter.call(forms, function(form) {
+      form.addEventListener('submit', function(event) {
+        if (form.checkValidity() === false) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
 
-                let submitBtn = form.querySelector('button[type="submit"]');
-                submitBtn.onclick = function() {
-                // code nung verification mamaya sa DB
-                console.log('Submit button clicked!');
-                };
-            });
-            }, false);
-        })();
+      const firstname = document.getElementById("firstname");
+      const middlename = document.getElementById("middlename");
+      const lastname = document.getElementById("lastname");
+      const submitBtn = form.querySelector('button[type="submit"]');
+
+      firstname.addEventListener("input", function(e) {
+        const inputValue = e.target.value.trim();
+        const lettersOnly = /^[a-zA-Z\s]+$/;
+
+        if (inputValue.length === 0) {
+          firstname.setCustomValidity("First name is required");  
+          firstname.classList.remove("is-valid");
+          firstname.classList.add("is-invalid");
+        } else if (!inputValue.match(lettersOnly)) {
+          firstname.setCustomValidity("First name must not contain letters and special characters");
+          firstname.classList.remove("is-valid");
+          firstname.classList.add("is-invalid");
+        }
+        else {
+            firstname.setCustomValidity("");
+            firstname.classList.remove("is-invalid");
+            firstname.classList.add("is-valid");
+        }
         
+        document.querySelector("#firstname_error").innerText = firstname.validationMessage;
+        validateForm();
+      });
+
+      middlename.addEventListener("input", function(e) {
+        const inputValue = e.target.value.trim();
+        const lettersOnly = /^[a-zA-Z\s]+$/;
+
+        if (inputValue.length === 0) {
+          middlename.setCustomValidity("Middle name is required");  
+          middlename.classList.remove("is-valid");
+          middlename.classList.add("is-invalid");
+        } else if (!inputValue.match(lettersOnly)) {
+          middlename.setCustomValidity("Middle name must not contain letters and special characters");
+          middlename.classList.remove("is-valid");
+          middlename.classList.add("is-invalid");
+        }
+        else {
+            middlename.setCustomValidity("");
+            middlename.classList.remove("is-invalid");
+            middlename.classList.add("is-valid");
+        }
+
+        document.querySelector("#middlename_error").innerText = middlename.validationMessage;
+        validateForm()
+      });
+
+      lastname.addEventListener("input", function(e) {
+        const inputValue = e.target.value.trim();
+        const lettersOnly = /^[a-zA-Z\s]+$/;
+
+        if (inputValue.length === 0) {
+          lastname.setCustomValidity("Last name is required");  
+          lastname.classList.remove("is-valid");
+          lastname.classList.add("is-invalid");
+        } else if (!inputValue.match(lettersOnly)) {
+          lastname.setCustomValidity("Last name must not contain letters and special characters");
+          lastname.classList.remove("is-valid");
+          lastname.classList.add("is-invalid");
+        }
+        else {
+            lastname.setCustomValidity("");
+            lastname.classList.remove("is-invalid");
+            lastname.classList.add("is-valid");
+        }
+
+        document.querySelector("#lastname_error").innerText = lastname.validationMessage;
+        validateForm();
+        });
+
+        let birthday = document.querySelector("input[name='birthday']");
+        birthday.addEventListener("input", function(e) {
+        const inputValue = e.target.value;
+
+        if (inputValue === "") {
+            birthday.setCustomValidity("Birthday is required");
+            birthday.classList.remove("is-valid");
+            birthday.classList.add("is-invalid");
+        } else {
+            const today = new Date();
+            const inputDate = new Date(inputValue);
+            const age = today.getFullYear() - inputDate.getFullYear();
+            if (age >= 18) {
+            birthday.setCustomValidity("");
+            birthday.classList.remove("is-invalid");
+            birthday.classList.add("is-valid");
+            } else {
+            birthday.setCustomValidity("You must be at least 18 years old");
+            birthday.classList.remove("is-valid");
+            birthday.classList.add("is-invalid");
+            }
+        }
+
+        if (birthday.validationMessage !== "") {
+            alert(birthday.validationMessage);
+        }   
+        validateForm();
+        });
+
+        contactNo.addEventListener("input", function(e) {
+        const inputValue = e.target.value;
+        const numbersOnly = /^[0-9]+$/;
+        if (inputValue === "") {
+            contactNo.setCustomValidity("Contact No. is required");
+            contactNo.classList.remove("is-valid");
+            contactNo.classList.add("is-invalid");
+        } else if (inputValue[0] !== '9') {
+        contactNo.setCustomValidity("Contact No. must start with 9");
+        contactNo.classList.remove("is-valid");
+        contactNo.classList.add("is-invalid");
+         } else if (inputValue.length !== 10 || isNaN(inputValue)){
+            contactNo.setCustomValidity("Contact No. must be 10 characters long");
+            contactNo.classList.remove("is-valid");
+            contactNo.classList.add("is-invalid");
+        } else if (!inputValue.match(numbersOnly)){
+            contactNo.setCustomValidity("Contact No. must only be numbers");
+            contactNo.classList.remove("is-valid");
+            contactNo.classList.add("is-invalid");
+        } else {
+            contactNo.setCustomValidity("");
+            contactNo.classList.remove("is-invalid");
+            contactNo.classList.add("is-valid");
+        }
+
+        document.querySelector("#contactno_error").innerText = contactNo.validationMessage;
+        validateForm();
+        });
+
+        let datehire = document.querySelector("input[name='date_hire']");
+        datehire.addEventListener("input", function(e) {
+        const inputValue = e.target.value;
+
+        if (inputValue === "") {
+            datehire.setCustomValidity("Date Hire is required");
+            datehire.classList.remove("is-valid");
+            datehire.classList.add("is-invalid");
+        }
+        if (datehire.validationMessage !== "") {
+            alert(datehire.validationMessage);
+        }   
+        validateForm();
+        });
+
+        jobTitle.addEventListener("input", function(e) {
+        const inputValue = e.target.value.trim();
+        const lettersOnly = /^[a-zA-Z\s]+$/;
+
+        if (inputValue.length === 0) {
+          jobTitle.setCustomValidity("Job Title is required");  
+          jobTitle.classList.remove("is-valid");
+          jobTitle.classList.add("is-invalid");
+        } else if (!inputValue.match(lettersOnly)) {
+          jobTitle.setCustomValidity("Job Title must not contain letters and special characters");
+          jobTitle.classList.remove("is-valid");
+          jobTitle.classList.add("is-invalid");
+        }
+        else {
+            jobTitle.setCustomValidity("");
+            jobTitle.classList.remove("is-invalid");
+            jobTitle.classList.add("is-valid");
+        }
+        
+        document.querySelector("#jobtitle_error").innerText = jobTitle.validationMessage;
+        validateForm();
+      });
+
+      rank.addEventListener("input", function(e) {
+        const inputValue = e.target.value.trim();
+        const lettersOnly = /^[a-zA-Z\s]+$/;
+
+        if (inputValue.length === 0) {
+          rank.setCustomValidity("Rank is required");  
+          rank.classList.remove("is-valid");
+          rank.classList.add("is-invalid");
+        } else if (!inputValue.match(lettersOnly)) {
+          rank.setCustomValidity("Rank must not contain letters and special characters");
+          rank.classList.remove("is-valid");
+          rank.classList.add("is-invalid");
+        }
+        else {
+            rank.setCustomValidity("");
+            rank.classList.remove("is-invalid");
+            rank.classList.add("is-valid");
+        }
+        
+        document.querySelector("#rank_error").innerText = rank.validationMessage;
+        validateForm();
+        });
+
+        department.addEventListener("input", function(e) {
+        const inputValue = e.target.value.trim();
+        const lettersOnly = /^[a-zA-Z\s]+$/;
+
+        if (inputValue.length === 0) {
+          department.setCustomValidity("Department is required");  
+          department.classList.remove("is-valid");
+          department.classList.add("is-invalid");
+        } else if (!inputValue.match(lettersOnly)) {
+          department.setCustomValidity("Department must not contain letters and special characters");
+          department.classList.remove("is-valid");
+          department.classList.add("is-invalid");
+        }
+        else {
+            department.setCustomValidity("");
+            department.classList.remove("is-invalid");
+            department.classList.add("is-valid");
+        }
+        
+        document.querySelector("#department_error").innerText = department.validationMessage;
+        validateForm();
+        });
+      document.getElementById("activeResigned").addEventListener("change", function() {
+        const selectedValue = this.value;
+        const dateResignField = document.getElementById("dateResign");
+
+        if (selectedValue === "Resigned") {
+        dateResignField.style.display = "block";
+        } else {
+        dateResignField.style.display = "none";
+        }
+        });
+        function validateForm() {
+            if (firstname.classList.contains("is-valid") && middlename.classList.contains("is-valid") && lastname.classList.contains("is-valid") 
+            && contactNo.classList.contains("is-valid") && jobTitle.classList.contains("is-valid") && rank.classList.contains("is-valid") 
+            && department.classList.contains("is-valid")) {
+            submitBtn.removeAttribute("disabled");
+            } else {
+            submitBtn.setAttribute("disabled", "true");
+            }
+        }
+        });
+        }, false);
+    })();
+    
     $(document).ready(function() {
         $('.datebtn').click(function() {
             $('#datepicker').datepicker('show');
