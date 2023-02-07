@@ -10,10 +10,10 @@ class AnnouncementController extends Controller
 {
     public function create(Request $request)
     {
-        $announcements = new Announcement;
-        $announcements->message = $request->message;
-        $announcements->user_id = $request->user_id;
-        $announcements->save();
+        $announcement = new Announcement;
+        $announcement->message = $request->message;
+        $announcement->user_id = $request->user_id;
+        $announcement->save();
 
         return redirect()->route('home')->with('success', 'New announcement has been posted');
     }
