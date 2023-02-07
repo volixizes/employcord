@@ -31,6 +31,11 @@
                 font-family: 'Inter', sans-serif;
                 font-family: 'Quicksand', sans-serif;
             };
+
+            .navbar-dark {
+                background: rgb(23,40,223);
+                background: linear-gradient(360deg, rgba(23,40,223,1) 33%, rgba(88,101,242,1) 54%);
+            }
   
     </style>
 
@@ -39,13 +44,12 @@
 <body>
     <div id="app">
 
-        <nav class="navbar navbar-expand-md navbar-dark shadow-sm" style="background-color: #285430;">
+        <nav class="navbar navbar-expand-md navbar-dark shadow-sm " style="background-color: #5404C4;">
 
             <div class="container-fluid">
             {{-- navbar logo --}}
                 <div class="navbar-brand d-flex">
-                        <img src="/images/logoicon.png" alt="Logo" class="img-fluid d-none d-xxl-block d-xl-none" style="width: auto; height: 3em;">
-                    <a class="navbar-brand mt-3" href="{{ url('home') }}" style="color: #A4BE7B; font-family: 'Sofia Sans', sans-serif;">EmployCord</a> 
+                    <img src="/images/logowhite.png" alt="Logo" class="img-fluid d-none d-xxl-block d-xl-none" style="width: auto; height: 2.5em;">
                 </div>
                 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
