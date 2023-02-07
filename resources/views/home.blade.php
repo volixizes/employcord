@@ -23,20 +23,25 @@
                         <form action="{{ route('createannouncement') }}" method="POST">
                             @csrf
                                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <input class="form-control" placeholder="Type an announcement here..." type="text" name="message" required id="message">
+                                    <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+                                    <input class="form-control" placeholder="Type an announcement here..." type="text" name="message" required>
                                     <button class="btn btn-primary me-md-2"> Post </button>
                                     </div>
-                        </form>
+                        
                         <!-- Announcement display -->
                         @foreach($announcements as $announcement)
                         <div class="card mt-2" style="border-radius: 20px;">
                             <div class="card-body"> 
-                                <h6>👨 Val Everson Sienes</h6> <small class="text-muted  float-end"></small>
-                                <p style="color: blue">{{ $announcements->message }}</p>
+                                <h6>👨 Val Everson Sienes</h6> <small class="text-muted  float-end">{{ $announcement->created_at->diffForHumans() }}</small>
+                                <p style="color: blue">
+                                {{ $announcement->message }}
+                                </p>
                                 
                             </div>
                         </div>
                         @endforeach
+                        
+                        </form>
             </div>
         </div>
         </div>

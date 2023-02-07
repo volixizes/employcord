@@ -24,8 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $announcements = Announcement::orderBy('created_at', 'desc')->take(5)->get();
-        return view('home', compact('announcements'));
+        
+        return view('home')->with('announcements', Announcement::orderBy('created_at', 'desc')->get());
     }
 
 }

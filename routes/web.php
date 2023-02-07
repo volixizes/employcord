@@ -33,6 +33,7 @@ Route::get('/trackrecords', function(){
     return view('trackrecords');
 })->name('trackrecords');
 
-Route::post('/createannouncement', [AnnouncementController::class, 'create'])->name('createannouncement');
+// Announcement routes
+Route::post('/createannouncement', [AnnouncementController::class,'create'])->name('createannouncement');
 
 Route::post('/createemployee', [EmployeeController::class,'create'])->name('createemployee');
