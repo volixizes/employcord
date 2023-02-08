@@ -119,11 +119,14 @@
                             <div class="card-body"> 
                                <table class="table">
                                 <thead>
+                                <h1 class="text-center">Birthday List for {{ date('F') }}</h1>
                                     <tr>
-                                        <th>Last Name</th>
-                                        <th>First Name</th>
-                                        <th>Middle Name</th>
-                                        <th>Birthday</th>
+                                        @foreach($employee as $birthday)
+                                        <th>{{ $birthday->first_name }}</th>
+                                        <th>{{ $birthday->last_name }}</th>
+                                        <th>{{ $birthday->middle_name }}</th>
+                                        <th>{{ $birthday->birthday->format('d-m-Y') }}</th>
+                                        @endforeach
                                     </tr>
                                 </thead>
                                 <tbody>
