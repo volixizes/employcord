@@ -41,7 +41,7 @@
                     </div>
                     @endforeach
                     <div class="text-center my-3">
-                        {!! $announcements->links(); !!}    
+                        {!! $announcements->links() !!}    
                     </div>    
                 </div>
             </div>

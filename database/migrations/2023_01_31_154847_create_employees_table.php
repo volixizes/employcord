@@ -21,7 +21,7 @@ return new class extends Migration
             $table->date('birthday');
             $table->string('gender');
             $table->string('marital_status');
-            $table->integer('contact_no')->unique();
+            $table->string('contact_no')->unique();
             $table->string('street');
             $table->string('barangay');
             $table->string('city');
@@ -30,7 +30,7 @@ return new class extends Migration
             $table->string('employment_status');
             $table->string('isActive');
             $table->string('Job_Title');
-            $table->date('isResigned');
+            $table->date('isResigned')->nullable();
             $table->string('rank');
             $table->string('department');
             $table->string('email')->unique();
