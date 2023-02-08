@@ -8,7 +8,7 @@
         <!--Announcements-->
         <div class="container mt-3">
             @if (session()->has('success'))
-                <div class="alert alert-success")>
+                <div class="alert alert-success">
                     {{ session('success') }}
                 </div>
              @endif
@@ -27,6 +27,7 @@
                             <input class="form-control" placeholder="Type an announcement here..." type="text" name="message" required>
                             <button type="submit" class="btn btn-primary me-md-2"> Post </button>
                         </div>
+                    </form>
                     
                     <!-- Announcement display -->
                     @foreach($announcements as $announcement)
@@ -39,7 +40,6 @@
                         </div>
                     </div>
                     @endforeach
-                    </form>
                     <div class="text-center my-3">
                         {!! $announcements->links(); !!}    
                     </div>    
