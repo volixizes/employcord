@@ -19,6 +19,7 @@ class DocumentController extends Controller
         $employees = Employee::all();
         $documents = Document::all();
         $contract = Document::orderBy('created_at', 'desc')->where('image_name', 'Contract')->first();
+        // $clearnce =
         return view('trackrecords')->with('employees', $employees)
                                     ->with('documents', $documents)
                                     ->with('contract', $contract);

@@ -21,8 +21,8 @@ return new class extends Migration
             $table->date('expiration');
             $table->string('status')->default('Current');
 
-            $table->unsignedBigInteger('employee_id');
-            $table->foreign('employee_id')->references('id')->on('employee')->onDelete('cascade');
+            $table->intger('employee_id');
+            // $table->foreign('employee_id')->references('id')->on('employee')->onDelete('cascade');
         });
     }
 
