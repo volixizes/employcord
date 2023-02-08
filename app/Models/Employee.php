@@ -33,4 +33,5 @@ class Employee extends Model
         'email',
         'password',
     ];
+    
 }

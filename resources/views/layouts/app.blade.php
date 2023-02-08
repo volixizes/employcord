@@ -277,6 +277,15 @@
             contactNo.classList.add("is-valid");
         }
 
+        const fullContactNo = contactStart + inputValue;
+
+ 
+        const hiddenInput = document.createElement("input");
+        hiddenInput.type = "hidden";
+        hiddenInput.name = "full_contact_no";
+        hiddenInput.value = fullContactNo;
+        contactNo.after(hiddenInput);
+
         document.querySelector("#contactno_error").innerText = contactNo.validationMessage;
         validateForm();
         });
@@ -364,19 +373,25 @@
         document.querySelector("#department_error").innerText = department.validationMessage;
         validateForm();
         });
-      document.getElementById("activeResigned").addEventListener("change", function() {
-        const selectedValue = this.value;
-        const dateResignField = document.getElementById("dateResign");
 
-        if (selectedValue === "Resigned") {
-        dateResignField.style.display = "block";
-        } else {
-        dateResignField.style.display = "none";
-        }
+        document.getElementById("activeResigned").addEventListener("change", function() {
+            const selectedValue = this.value;
+            const dateResignField = document.getElementById("dateResign");
+            const dateResigned = document.getElementById("dateResigned");
+            if (selectedValue === "Resigned") {
+                dateResignField.style.display = "block";
+                dateResigned.required = true;
+            } else {
+                dateResignField.style.display = "none";
+                dateResigned.value = "";
+                dateResigned.required = false;
+            }
         });
+        
         function validateForm() {
             if (firstname.classList.contains("is-valid") && middlename.classList.contains("is-valid") && lastname.classList.contains("is-valid") 
-            && contactNo.classList.contains("is-valid") && jobTitle.classList.contains("is-valid") && rank.classList.contains("is-valid") 
+             && contactNo.classList.contains("is-valid")  
+            && jobTitle.classList.contains("is-valid") && rank.classList.contains("is-valid") 
             && department.classList.contains("is-valid")) {
             submitBtn.removeAttribute("disabled");
             } else {
