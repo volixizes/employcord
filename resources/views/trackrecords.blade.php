@@ -30,7 +30,9 @@
                       src="{{url('/images/male-avatar-profile-picture-vector.webp')}}"
                       alt="User profile picture"/>
               </div>
+              @if (count($employees) > 0)
               <h3 class="profile-username text-center">{{ $employees->first()->getFullname()  }}</h3>
+              
               <p class="text-muted text-center">{{ $employees->first()->Job_Title  }}</p>
               <ul class="list-group list-group-unbordered mb-3">
                 <li class="list-group-item">
@@ -42,7 +44,9 @@
                 <li class="list-group-item">
                 </li> --}}
               </ul>
+              @endif
             </div>
+            
             <!-- /.card-body -->
           </div>
         </div>

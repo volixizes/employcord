@@ -44,6 +44,6 @@ class EmployeeController extends Controller
                 return redirect()->back()->withInput($request->all())->with('error', 'Email address already exists.');
             }
         }
-    }
+     }
 
 }

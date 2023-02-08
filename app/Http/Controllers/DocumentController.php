@@ -43,7 +43,6 @@ class DocumentController extends Controller
     public function store(Request $request) {
         $document = new Document;
         $document->employee_id = $request->employee_id;
-        $document->employee_id = $request->employee_id;
         $document->expiration = $request->expiration;
 
         if($request->hasFile('image')){

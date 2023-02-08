@@ -21,7 +21,7 @@ return new class extends Migration
             $table->date('expiration');
             $table->string('status')->default('Current');
 
-            $table->Integer('employee_id');
+            $table->integer('employee_id');
             // $table->foreign('employee_id')->references('id')->on('employees')->onDelete('cascade');
         });
     }
