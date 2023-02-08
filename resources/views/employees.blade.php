@@ -171,6 +171,9 @@
     <div class="invalid-feedback">
       Email Address is required
     </div>
+    @if (session('error'))
+        <div class="alert alert-danger mt-2">{{ session('error') }}</div>
+    @endif
   </div>
   <div class="col-md-4" style="margin-right: 40%">
     <label for="empPassword" class="form-label">Password</label>
