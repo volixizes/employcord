@@ -13,18 +13,16 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('announcements', function (Blueprint $table) {
+        Schema::create('documents', function (Blueprint $table) {
             $table->id();
-            $table->string('message');
             $table->timestamps();
+            $table->string('image_name');
+            $table->string('image_path');
+            $table->date('expiration');
+            $table->string('status')->default('Current');
 
-            //foreign key declaration
-            $table->unsignedBigInteger('user_id');
-            //
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-
-
-            // $table->foreign('admin_id')->references('id')->on('user')
+            $table->unsignedBigInteger('employee_id');
+            $table->foreign('employee_id')->references('id')->on('employee')->onDelete('cascade');
         });
     }
 
@@ -35,6 +33,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('announcements');
+        Schema::dropIfExists('documents');
     }
 };

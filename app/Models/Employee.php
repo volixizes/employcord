@@ -33,5 +33,8 @@ class Employee extends Model
         'email',
         'password',
     ];
-    
+
+    public function getFullname() {
+        return $this->first_name ." ". $this->last_name;
+    }
 }

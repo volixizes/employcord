@@ -4,6 +4,7 @@ use App\Http\Controllers\AnnouncementController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\DocumentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,18 +22,18 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', function(){
-    return view('home');
-})->name('home');
-
 Route::get('/employees', function(){
     return view('employees');
 })->name('employees');
 
-Route::get('/trackrecords', function(){
-    return view('trackrecords');
-})->name('trackrecords');
+Route::get('/home', [HomeController::class,'index'])->name('home');
 
-Route::post('/createannouncement', [AnnouncementController::class, 'create'])->name('createannouncement');
+// Announcement routes
+Route::post('/create-announcement', [AnnouncementController::class,'create'])->name('create-announcement');
 
 Route::post('/createemployee', [EmployeeController::class,'create'])->name('createemployee');
+
+Route::controller(DocumentController::class)->group(function() {
+    Route::get('/track-records', 'display')->name('track-records');
+    Route::post('/upload-image', 'store')->name('upload-image');
+});
