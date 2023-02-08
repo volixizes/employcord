@@ -1,4 +1,4 @@
- <!doctype html>
+<!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -36,8 +36,8 @@
             }
 
             .navbar-dark {
-                background: rgb(23,40,223);
-                background: linear-gradient(360deg, rgba(23,40,223,1) 33%, rgba(88,101,242,1) 54%);
+                background: rgb(84,4,196);
+                background: linear-gradient(360deg, rgba(84,4,196,1) 5%, rgba(88,101,242,1) 100%);
             }
 
             .footer {
