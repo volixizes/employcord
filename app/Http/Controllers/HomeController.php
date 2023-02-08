@@ -26,7 +26,6 @@ class HomeController extends Controller
     {
         $announcements = Announcement::orderBy('created_at', 'desc')->simplePaginate(3);
         return view('home')->with('announcements', $announcements);
-        
     }
 }
 

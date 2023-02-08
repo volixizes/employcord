@@ -2,32 +2,20 @@
 @section('title', 'Track Records')
 @section('content')
 
-<style>
-  .nav-link > .active > a { 
-    background-color: green ; 
-}
-
- .nav .active a,.nav .active a:hover,.nav .active a:focus {
-    background-color: green;
-    color: #FFFFFF;
-} 
-</style>
-
 <div class="container mt-2" >
-  <div class="d-flex  align-content-center">
+  <div class="d-flex  align-items-center justify-content-center">
     <div class="me-auto">
-      <h1>Track Records</h1>
+      <h1 class="p-0">Track Records</h1>
     </div>
-    <div class="pt-3">
+    <div class="mt-3 me-2">
       <p>Search Employee</p>
     </div>
-    <div class="p-2">
-        <select class="form-select" aria-label="Default select example">
-          <option selected>--- Select employee ---</option>
-          <option value="1">Patrick</option>
-          <option value="2">Mike</option>
-          <option value="3">Mick</option>
-          <option value="3">Fin</option>
+    <div class="">
+        <select class="form-select" aria-label="Default select example" id="select2" style="width:200px">
+          {{-- <option selected="" >--- Select employee ---</option> --}}
+          @foreach($employees as $employee)
+            <option value="{{$employee->id}}">{{ $employee->getFullname() }}</option>
+          @endforeach
         </select>
     </div>
   </div>
@@ -42,11 +30,12 @@
                       src="{{url('/images/male-avatar-profile-picture-vector.webp')}}"
                       alt="User profile picture"/>
               </div>
-              <h3 class="profile-username text-center">Patrick Angeles</h3>
-              <p class="text-muted text-center">Software Engineer</p>
+              <h3 class="profile-username text-center">{{ $employees->first()->getFullname()  }}</h3>
+              <p class="text-muted text-center">{{ $employees->first()->Job_Title  }}</p>
               <ul class="list-group list-group-unbordered mb-3">
                 <li class="list-group-item">
                   <p>Employment Date</p>
+                  <p class="text-center">{{ $employees->first()->date_hire }}</p>
                 </li>
                 {{-- <li class="list-group-item">
                 </li>
@@ -78,47 +67,44 @@
             <div class="card-body">
               <div class="tab-content" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-records" role="tabpanel" aria-labelledby="pills-records-tab" tabindex="0">
+                  <form method="POST" action="{{ route('upload-image') }}" class="row mb-3" enctype="multipart/form-data">
+                    @csrf
+                    <input type="hidden" name="employee_id" value="1" class="form-control">
+                   
+                    <div class="col-md-5">
+                      <label for="validationDefault01" class="form-label" >Upload clearance</label>
+                      <input type="file" class="form-control" id="validationDefault01" name="image" accept=".gif,.jpg,.jpeg,.png" required>
+                    </div>
+                    <div class="col-md-3">
+                      <label for="validationDefault04" class="form-label">Type</label>
+                      <select class="form-select" id="validationDefault04" name="type" required>
+                        <option selected disabled value="">Choose...</option>
+                        <option value="Police Clearance ">Police Clearnce</option>
+                        <option value="NBI Clearance">NBI Clearance</option>
+                        <option value="Brgy. Clearance">Brgy. Clearance</option>
+                      </select>
+                    </div>
+                    <div class="col-md-3">
+                      <label for="validationDefault02" class="form-label">Expiration</label>
+                      <input type="date" class="form-control" id="validationDefault02" value="" name="expiration" required>
+                    </div>
+                    <div class="col-md-1 bg-success">
+                      <button class="btn btn-primary" type="submit"><strong>↑</strong></button>
+                    </div>
+                  </form>
+                  
                   <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action active" data-bs-toggle="list" aria-current="true">
-                      <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1 col-5">Police Clearance</h5>
-                        <p class="mb-1 col-5">Valid until: Feb. 5, 2023</p>
-                        <p class="text-warning col-2"><small>15 days to expire</small></p>
-                      </div>
-                      {{-- <small>And some small print.</small> --}}
-                    </a>
+                    @foreach($documents as $document)
+                      
                     <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="list" aria-current="true">
                       <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1 col-5">Police Clearance</h5>
-                        <p class="mb-1 col-5">Valid until: Feb. 5, 2023</p>
+                        <h5 class=" col-5">{{ $document->image_name }}</h5>
+                        <p class=" col-5">Valid until: {{$document->expiration}}</p>
                         <p class="text-warning col-2"><small>15 days to expire</small></p>
                       </div>
                       {{-- <small>And some small print.</small> --}}
                     </a>
-                    <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="list">
-                      <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1 col-5">NBI Clearance</h5>
-                        <p class="mb-1 col-5">Valid until: Jan. 29, 2023</p>
-                        <p class="text-danger col-2"><small>Expired!</small></p>
-                      </div>
-                      {{-- <small class="text-muted">And some muted small print.</small> --}}
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="list">
-                      <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1 col-5">Barangay Clearance</h5>
-                        <p class="mb-1 col-5">Valid until: Jan. 29, 2023</p>
-                        <p class="text-danger col-2"><small> Expired!</small></p>
-                      </div>
-                      {{-- <small class="text-muted">And some muted small print.</small> --}}
-                    </a>
-                    {{-- <a href="#" class="list-group-item list-group-item-action">
-                      <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">List group item heading</h5>
-                        <small class="text-muted">3 days ago</small>
-                      </div>
-                      <p class="mb-1">Some placeholder content in a paragraph.</p>
-                      <small class="text-muted">And some muted small print.</small>
-                    </a> --}}
+                    @endforeach
                   </div>
                 </div>
                 <div class="tab-pane fade show" id="pills-memo" role="tabpanel" aria-labelledby="pills-memo-tab" tabindex="0">
@@ -177,34 +163,35 @@
                     </a>
                   </div>
                 </div>
+
                 <div class="tab-pane fade" id="pills-contract" role="tabpanel" aria-labelledby="pills-contract-tab" tabindex="0">
-                  <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-                      <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">List group item heading</h5>
-                        <small>3 days ago</small>
-                      </div>
-                      <p class="mb-1">Some placeholder content in a paragraph.</p>
-                      <small>And some small print.</small>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action">
-                      <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">List group item heading</h5>
-                        <small class="text-muted">3 days ago</small>
-                      </div>
-                      <p class="mb-1">Some placeholder content in a paragraph.</p>
-                      <small class="text-muted">And some muted small print.</small>
-                    </a>
-                    <a href="#" class="list-group-item list-group-item-action">
-                      <div class="d-flex w-100 justify-content-between">
-                        <h5 class="mb-1">List group item heading</h5>
-                        <small class="text-muted">3 days ago</small>
-                      </div>
-                      <p class="mb-1">Some placeholder content in a paragraph.</p>
-                      <small class="text-muted">And some muted small print.</small>
-                    </a>
+                  <form method="POST" action="{{ route('upload-image') }}" class="row mb-3" enctype="multipart/form-data">
+                    @csrf
+                    <input type="hidden" name="employee_id" value="1" class="form-control">
+                    <input type="hidden" name="type" value="Contract" class="form-control">
+
+                    <div class="col-md-6">
+                      <label for="validationDefault01" class="form-label" >Upload contract</label>
+                      <input type="file" class="form-control" id="validationDefault01" name="image" accept=".gif,.jpg,.jpeg,.png" required>
+                    </div>
+                    <div class="col-md-4">
+                      <label for="validationDefault02" class="form-label">Expiration</label>
+                      <input type="date" class="form-control" id="validationDefault02" value="" name="expiration" required>
+                    </div>
+                    <div class="col-md-2 bg-success">
+                      <button class="btn btn-primary" type="submit"><strong>↑</strong></button>
+                    </div>
+                  </form>
+                  
+                  @if ($contract != NULL) 
+                  <div class="card">
+                    <img src="{{ Storage::url('public/images/'.$contract->image_path) }}" class="rounded mx-auto img-fluid" style="height:500px" alt="image">  
+                  </div>                  
+                  @endif
+                 
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
@@ -213,4 +200,20 @@
     </div>
   </section>
 </div>
+@endsection
+@section('scripts')
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('#select2').select2({
+        placeholder:"Select employee",
+        // ajax:{
+        //   url:"",
+        //   type:"POST",
+          // dataType:"json",
+          // delay:250,
+          // data:function(params)
+        // }
+      });
+    });
+  </script>
 @endsection

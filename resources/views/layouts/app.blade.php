@@ -16,49 +16,43 @@
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-              <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
-    <!-- Scripts -->
-
-
+        
+        {{-- <link rel="stylesheet" href="{{ asset('css/app.css') }}" type="text/css"> --}}
     <style>
+        body {
+        font-family: 'Inter', sans-serif;
+        font-family: 'Quicksand', sans-serif;
+        };
+        #dateResign {
+            display: none;
+        }
 
-            body {
-                font-family: 'Inter', sans-serif;
-                font-family: 'Quicksand', sans-serif;
-            };
-            #dateResign {
-                display: none;
-            }
+        .navbar-dark {
+            background: rgb(23,40,223);
+            background: linear-gradient(360deg, rgba(23,40,223,1) 33%, rgba(88,101,242,1) 54%);
+        }
 
-            .navbar-dark {
-                background: rgb(23,40,223);
-                background: linear-gradient(360deg, rgba(23,40,223,1) 33%, rgba(88,101,242,1) 54%);
-            }
+        .footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 50px;
+        bottom:0;
 
-            .footer {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 50px;
-            bottom:0;
-            
-            width: 100%;
-            color: #5404c4;
-            font-weight: bold;
-            }
-
+        width: 100%;
+        color: #5404c4;
+        font-weight: bold;
+        }
     </style>
-
-    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+    
+        @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 </head>
 <body>
     <div id="app">
-
         <nav class="navbar navbar-expand-md navbar-dark shadow-sm " style="background-color: #5404C4;">
 
             <div class="container-fluid">
@@ -82,7 +76,7 @@
                                 <a class="nav-link {{ Request::is('employees') ? 'active':'' }} fw-bold" href="{{ route('employees') }}">Employees</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ Request::is('trackrecords') ? 'active':'' }} fw-bold" href="{{ route('trackrecords') }}">Track Records</a>
+                                <a class="nav-link {{ Request::is('track-records') ? 'active':'' }} fw-bold" href="{{ route('track-records') }}">Track Records</a>
                             </li>
                     </ul>
 
@@ -134,11 +128,10 @@
     </div>
 
    
-</body>
-<script>
-    (function() {
-  'use strict';
-  window.addEventListener('load', function() {
+    <script>
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
     let forms = document.getElementsByClassName('needs-validation');
     let validation = Array.prototype.filter.call(forms, function(form) {
       form.addEventListener('submit', function(event) {
@@ -157,15 +150,15 @@
       firstname.addEventListener("input", function(e) {
         const inputValue = e.target.value.trim();
         const lettersOnly = /^[a-zA-Z\s]+$/;
-
+        
         if (inputValue.length === 0) {
-          firstname.setCustomValidity("First name is required");  
-          firstname.classList.remove("is-valid");
-          firstname.classList.add("is-invalid");
+            firstname.setCustomValidity("First name is required");  
+            firstname.classList.remove("is-valid");
+            firstname.classList.add("is-invalid");
         } else if (!inputValue.match(lettersOnly)) {
-          firstname.setCustomValidity("First name must not contain letters and special characters");
-          firstname.classList.remove("is-valid");
-          firstname.classList.add("is-invalid");
+            firstname.setCustomValidity("First name must not contain letters and special characters");
+            firstname.classList.remove("is-valid");
+            firstname.classList.add("is-invalid");
         }
         else {
             firstname.setCustomValidity("");
@@ -195,12 +188,12 @@
             middlename.classList.remove("is-invalid");
             middlename.classList.add("is-valid");
         }
-
+        
         document.querySelector("#middlename_error").innerText = middlename.validationMessage;
         validateForm()
-      });
-
-      lastname.addEventListener("input", function(e) {
+    });
+    
+    lastname.addEventListener("input", function(e) {
         const inputValue = e.target.value.trim();
         const lettersOnly = /^[a-zA-Z\s]+$/;
 
@@ -320,11 +313,11 @@
       });
 
       rank.addEventListener("input", function(e) {
-        const inputValue = e.target.value.trim();
+          const inputValue = e.target.value.trim();
         const lettersOnly = /^[a-zA-Z\s]+$/;
 
         if (inputValue.length === 0) {
-          rank.setCustomValidity("Rank is required");  
+            rank.setCustomValidity("Rank is required");  
           rank.classList.remove("is-valid");
           rank.classList.add("is-invalid");
         } else if (!inputValue.match(lettersOnly)) {
@@ -340,9 +333,9 @@
         
         document.querySelector("#rank_error").innerText = rank.validationMessage;
         validateForm();
-        });
+    });
 
-        department.addEventListener("input", function(e) {
+    department.addEventListener("input", function(e) {
         const inputValue = e.target.value.trim();
         const lettersOnly = /^[a-zA-Z\s]+$/;
 
@@ -351,7 +344,7 @@
           department.classList.remove("is-valid");
           department.classList.add("is-invalid");
         } else if (!inputValue.match(lettersOnly)) {
-          department.setCustomValidity("Department must not contain letters and special characters");
+            department.setCustomValidity("Department must not contain letters and special characters");
           department.classList.remove("is-valid");
           department.classList.add("is-invalid");
         }
@@ -363,15 +356,15 @@
         
         document.querySelector("#department_error").innerText = department.validationMessage;
         validateForm();
-        });
-      document.getElementById("activeResigned").addEventListener("change", function() {
+    });
+    document.getElementById("activeResigned").addEventListener("change", function() {
         const selectedValue = this.value;
         const dateResignField = document.getElementById("dateResign");
-
+        
         if (selectedValue === "Resigned") {
-        dateResignField.style.display = "block";
+            dateResignField.style.display = "block";
         } else {
-        dateResignField.style.display = "none";
+            dateResignField.style.display = "none";
         }
         });
         function validateForm() {
@@ -383,7 +376,7 @@
             submitBtn.setAttribute("disabled", "true");
             }
         }
-        });
+    });
         }, false);
     })();
     
@@ -412,7 +405,10 @@
     }
     });
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+</body>
 </html>
-

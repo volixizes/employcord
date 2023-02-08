@@ -37,3 +37,8 @@ app.component('example-component', ExampleComponent);
  */
 
 app.mount('#app');
+
+setTimeout(function () {
+    $('.alert').alert('close');
+}, 5000);
+
