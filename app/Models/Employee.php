@@ -37,4 +37,9 @@ class Employee extends Model
     public function getFullname() {
         return $this->first_name ." ". $this->last_name;
     }
+
+    public function documents()
+    {
+        return $this->hasMany(Document::class);
+    }
 }

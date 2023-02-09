@@ -17,11 +17,16 @@ class DocumentController extends Controller
      */
     public function display() {
         $employees = Employee::all();
+        
         $documents = Document::all();
-        $contract = Document::orderBy('created_at', 'desc')->where('image_name', 'Contract')->first();
+        if ($documents->image_type)
+
+        $image_types = Document::all();
+        $contract = Document::orderBy('created_at', 'desc')->where('image_type', 'Contract')->first();
         // $clearnce =
         return view('trackrecords')->with('employees', $employees)
                                     ->with('documents', $documents)
+                                    ->with('image_types', $image_types)
                                     ->with('contract', $contract);
     }
 
@@ -63,7 +68,7 @@ class DocumentController extends Controller
             $document->image_path = null;
         }
         
-        $document->image_name = $request->type;
+        $document->image_type = $request->type;
         $document->save();
         return redirect()->route('track-records')->with('success', "New image is uploaded!");
     }

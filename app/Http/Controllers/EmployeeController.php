@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Employee;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
 
 class EmployeeController extends Controller
 {
     public function create(Request $request)
     {
-        try {
+        // try {
             $contactValue = "+63";
             $employees = new Employee;
             $employees->first_name = $request->first_name;
@@ -37,13 +39,23 @@ class EmployeeController extends Controller
             $employees->email = $request->email;
             $employees->password = $request->password;
             $employees->save();
+
+            $employee_login = [
+                'employee_id' => $request->id,
+                'name' => $request->first_name ." ". $request->last_name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+            ];
+
+            DB::table('users')->insert($employee_login);
+            DB::commit();
     
-            return redirect()->route('employees')->with('success', 'New employee added!');
-        } catch (\Illuminate\Database\QueryException $ex) {
-            if ($ex->errorInfo[1] == 1062) {
-                return redirect()->back()->withInput($request->all())->with('error', 'Email address already exists.');
-            }
-        }
+            return redirect()->route('employees')->with('success', 'New employees added!');
+        // } catch (\Illuminate\Database\QueryException $ex) {
+        //     if ($ex->errorInfo[1] == 1062) {
+        //         return redirect()->back()->withInput($request->all())->with('error', 'Email address already exists.');
+        //     }
+        // }
      }
 
 }

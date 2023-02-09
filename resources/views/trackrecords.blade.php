@@ -81,11 +81,11 @@
                     </div>
                     <div class="col-md-3">
                       <label for="validationDefault04" class="form-label">Type</label>
-                      <select class="form-select" id="validationDefault04" name="type" required>
+                      <select class="form-select" id="validationDefault04" name="type" required></select>
                         <option selected disabled value="">Choose...</option>
-                        <option value="Police Clearance ">Police Clearnce</option>
-                        <option value="NBI Clearance">NBI Clearance</option>
-                        <option value="Brgy. Clearance">Brgy. Clearance</option>
+                        <option value="1">Police Clearnce</option>
+                        <option value="2">NBI Clearance</option>
+                        <option value="3">Brgy. Clearance</option>
                       </select>
                     </div>
                     <div class="col-md-3">
@@ -102,7 +102,7 @@
                       
                     <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="list" aria-current="true">
                       <div class="d-flex w-100 justify-content-between">
-                        <h5 class=" col-5">{{ $document->image_name }}</h5>
+                        <h5 class=" col-5">{{ $document->image_type }}</h5>
                         <p class=" col-5">Valid until: {{$document->expiration}}</p>
                         <p class="text-warning col-2"><small>15 days to expire</small></p>
                       </div>

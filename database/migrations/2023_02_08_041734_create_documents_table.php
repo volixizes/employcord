@@ -16,13 +16,13 @@ return new class extends Migration
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('image_name');
+            $table->enum('image_type', ['Police Clearance'], ['NBI Clearnce'], 'Barangay Clearnce');
             $table->string('image_path');
             $table->date('expiration');
-            $table->string('status')->default('Current');
+            $table->enum('status', ['Current', 'Processing', 'Expired'])->default('Current');
 
-            $table->integer('employee_id');
-            // $table->foreign('employee_id')->references('id')->on('employees')->onDelete('cascade');
+            $table->unsignedBigInteger('employee_id');
+            $table->foreign('employee_id')->references('id')->on('employees')->onDelete('cascade');
         });
     }
 
