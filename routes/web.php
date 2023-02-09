@@ -26,12 +26,18 @@ Route::get('/employees', function(){
     return view('employees');
 })->name('employees');
 
+// Route::post('/confirmemployee', function(){ 
+//     return view('confirmemployee' );
+// })->name('storeemployee');
+
 Route::get('/home', [HomeController::class,'index'])->name('home');
 
 // Announcement routes
 Route::post('/create-announcement', [AnnouncementController::class,'create'])->name('create-announcement');
 
 Route::post('/createemployee', [EmployeeController::class,'create'])->name('createemployee');
+
+Route::get('/confirmemployee', [EmployeeController::class,'confirm'])->name('storeemployee');
 
 Route::controller(DocumentController::class)->group(function() {
     Route::get('/track-records', 'display')->name('track-records');
