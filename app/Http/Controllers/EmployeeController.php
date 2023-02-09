@@ -55,13 +55,23 @@ class EmployeeController extends Controller
             DB::table('users')->insert($employee_login);
             DB::commit();
     
-            return redirect()->route('employees')->with('success', 'New employees added!');
-        // } 
-        // catch (\Illuminate\Database\QueryException $ex) {
+            return redirect()->route('storeemployee');
 
+            dd($request->all());
+        // } catch (\Illuminate\Database\QueryException $ex) {
         //     if ($ex->errorInfo[1] == 1062) {
         //         return redirect()->back()->withInput($request->all())->with('error', 'Email address already exists.');
         //     }
         // }
-    }
+     }
+
+     public function confirm(){
+
+            
+            $employees = Employee::all();
+            return view('confirmemployee')->with('employees', $employees)
+            ->with('success', 'New employees added!');
+        
+     }
+
 }
