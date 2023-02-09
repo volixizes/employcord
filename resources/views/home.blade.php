@@ -133,32 +133,24 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                @if(isset($birthdays))
+                                    @foreach($birthdays as $birthday)
                                     <tr>
-                                        <td>Bautista</td>
-                                        <td>Mick</td>
-                                        <td>Lopez</td>
-                                        <td>Fabruary 5, 2023</td>
+                                        <td>{{ $birthday->first_name }}</td>
+                                        <td>{{ $birthday->last_name }}</td>
+                                        <td>{{ $birthday->middle_name }}</td>
+                                        <td>{{ $birthday->birthday }}</td>
                                     </tr>
-                                    <tr>
-                                        <td>Bautista</td>
-                                        <td>Mick</td>
-                                        <td>Lopez</td>
-                                        <td>Fabruary 5, 2023</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bautista</td>
-                                        <td>Mick</td>
-                                        <td>Lopez</td>
-                                        <td>Fabruary 5, 2023</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Bautista</td>
-                                        <td>Mick</td>
-                                        <td>Lopez</td>
-                                        <td>Fabruary 5, 2023</td>
-                                    </tr>
-                                </tbody>
+                                    @endforeach
+                                @else
+                                <tr>
+
+                                </tr>
+                                    
+
                                </table>
+                               <h1 class="text-center justify-content-center">No employees found.</h1>
+                               @endif
                             </div>
                         </div>
                         

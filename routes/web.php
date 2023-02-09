@@ -31,6 +31,7 @@ Route::get('/employees', function(){
 // })->name('storeemployee');
 
 Route::get('/home', [HomeController::class,'index'])->name('home');
+Route::get('/birthdays', [EmployeeController::class,'birthday'])->name('birthdays');
 
 // Announcement routes
 Route::post('/create-announcement', [AnnouncementController::class,'create'])->name('create-announcement');
