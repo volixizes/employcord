@@ -5,11 +5,15 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Employee;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
 class EmployeeController extends Controller
 {
+
+    
+
     public function create(Request $request)
     {   
         $emp_id = Employee::all();
@@ -72,5 +76,20 @@ class EmployeeController extends Controller
             ->with('success', 'New employees added!');
         
      }
+
+     public function birthday(Request $request){
+        $birthdays = DB::table('employees')->select('first_name','middle_name', 'last_name', 'birthday')->get();
+        $birthdays = Employee::whereBetween('birthday', [
+            Carbon::now()->startOfWeek(), 
+            Carbon::now()->endOfWeek()
+        ])->simplePaginate(3);
+        
+        $birthdays->first_name = $request->first_name;
+        $birthdays->last_name = $request->last_name;
+        $birthdays->middle_name = $request->middle_name;
+        $birthdays->birthday = $request->birthday;
+
+        return view('home')->with('birthdays', $birthdays);
+    }
 
 }
