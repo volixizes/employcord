@@ -69,7 +69,9 @@ Route::post('/createemployee', [EmployeeController::class,'create'
 Route::get('/confirmemployee', [EmployeeController::class,'confirm'
     ])->name('storeemployee');
 
-
+Route::post('/updatememployee', [EmployeeController::class,'update'
+    ])->name('updateemployee');
+    
 // Document routes
 Route::controller(DocumentController::class)->group(function() {
     Route::get('/track-records', 'display')->name('track-records');

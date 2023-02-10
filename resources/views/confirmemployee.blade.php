@@ -76,7 +76,7 @@
                   </div>
                   <div class="col" style="">
                         <label for="activeResigned" class="form-label">Active / Resigned</label>
-                        <input type="text" class="form-control" id="activeResigned" name="isActive" placeholder="{{ $employee->isActive }}" value="{{ $employee->isActive }}" readonly>
+                        <input type="text" class="form-control" id="activeResigned" name="isActive" placeholder="{{ $employee->isActive }}" onchange="updateResigned()" value="{{ $employee->isActive }}" readonly>
                   </div>
                   <div class="col" style="">
                   <label for="dateResign" class="form-label">Resigned</label>

@@ -9,9 +9,9 @@
   {{ session('success') }}
 </div>
 @endif
-<div class="container mt-4" >
-<h1 class="mt-2 mb-4 fw-bold"> Basic Information </h1>
-<form class="row g-3 needs-validation" method="POST" action="{{ route('createemployee') }}"  novalidate>
+<div class="container mt-5" >
+<h1 class="mt-2 mb-4"> Basic Information </h1>
+<form class="row g-3 needs-validation" method="POST" action="{{ route('updateemployee') }}"  novalidate>
   @csrf
   <div class="col-md-12">
     <label for="firstname" class="form-label">First name</label>

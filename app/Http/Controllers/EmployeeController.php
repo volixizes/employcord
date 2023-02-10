@@ -92,4 +92,36 @@ class EmployeeController extends Controller
         return view('home')->with('birthdays', $birthdays);
     }
 
+        public function update(Request $request, $id)
+    {
+        $employee = Employee::find($id);
+        $employee->first_name = $request->first_name;
+        $employee->middle_name = $request->middle_name;
+        $employee->last_name= $request->last_name;
+        $employee->birthday = $request->birthday;
+        $employee->gender = $request->gender;
+        $employee->marital_status = $request->marital_status;
+        $employee->contact_no = $request->contact_no;
+        $employee->street = $request->street;
+        $employee->barangay = $request->barangay;
+        $employee->city = $request->city;
+        $employee->province = $request->province;
+        $employee->date_hire = $request->date_hire;
+        $employee->employment_status = $request->employment_status;
+        $employee->isActive = $request->isActive;
+        $employee->Job_Title = $request->Job_Title;
+        if ($request->isActive === "Active") {
+            $employee->isResigned = null;
+        } else {
+            $employee->isResigned = $request->isResigned;
+        }
+        $employee->rank = $request->rank;
+        $employee->department = $request->department;
+        $employee->email = $request->email;
+        $employee->password = $request->password;
+        $employee->save();
+
+        return redirect()->route('confirmemployee');
+    }
+
 }

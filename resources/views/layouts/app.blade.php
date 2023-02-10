@@ -394,6 +394,19 @@
     });
         }, false);
     })();
+
+        function updateResigned() {
+        var activeResigned = document.getElementById("activeResigned");
+        var dateResigned = document.getElementById("dateResigned");
+
+        if (activeResigned.value === "Active") {
+        dateResigned.placeholder = "N/A";
+        dateResigned.value = "N/A";
+        } else {
+        dateResigned.placeholder = "";
+        dateResigned.value = "";
+        }
+    }
     
     $(document).ready(function() {
         $('.datebtn').click(function() {
