@@ -86,16 +86,16 @@
 
   <div class="row mb-5">
   <div class="col">
-        <label for="jobTitle" class="form-label">Job Title</label>
+        <label for="jobTitle" class="form-label mt-2">Job Title</label>
         <input type="text" class="form-control" id="jobTitle" name="Job_Title" placeholder="{{ $employee->Job_Title }}" value="{{ $employee->Job_Title }}" readonly>
   </div>
   
   <div class="col">
-    <label for="rank" class="form-label">Rank</label>
+    <label for="rank" class="form-label mt-2">Rank</label>
     <input type="text" class="form-control" id="rank" name="rank" placeholder="{{ $employee->rank }}" value="{{ $employee->rank }}" readonly>
   </div>
   <div class="col">
-    <label for="department" class="form-label">Department</label>
+    <label for="department" class="form-label mt-2">Department</label>
     <input type="text" class="form-control" id="department" placeholder="{{ $employee->department }}" name="department" value="{{ $employee->rank }}" readonly>
   </div>
   </div>
