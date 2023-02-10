@@ -19,8 +19,6 @@ class DocumentController extends Controller
         $employees = Employee::all();
         
         $documents = Document::all();
-        if ($documents->image_type)
-
         $image_types = Document::all();
         $contract = Document::orderBy('created_at', 'desc')->where('image_type', 'Contract')->first();
         // $clearnce =
@@ -47,10 +45,10 @@ class DocumentController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request) {
+        
         $document = new Document;
         $document->employee_id = $request->employee_id;
         $document->expiration = $request->expiration;
-
         if($request->hasFile('image')){
             $request->validate([
                 'image' => 'required|image|mimes:jpeg,jpg,png,gif|max:2048',

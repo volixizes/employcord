@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Employee;
+use App\Models\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
@@ -13,11 +14,11 @@ class EmployeeController extends Controller
     
 
     public function create(Request $request)
-    {
+    {   
+        $emp_id = Employee::all();
+
         // try {
-
-            
-
+            DB::beginTransaction();
             $contactValue = "+63";
             $employees = new Employee;
             $employees->first_name = $request->first_name;
@@ -46,16 +47,16 @@ class EmployeeController extends Controller
             $employees->password = $request->password;
             $employees->save();
             
-
-            // $employee_login = [
-            //     'employee_id' => $request->id,
-            //     'name' => $request->first_name ." ". $request->last_name,
-            //     'email' => $request->email,
-            //     'password' => Hash::make($request->password),
-            // ];
-
-            // DB::table('users')->insert($employee_login);
-            // DB::commit();
+            $employee_login = [
+                'name' => $request->first_name ." ". $request->last_name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+                'created_at' => now(),
+                'employee_id' => $employees->id,
+                'isAdmin' => 0
+            ];
+            DB::table('users')->insert($employee_login);
+            DB::commit();
     
             return redirect()->route('storeemployee');
 
