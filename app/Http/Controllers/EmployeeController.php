@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\Hash;
 
 class EmployeeController extends Controller
 {
+
+    
+
     public function create(Request $request)
     {
         // try {

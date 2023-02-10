@@ -8,7 +8,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>EmployCord - @yield('title')</title>
-
+    <link rel="shortcut icon" type="image/x-icon" href="/images/empicon.png">
     <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,8 +32,8 @@
         }
 
         .navbar-dark {
-            background: rgb(23,40,223);
-            background: linear-gradient(360deg, rgba(23,40,223,1) 33%, rgba(88,101,242,1) 54%);
+            background: rgb(84,4,196);
+            background: linear-gradient(167deg, rgba(84,4,196,1) 0%, rgba(84,4,196,1) 26%, rgba(88,101,242,1) 83%);
         }
 
         .footer {

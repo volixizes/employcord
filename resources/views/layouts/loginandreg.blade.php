@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Employcord</title>
-
+        <link rel="shortcut icon" type="image/x-icon" href="/images/empicon.png">
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +27,7 @@
             html, body {
                 font-family: 'Inter', sans-serif;
                 font-family: 'Quicksand', sans-serif;
-                background: linear-gradient(360deg, rgba(255,255,255,1) 90%, rgba(84,4,196,1) 100%) no-repeat;
+                background: linear-gradient(360deg, rgba(255,255,255,1) 60%, rgba(84,4,196,1) 100%) no-repeat;
 
                 
                 
