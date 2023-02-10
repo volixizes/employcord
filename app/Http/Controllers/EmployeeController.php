@@ -78,16 +78,16 @@ class EmployeeController extends Controller
      }
 
      public function birthday(Request $request){
-        $birthdays = DB::table('employees')->select('first_name','middle_name', 'last_name', 'birthday')->get();
+        // $birthdays = DB::table('employees')->select('first_name','middle_name', 'last_name', 'birthday')->get();
         $birthdays = Employee::whereBetween('birthday', [
             Carbon::now()->startOfWeek(), 
             Carbon::now()->endOfWeek()
         ])->simplePaginate(3);
         
-        $birthdays->first_name = $request->first_name;
-        $birthdays->last_name = $request->last_name;
-        $birthdays->middle_name = $request->middle_name;
-        $birthdays->birthday = $request->birthday;
+        // $birthdays->first_name = $request->first_name;
+        // $birthdays->last_name = $request->last_name;
+        // $birthdays->middle_name = $request->middle_name;
+        // $birthdays->birthday = $request->birthday;
 
         return view('home')->with('birthdays', $birthdays);
     }
