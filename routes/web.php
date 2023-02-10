@@ -35,7 +35,6 @@ Route::get('/trackrecords', function(){
 Route::post('/createannouncement', [AnnouncementController::class, 'create'])->name('createannouncement');
 
 Route::get('/home', [HomeController::class,'index'])->name('home');
-Route::get('/employee', [BirthdayController::class,'index'])->name('birthday');
 
 // Announcement routes
 Route::post('/create-announcement', [AnnouncementController::class,'create'])->name('create-announcement');
