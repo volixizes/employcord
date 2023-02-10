@@ -20,7 +20,6 @@ return new class extends Migration
 
             //foreign key declaration
             $table->unsignedBigInteger('user_id');
-            //
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
 

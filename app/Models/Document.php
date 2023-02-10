@@ -16,6 +16,7 @@ class Document extends Model
         'employee_id',
         'image_name',
         'image_path',
+        'image_type',
         'expiration',
         'status'
     ];

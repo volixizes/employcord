@@ -14,7 +14,7 @@
         <select class="form-select" aria-label="Default select example" id="select2" style="width:200px">
           {{-- <option selected="" >--- Select employee ---</option> --}}
           @foreach($employees as $employee)
-            <option value="{{$employee->id}}">{{ $employee->getFullname() }}</option>
+            <option value="{{$employee->id}}">{{ $employee->user->name }}</option>
           @endforeach
         </select>
     </div>
@@ -81,13 +81,14 @@
                     </div>
                     <div class="col-md-3">
                       <label for="validationDefault04" class="form-label">Type</label>
-                      <select class="form-select" id="validationDefault04" name="type" required></select>
-                        <option selected disabled value="">Choose...</option>
-                        <option value="1">Police Clearnce</option>
-                        <option value="2">NBI Clearance</option>
-                        <option value="3">Brgy. Clearance</option>
+                      <select class="form-select"  name="type">
+                        <option selected>Choose...</option>
+                        <option value="Police Clearance">Police Clearnce</option>
+                        <option value="NBI Clearance">NBI Clearance</option>
+                        <option value="Brgy. Clearance">Brgy. Clearance</option>
                       </select>
                     </div>
+
                     <div class="col-md-3">
                       <label for="validationDefault02" class="form-label">Expiration</label>
                       <input type="date" class="form-control" id="validationDefault02" value="" name="expiration" required>
