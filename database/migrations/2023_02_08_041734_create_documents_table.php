@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('image_path');
             $table->date('expiration');
             // $table->enum('status', ['Current', 'Processing', 'Expired'])->default('Current');
-            $table->string('status')->default('Current');
+            // $table->string('status')->default('Current');
 
             $table->unsignedBigInteger('employee_id');
             $table->foreign('employee_id')->references('id')->on('employees')->onDelete('cascade');

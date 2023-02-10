@@ -14,7 +14,7 @@
         <select class="form-select" aria-label="Default select example" id="select2" style="width:200px">
           {{-- <option selected="" >--- Select employee ---</option> --}}
           @foreach($employees as $employee)
-            <option value="{{$employee->id}}">{{ $employee->user->name }}</option>
+            <option value="{{$employee->id}}">{{ $employee->getFullname() }}</option>
           @endforeach
         </select>
     </div>
@@ -81,14 +81,13 @@
                     </div>
                     <div class="col-md-3">
                       <label for="validationDefault04" class="form-label">Type</label>
-                      <select class="form-select"  name="type">
+                      <select class="form-select" id="validationDefault04" name="type" required>
                         <option selected>Choose...</option>
                         <option value="Police Clearance">Police Clearnce</option>
                         <option value="NBI Clearance">NBI Clearance</option>
                         <option value="Brgy. Clearance">Brgy. Clearance</option>
                       </select>
                     </div>
-
                     <div class="col-md-3">
                       <label for="validationDefault02" class="form-label">Expiration</label>
                       <input type="date" class="form-control" id="validationDefault02" value="" name="expiration" required>
@@ -99,17 +98,22 @@
                   </form>
                   
                   <div class="list-group">
-                    @foreach($documents as $document)
-                      
+                    @if (count($clearances) > 0 )
+                    @foreach($clearances as $clearance)
+                    @if ($clearance != NULL)
                     <a href="#" class="list-group-item list-group-item-action" data-bs-toggle="list" aria-current="true">
                       <div class="d-flex w-100 justify-content-between">
-                        <h5 class=" col-5">{{ $document->image_type }}</h5>
-                        <p class=" col-5">Valid until: {{$document->expiration}}</p>
-                        <p class="text-warning col-2"><small>15 days to expire</small></p>
+                        <h5 class=" col-5">{{ $clearance->image_type }}</h5>
+                        <p class=" col-5">Valid until: {{$clearance->expiration}}</p>
+                        <p class="text-warning col-2"><small>{{$clearance->getStatus()}}</small></p>
                       </div>
                       {{-- <small>And some small print.</small> --}}
                     </a>
+                    @endif
                     @endforeach
+                    @else 
+                    <p class="text-center">No documents found.</p>
+                    @endif
                   </div>
                 </div>
                 <div class="tab-pane fade show" id="pills-memo" role="tabpanel" aria-labelledby="pills-memo-tab" tabindex="0">
@@ -191,7 +195,9 @@
                   @if ($contract != NULL) 
                   <div class="card">
                     <img src="{{ Storage::url('public/images/'.$contract->image_path) }}" class="rounded mx-auto img-fluid" style="height:500px" alt="image">  
-                  </div>                  
+                  </div>
+                  @else
+                  <p class="text-center">No documents found.</p>                  
                   @endif
                  
                   </div>
