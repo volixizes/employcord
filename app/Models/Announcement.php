@@ -11,5 +11,12 @@ class Announcement extends Model
 
     protected $table = 'announcements';
 
-    protected $fillable = ['message',];
+    protected $fillable = [
+        'message',
+        'user_id',
+    ];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

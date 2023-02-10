@@ -5,22 +5,91 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Employcord</title>
-
+        <link rel="shortcut icon" type="image/x-icon" href="/images/empicon.png">
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@800&display=swap" rel="stylesheet">
         <link href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-  
-        <!-- Styles -->
-        <style>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+              <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Scripts -->
 
-            body {
-                font-family: 'Sofia Sans', sans-serif;
+
+    <style>
+
+            html, body {
+                font-family: 'Inter', sans-serif;
+                font-family: 'Quicksand', sans-serif;
+                background: linear-gradient(360deg, rgba(255,255,255,1) 60%, rgba(84,4,196,1) 100%) no-repeat;
+
+                
+                
+             }
+
+            img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                width: 450px;
+                height: auto;
+                }
+
+            * {
+                margin: 0;
+                padding: 0;
             }
-        </style>
+
+
+
+            #wrap {
+            min-height: 100%;
+            }
+
+            #main {
+            overflow: auto;
+            padding-bottom: 180px;
+            /* must be same height as the footer */
+            }
+
+            .footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            bottom:0;
+            position: fixed;
+            width: 100%;
+            color: #5404c4;
+            font-weight: bold;
+            }
+
+            .col-lg-7 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            }
+
+            .centered-div {
+                width: 50%;
+                height: 100px;
+                background-color: lightgray;
+            }
+
+            .btn-primary {
+            background-color: #5865F2;
+            border-color: #5865F2;
+            }
+        
+    </style>
     </head>
+    
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen sm:items-center py-4 sm:pt-0">
              {{-- @if (Route::has('login'))
@@ -37,27 +106,35 @@
                 </div>
             @endif  --}}
 
-                <section class="vh-75 gradient-custom d-flex justify-items-center">
-                    <div class="container-fluid my-5 py-5 h-50">
-                      <div class="row d-flex justify-content-center align-items-center h-50">
-                        <div class="col-12 col-md-8 col-lg-6 col-xxl-5">
-                          <div class="card text-white" style="border-radius: 1rem; background-color: #97cc04;">
-                        
-                        <div class="card-body p-5 text-center m-auto">
-                            <div class="mb-md-5 mt-md-4 pb-5">
-                            <div class="d-flex justify-content-center m-5">
-                                    <img src="https://firebasestorage.googleapis.com/v0/b/product-37997.appspot.com/o/Capture-removebg-preview.png?alt=media&token=aa0cd770-6435-4623-81ec-db460156f961" alt="Logo" class="img-fluid d-none d-xxl-block d-xl-none" style="width: auto; height: 5em;">
-                                    <h1 class="mt-3" style="color: #205295;">EmployCord</h1>
+                <section clss="form">
+                    
+                    <div class="container mt-5">
+                    <div class="row mt-5">
+                    <div class="col-lg-7" >
+                                <div class="image-container">
+                                <img src="/images/logo.png" alt="Logo">
                                 </div>
-                                @yield('login')
-                                @yield('register')
-                                    </div>
+                    </div>
+                    
+                      
+                        <div class="col-lg-5 mt-5">
+                            <div class="card shadow p-4" style="border-radius: 1rem;">
+                                <div class="card-body">
+                                    @yield('login')
+                                    @yield('register')
+                                </div>
                             </div>
                         </div>
-                      </div>
                     </div>
+                        
                     </div>
                   </section>
+                 
+                  
             </div>
+
+            <footer class="footer">
+                <p>&copy; 2023 Copyright. All Rights Reserved. Designed by: Mick ● Patrick ● Fin ● Mike </p>
+            </footer>
     </body>
 </html>

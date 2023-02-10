@@ -13,3 +13,38 @@ height: calc(100% - 73px);
 height: 100%;
 }
 } */
+
+/* .nav .active a,.nav .active a:hover,.nav .active a:focus {
+    background-color: green;
+    color: #FFFFFF;
+} */
+
+/* .nav-link > .active > a { 
+    background-color: green ; 
+} */
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+};
+#dateResign {
+    display: none;
+}
+
+.navbar-dark {
+    background: rgb(23,40,223);
+    background: linear-gradient(360deg, rgba(23,40,223,1) 33%, rgba(88,101,242,1) 54%);
+}
+
+.footer {
+display: flex;
+align-items: center;
+justify-content: center;
+height: 50px;
+bottom:0;
+
+width: 100%;
+color: #5404c4;
+font-weight: bold;
+}

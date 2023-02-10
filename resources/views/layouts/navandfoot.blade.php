@@ -25,9 +25,7 @@
                 font-family: 'Inter', sans-serif;
                 font-family: 'Quicksand', sans-serif;
             };
-
             
-
             
         </style>
     </head>
@@ -84,53 +82,6 @@
             </div>
        </footer>
     </body>
-    <script>
-        (function() {
-            'use strict';
-            window.addEventListener('load', function() {
-            let forms = document.getElementsByClassName('needs-validation');
-            let validation = Array.prototype.filter.call(forms, function(form) {
-                form.addEventListener('submit', function(event) {
-                if (form.checkValidity() === false) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                }
-                form.classList.add('was-validated');
-                }, false);
-
-                let submitBtn = form.querySelector('button[type="submit"]');
-                submitBtn.onclick = function() {
-                // code nung verification mamaya sa DB
-                console.log('Submit button clicked!');
-                };
-            });
-            }, false);
-        })();
-        
-    $(document).ready(function() {
-        $('.datebtn').click(function() {
-            $('#datepicker').datepicker('show');
-        });
-        $('#datepicker').datepicker({
-            dateFormat: 'mm/dd/yy'
-        });
-        $('.hirebtn').click(function(){
-            $('#hirepicker').datepicker('show');
-        });
-        $('#hirepicker').datepicker({
-            dateFormat: 'mm/dd/yy'
-        });
-    });
-    document.getElementById("showPasswordBtn").addEventListener("click", function() {
-    let passwordInput = document.getElementById("empPassword");
-    if (passwordInput.type === "password") {
-        passwordInput.type = "text";
-        this.innerHTML = "<i class='fa fa-eye'></i>";
-    } else {
-        passwordInput.type = "password";
-        this.innerHTML = "<i class='fa fa-eye-slash'></i>";
-    }
-    });
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 </html>

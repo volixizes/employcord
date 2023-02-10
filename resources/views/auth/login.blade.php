@@ -4,7 +4,7 @@
     @csrf
     <!-- <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label> -->
     <div class="form-outline form-white mb-4">
-    <h5 class="mb-3">Sign in</h5>
+    <h1 class="mb-3 fw-bold" style="color: #5865F2">Sign in</h1>
     <input type="email" id="email" class="form-control form-control-lg @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="{{ __('Email Address') }}" />
     @error('email')
         <span class="invalid-feedback" role="alert">
@@ -34,7 +34,7 @@
         </div>
     </div>                                
     <div class="d-grid col-4 mx-auto ">
-            <button type="submit" class="btn btn-outline-light btn-lg px-5">
+            <button type="submit" class="btn btn-primary btn-lg px-5">
                 {{ __('Login') }}
             </button>
     </div>

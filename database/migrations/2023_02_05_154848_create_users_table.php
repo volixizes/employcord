@@ -21,6 +21,10 @@ return new class extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->boolean('isAdmin');
+           
+            $table->unsignedBigInteger('employee_id')->nullable();
+            // $table->foreign('employee_id')->references('id')->on('employees')->onDelete('cascade');
         });
     }
 
