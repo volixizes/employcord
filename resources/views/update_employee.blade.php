@@ -9,10 +9,13 @@
   {{ session('success') }}
 </div>
 @endif
+
 <div class="container mt-5" >
 <h1 class="mt-2 mb-4"> Basic Information </h1>
-<form class="row g-3 needs-validation" method="POST" action="{{ route('updateemployee') }}"  novalidate>
-  @csrf
+<form class="row g-3 needs-validation" method="POST" action="{{ route('updateemployee') }}" novalidate>
+    @csrf
+    @method('PUT')
+  
   <div class="col-md-12">
     <label for="firstname" class="form-label">First name</label>
     <input type="text" class="form-control" id="firstname" placeholder="First Name" name="first_name" required>

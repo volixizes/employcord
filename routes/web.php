@@ -69,7 +69,7 @@ Route::post('/createemployee', [EmployeeController::class,'create'
 Route::get('/confirmemployee', [EmployeeController::class,'confirm'
     ])->name('storeemployee');
 
-Route::post('/updatememployee', [EmployeeController::class,'update'
+Route::post('/updateemployee/{id}', [EmployeeController::class,'update'
     ])->name('updateemployee');
     
 // Document routes

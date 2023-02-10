@@ -117,9 +117,9 @@
   @endforeach
   <div class="btn-group mt-5 " role="group" aria-label="Basic mixed styles example" style="display: flex;
     justify-content: center;">
-      <button type="button" class="btn btn-primary">Previous</button>
-      <button type="button" class="btn btn-secondary">Download PDF</button>
-      <button type="button" class="btn btn-success">Proceed Registration</button>
+      <a type="button" href="{{ route('updateemployee') }}" class="btn btn-primary">Previous</a>
+      <a type="button" href="#" class="btn btn-secondary">Download PDF</a>
+      <a type="button" href="#" class="btn btn-success">Proceed Registration</a>
 </div>
 </form>
 </div>

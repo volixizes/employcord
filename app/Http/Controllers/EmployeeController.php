@@ -121,7 +121,8 @@ class EmployeeController extends Controller
         $employee->password = $request->password;
         $employee->save();
 
-        return redirect()->route('confirmemployee');
+        return view ('confirmemployee');
+        // redirect()->route('storeemployee');
     }
 
 }
