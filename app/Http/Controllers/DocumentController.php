@@ -7,6 +7,7 @@ use App\Models\Document;
 use App\Models\Employee;
 
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Collection;
 
 class DocumentController extends Controller
 {
@@ -17,15 +18,33 @@ class DocumentController extends Controller
      */
     public function display() {
         $employees = Employee::all();
-        
         $documents = Document::all();
-        $image_types = Document::all();
-        $contract = Document::orderBy('created_at', 'desc')->where('image_type', 'Contract')->first();
-        // $clearnce =
+        $contract = $documents->sortByDesc('created_at')->where('image_type', 'Contract')->first();
+        $police = $documents->sortByDesc('expiration')->where('image_type', 'Police Clearance')->first();
+        $nbi = $documents->sortByDesc('expiration')->where('image_type', 'NBI Clearance')->first();
+        $brgy = $documents->sortByDesc('created_at')->where('image_type', 'Brgy. Clearance')->first();
+        $clearances = collect([$police, $nbi, $brgy]) ;
+        // if ($police =! null){
+        //      $clearances = collect([$police]);
+        //     }
+        // if ($nbi =! null) {$clearances = collect([$nbi]);}
+        // if ($brgy =! null) {$clearances = collect([$brgy]);}
+        
+        // dd($clearances);
+        // $police = Document::orderBy('created_at', 'desc')->where('image_type', 'Police Clearance')->first();
+        // $nbi = Document::orderBy('created_at', 'desc')->where('image_type', 'Police NBI Clearance')->first();
+        // $brgy = Document::orderBy('created_at', 'desc')->where('image_type', 'Brgy. Crealance')->first();
+        // $clearances = Document::orderBy('created_at', 'desc')->where('image_type', 'Brgy. Crealance')
+        //                                                     ->where('image_type', 'Police Crealance')
+        //                                                     ->where('image_type', 'NBI Crealance')
+        //                                                     ->first();
+
         return view('trackrecords')->with('employees', $employees)
-                                    ->with('documents', $documents)
-                                    ->with('image_types', $image_types)
-                                    ->with('contract', $contract);
+                                    ->with('contract', $contract)
+                                    // ->with('police', $police)
+                                    // ->with('nbi', $nbi)
+                                    // ->with('brgy', $brgy)
+                                    ->with('clearances', $clearances);
     }
 
     /**

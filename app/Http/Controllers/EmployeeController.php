@@ -61,7 +61,6 @@ class EmployeeController extends Controller
     
             return redirect()->route('storeemployee');
 
-            dd($request->all());
         // } catch (\Illuminate\Database\QueryException $ex) {
         //     if ($ex->errorInfo[1] == 1062) {
         //         return redirect()->back()->withInput($request->all())->with('error', 'Email address already exists.');
