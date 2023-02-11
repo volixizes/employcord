@@ -47,6 +47,31 @@
         color: #5404c4;
         font-weight: bold;
         }
+
+        .user-pic {
+            width: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            margin-left: 30px;
+        }
+
+        .sub-menu-warp{
+            position: absolute;
+            top: 10%;
+            right: 10%;
+            width: 320px; 
+        }
+        .sub-menu {
+            background: #ffff;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        .user-info-menu{
+            display: flex;
+            align-items:  center;
+        }
+        
     </style>
     
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -84,7 +109,7 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
-                        @guest
+                        <!-- @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -96,25 +121,31 @@
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 </li>
                             @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
+                        @else -->
+                            
+                            
+                        <!-- @endguest -->
+                    </ul>
+                            <img src="/images/male-avatar-profile-picture-vector.webp" class="user-pic">
+                                <a  class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                     
                                 </a>
 
-                                
-                                
-                                
-                            </li>
+                                <div class="sub-menu-warp">
+                                    <div class="sub-menu">
+                                        <div class="user-info-menu">
+                                        <img src="/images/male-avatar-profile-picture-vector.webp">
+                                        <h2>{{ Auth::user()->name }}</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            
                             <button onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                                     class="btn btn-light btn-sm">← Logout</button>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
-                        @endguest
-                    </ul>
-                
             </div>
             
         </nav>
