@@ -55,7 +55,7 @@
             margin-left: 30px;
         }
 
-        .sub-menu-warp{
+        .sub-menu-wrap{
             position: absolute;
             top: 10%;
             right: 10%;
@@ -71,7 +71,46 @@
             display: flex;
             align-items:  center;
         }
+
+        .user-info-menu h3{
+            font-weight: 500;
+        }
+
+        .user-info-menu img{
+            width: 60px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .sub-menu hr{
+            boredr:0;
+            height: 1px;
+            width: 100%;
+            background: #ccc;
+            margin: 15px ;
+        }
+
+        .sub-menu-link{
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #525252;
+            margin: 12px 0;
+        }
+
+        .sub-menu-link p{
+            width: 100%;
+        }
+
+        .sub-menu img{
+            width: 40px;
+            background: #e5e5e5;
+            border-radius: 50%;
+            padding: 8px;
+            margin-right: 15px;
+        }
         
+
     </style>
     
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -137,6 +176,17 @@
                                         <img src="/images/male-avatar-profile-picture-vector.webp">
                                         <h2>{{ Auth::user()->name }}</h2>
                                         </div>
+
+                                        <hr>
+
+                                        <a href="#" class="sub-menu-link">
+                                            <img src="/images/male-avatar-profile-picture-vector.webp">
+                                            <p>Profile</p>
+                                            <span></span>
+                                        </a>
+
+                                        </a>
+
                                     </div>
                                 </div>
                             
