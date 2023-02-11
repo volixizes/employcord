@@ -15,7 +15,7 @@
         </div>
         <div class="col-md-6"> 
             <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: 33rem;">
-                <div class="card-header fs-5 fw-bold" style="color: #285430;">
+                <div class="card-header fs-3 fw-bold" style="color: #5404c4;">
                     📢 Announcements
                 </div>
                 <div class="card-body">
@@ -50,7 +50,7 @@
          <!--Who's On Leave?-->
          <div class="col-md-6"> 
             <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: auto;">
-            <div class="card-header fs-5 fw-bold" style="color: #285430;">
+            <div class="card-header fs-3 fw-bold" style="color: #5404c4;">
                 🗓️ Who's On Leave
             </div>
             <div class="card-body">
@@ -117,7 +117,7 @@
         <!--Birthday Corner-->
         <div class="col-md-6"> 
             <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: 33rem;">
-            <div class="card-header fs-5 fw-bold" style="color: #285430;">
+            <div class="card-header fs-3 fw-bold" style="color: #5404c4;">
                 🎂 Birthday Corner
             </div>
             <div class="card-body">
@@ -162,7 +162,7 @@
         <!--Headcount-->
         <div class="col-md-6"> 
         <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: 33rem;">
-            <div class="card-header fs-3 fw-bold " style="color: #285430;">
+            <div class="card-header fs-3 fw-bold " style="color: #5404c4;">
                 👨‍💼 Headcount
             </div>
             <div class="card-body" style="display: flex; align-items: center; justify-content: center; ">

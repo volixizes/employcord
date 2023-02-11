@@ -52,7 +52,7 @@
         }
 
         .user-pic {
-            width: 50px;
+            width: 60px;
             border-radius: 50%;
             cursor: pointer;
             margin-left: 10px;
