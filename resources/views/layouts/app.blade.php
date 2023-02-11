@@ -123,7 +123,7 @@
             @yield('content')
         </main>
         <footer class="footer">
-                <p>&copy; 2023 Copyright. All Rights Reserved. Designed by: Mick ● Patrick ● Fin ● Mike </p>
+                <p class="fs-6">&copy; 2023 Copyright. All Rights Reserved. Designed by: Mick ● Patrick ● Fin ● Mike </p>
         </footer>
     </div>
 
