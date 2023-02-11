@@ -118,7 +118,7 @@
                     
                       
                                 <div class="col-lg-5 mt-5">
-                                    <div class="card shadow p-4" style="border-radius: 1rem; height: 25rem">
+                                    <div class="card shadow p-4" style="border-radius: 1rem; height: auto">
                                         <div class="card-body">
                                             @yield('content')
                                             

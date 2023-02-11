@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\DocumentController;
-use App\Http\Controllers\RegisterController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,7 +37,6 @@ Route::post('/createannouncement', [AnnouncementController::class, 'create'])->n
 
 Route::get('/home', [HomeController::class,'index'])->name('home');
 
-Route::post('/register', [RegisterController::class,'create'])->name('register');
 
 // Announcement routes
 Route::post('/create-announcement', [AnnouncementController::class,'create'])->name('create-announcement');
