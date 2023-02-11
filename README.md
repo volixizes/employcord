@@ -10,16 +10,16 @@ EmployCord is a employee management system capstone project of Group 9 led by Ma
 
 ## The features of the project are:
 
--> Admin
+- Admin
 - Can able to approve employees' leave requests. 
 - Can able to announce company updates.
 - Can able to register new employees in the company.
 - Can able Be able to update records of employees.
-- Can able Track records of employees. 
+- Can able to track records of employees. 
 - Know the birthdays of employees in a monthly basis.
 - Know the current headcount of active employees.
 
--> Client (Employees)
+- Client (Employees)
 - Can able to request leaves to admin with type of leave, reason & credit leaves availability.
 - Can able to view his/her own records.
 - Can able to view the announcement posted by the Admin.
@@ -48,14 +48,15 @@ The application was developed to maintain the details, records, manage and track
 - Mark Michael Bautista (Role: Full Stack)
 - Mike Denum (Role: Full Stack)
 - Val Everson Sienes (Role: Full Stack)
-- Bryl Lim (Role: Instructor)
+- Bryl Lim (Role: Consultant/Adviser)
 
-## Resources
-- Beloved Instructor Sir Bryl Lim
+## References
+- Instructor Sir Bryl Lim
 - WD29 Class Recordings
 - https://www.w3schools.com
 - https://www.laravel.com
+- https://www.getbootstrap.com
 - ChatGPT
 - Lucidd Chart (for ERD)
-- Figma (for UI)
+- Figma (for UI design)
 
