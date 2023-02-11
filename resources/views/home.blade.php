@@ -18,9 +18,19 @@
                 <div class="card-header fs-5 fw-bold" style="color: #285430;">
                     📢 Announcements
                 </div>
+                
                 <div class="card-body">
-                    <p class="fw-bold text-muted">Create an announcement</p>
-                    <form action="{{ route('create-announcement') }}" method="POST">
+                @if(Auth::user()->employee_id)
+                    
+                <p class="fw-bold text-muted">Announcements</p>
+                    <style>
+                        .admin{
+                            display: none;
+                        }
+                    </style>
+                    @else
+                    <p class="fw-bold text-muted admin">Create an announcement</p>
+                    <form action="{{ route('create-announcement') }}" method="POST" class="admin">
                     @csrf
                         <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                             <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
@@ -28,7 +38,7 @@
                             <button type="submit" class="btn btn-primary me-md-2"> Post </button>
                         </div>
                     </form>
-                    
+                    @endif
                     <!-- Announcement display -->
                     @foreach($announcements as $announcement)
                     <div class="card mt-2" style="border-radius: 20px;">
@@ -47,7 +57,52 @@
             </div>
         </div>
         
-         <!--Who's On Leave?-->
+        @if(Auth::user()->employee_id)
+                  <!--Who's On Leave?-->
+         <div class="col-md-6"> 
+            <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: auto;">
+            <div class="card-header fs-5 fw-bold" style="color: #285430;">
+                🗓️ Who's On Leave
+            </div>
+            <div class="card-body">
+                    <form action="">
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+                        </div>
+                        </div>
+                        <div class="col-md-6 mt-3">
+                        <input type="email" class="form-control" placeholder="Email Address">
+                    </div>
+                    <div class="col-12 mt-3">
+                        <input type="text" class="form-control" id="inputAddress" placeholder="Full Address">
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="date-leave">Leave Date</label>
+                            <input type="date" class="form-control" placeholder="mm/dd/yy">
+                        </div>
+                        <div class="col">
+                            <label for="date-leave">Date of return</label>
+                            <input type="date" class="form-control" placeholder="mm/dd/yy">
+                        </div>
+                        </div>
+                        <div class="col-12 mt-3 form-floating">
+                        <textarea type="text" class="form-control" id="reason" style="height: 165px"></textarea>
+                        <label for="reason">Reason</label>
+                        </div>
+                    <div class="col-12 mt-4">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                    </form>
+            </div>
+        </div>  
+        </div>
+        @else
+               <!--Who's On Leave?-->
          <div class="col-md-6"> 
             <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: auto;">
             <div class="card-header fs-5 fw-bold" style="color: #285430;">
@@ -110,8 +165,11 @@
                         </div>
                         
             </div>
-        </div>
-        </div>
+        </div>  
+        </div>        
+        @endif
+        
+        
         
 
         <!--Birthday Corner-->
