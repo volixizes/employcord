@@ -93,7 +93,7 @@
     <body class="antialiased">
         <div class="relative flex items-top justify-center min-h-screen sm:items-center py-4 sm:pt-0">
              {{-- @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                <!-- <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                     @auth
                         {{-- <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
                     @else
@@ -103,28 +103,28 @@
                             <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
                         @endif
                     @endauth
-                </div>
+                </div> -->
             @endif  --}}
 
                 <section clss="form">
                     
                     <div class="container mt-5">
                     <div class="row mt-5">
-                    <div class="col-lg-7" >
-                                <div class="image-container">
-                                <img src="/images/logo.png" alt="Logo">
+                                <div class="col-lg-7" >
+                                            <div class="image-container">
+                                            <img src="/images/logo.png" alt="Logo">
+                                            </div>
                                 </div>
-                    </div>
                     
                       
-                        <div class="col-lg-5 mt-5">
-                            <div class="card shadow p-4" style="border-radius: 1rem;">
-                                <div class="card-body">
-                                    @yield('login')
-                                    @yield('register')
+                                <div class="col-lg-5 mt-5">
+                                    <div class="card shadow p-4" style="border-radius: 1rem; height: 25rem">
+                                        <div class="card-body">
+                                            @yield('content')
+                                            
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
                     </div>
                         
                     </div>

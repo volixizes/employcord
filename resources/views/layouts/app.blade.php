@@ -20,6 +20,9 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+
+        
+        <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
         
         {{-- <link rel="stylesheet" href="{{ asset('css/app.css') }}" type="text/css"> --}}
     <style>
@@ -52,63 +55,9 @@
             width: 50px;
             border-radius: 50%;
             cursor: pointer;
-            margin-left: 30px;
+            margin-left: 10px;
         }
 
-        .sub-menu-wrap{
-            position: absolute;
-            top: 10%;
-            right: 10%;
-            width: 320px; 
-        }
-        .sub-menu {
-            background: #ffff;
-            padding: 20px;
-            margin: 10px;
-        }
-
-        .user-info-menu{
-            display: flex;
-            align-items:  center;
-        }
-
-        .user-info-menu h3{
-            font-weight: 500;
-        }
-
-        .user-info-menu img{
-            width: 60px;
-            border-radius: 50%;
-            margin-right: 15px;
-        }
-
-        .sub-menu hr{
-            boredr:0;
-            height: 1px;
-            width: 100%;
-            background: #ccc;
-            margin: 15px ;
-        }
-
-        .sub-menu-link{
-            display: flex;
-            align-items: center;
-            text-decoration: none;
-            color: #525252;
-            margin: 12px 0;
-        }
-
-        .sub-menu-link p{
-            width: 100%;
-        }
-
-        .sub-menu img{
-            width: 40px;
-            background: #e5e5e5;
-            border-radius: 50%;
-            padding: 8px;
-            margin-right: 15px;
-        }
         
 
     </style>
@@ -120,7 +69,7 @@
         <nav class="navbar navbar-expand-md navbar-dark shadow-sm " style="background-color: #5404C4;">
 
             <div class="container-fluid">
-            {{-- navbar logo --}}
+                {{-- navbar logo --}}
                 <div class="navbar-brand d-flex">
                     <img src="/images/logowhite.png" alt="Logo" class="img-fluid d-none d-xxl-block d-xl-none" style="width: auto; height: 2.5em;">
                 </div>
@@ -147,52 +96,36 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
-                        <!-- @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
+                            <!-- Authentication Links --> 
+                             @guest
+                                @if (Route::has('login'))
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    </li>
+                                @endif
 
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else -->
-                            
-                            
-                        <!-- @endguest -->
-                    </ul>
-                            <img src="/images/male-avatar-profile-picture-vector.webp" class="user-pic">
-                                <a  class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                     
-                                </a>
+                                @if (Route::has('register'))
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    </li>
+                                @endif
+                            @else
+                                
+                                
+                           @endguest 
 
-                                <div class="sub-menu-warp">
-                                    <div class="sub-menu">
-                                        <div class="user-info-menu">
-                                        <img src="/images/male-avatar-profile-picture-vector.webp">
-                                        <h2>{{ Auth::user()->name }}</h2>
-                                        </div>
-
-                                        <hr>
-
-                                        <a href="#" class="sub-menu-link">
-                                            <img src="/images/male-avatar-profile-picture-vector.webp">
-                                            <p>Profile</p>
-                                            <span></span>
-                                        </a>
-
-                                        </a>
-
-                                    </div>
-                                </div>
-                            
-                            <button onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                                    class="btn btn-light btn-sm">← Logout</button>
-
+                            <li class="nav-item dropdown">
+                                    <a  class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
+                                        
+                                    {{ Auth::user()->name }}
+                                        <img src="/images/male-avatar-profile-picture-vector.webp" class="user-pic">
+                                        
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a onclick="event.preventDefault(); document.getElementById('logout-form').submit();" type="button" class="dropdown-item">Logout</a></li>
+                                    </ul>
+                            </li>
+                    </ul>             
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
@@ -518,6 +451,7 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
 </body>
 </html>

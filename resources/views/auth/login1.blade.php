@@ -38,8 +38,6 @@
                 {{ __('Login') }}
             </button>
     </div>
-
-    <p class="mt-3 float-end" href="{{ route('register') }}">No Account? Register here</p>
     <!-- @if (Route::has('password.request'))
     <a class="btn btn-link" href="{{ route('password.request') }}" style="color: #E5D9B6">
         {{ __('Forgot Your Password?') }}

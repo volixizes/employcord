@@ -103,7 +103,7 @@
     </div>
   </div>
   <hr>
-  <h1 class="mt-2"> Employment Record </h1>
+  <h1 class="mt-2 fw-bold"> Employment Record </h1>
   <div class="col-md-4" style="margin-right: 40%">
     <label for="datehire" class="form-label">Date Hire</label>
     <div class="input-group mb-3">
@@ -164,7 +164,7 @@
     </div>
   </div>
   <hr>
-  <h1 class="mt-2"> EmployCord Account </h1>
+  <h1 class="mt-2 fw-bold"> EmployCord Account </h1>
   <div class="col-md-4" style="margin-right: 40%">
     <label for="email" class="form-label">Email Address</label>
     <input type="text" class="form-control" id="email" name="email" required>
