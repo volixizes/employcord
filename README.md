@@ -4,11 +4,11 @@
 
 </p>
 
-## About EmployCord Application
+## 🖥️ About EmployCord Application
 
 EmployCord is a employee management system capstone project of Group 9 led by Mark Michael Bautista, Patrick Jerowin Angeles, Val Everson Sienes and Mike Denum of batch WD29 at the KodeGo Web Development Full Stack Bootcamp.
 
-## The features of the project are:
+## ⌨️ The features of the project are:
 
 - Admin
 - Can able to approve employees' leave requests. 
@@ -26,11 +26,11 @@ EmployCord is a employee management system capstone project of Group 9 led by Ma
 - Can able to view the current headcount of active employees.
 - Can able to view the birthdays of employees in a monthly basis.
 
-## Why EmployCord was chosen as the capstone project?
+## ℹ️ Why EmployCord was chosen as the capstone project?
 
 The application was developed to maintain the details, records, manage and track an organization's employee data. Most of the company in the industries have difficulty managing their employee records. Sometimes when the employee has complaints against the management it is easier for them to retrieve their records.
 
-## Stacks
+## 👨‍💻 Stacks
 
 -> Front-end
 - HTML5
@@ -40,17 +40,17 @@ The application was developed to maintain the details, records, manage and track
 - jQuery
 
 -> Back-end
-- Laravel
-- MySQL
+- PHP Laravel
+- MySQL (for Database)
 
 ## Contributors
-- Patrick Jerowin Angeles (Role: Full Stack)
-- Mark Michael Bautista (Role: Full Stack)
-- Mike Denum (Role: Full Stack)
-- Val Everson Sienes (Role: Full Stack)
-- Bryl Lim (Role: Consultant/Adviser)
+- 👨‍💼 Patrick Jerowin Angeles (Role: Full Stack)
+- 👨‍💼 Mark Michael Bautista (Role: Full Stack)
+- 👨‍💼 Mike Denum (Role: Full Stack)
+- 👨‍💼 Val Everson Sienes (Role: Full Stack)
+- 🧑‍🏫 Bryl Lim (Role: Consultant/Adviser)
 
-## References
+## 🌐 References
 - Instructor Sir Bryl Lim
 - WD29 Class Recordings
 - https://www.w3schools.com
