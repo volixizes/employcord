@@ -59,7 +59,7 @@ class EmployeeController extends Controller
             DB::table('users')->insert($employee_login);
             DB::commit();
     
-            return redirect()->route('storeemployee');
+            return redirect()->route('addemployee')->with('success', 'New employee has been added');
 
         // } catch (\Illuminate\Database\QueryException $ex) {
         //     if ($ex->errorInfo[1] == 1062) {
@@ -123,6 +123,10 @@ class EmployeeController extends Controller
 
         return view ('confirmemployee');
         // redirect()->route('storeemployee');
+    }
+
+    public function index(){
+        return view('employees')->with('employees', Employee::latest()->get());
     }
 
 }

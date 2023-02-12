@@ -2,17 +2,16 @@
 @section('title', 'Employees')
 @section('content')
 
-
+<div class="container mt-4" >
 
 @if(session('success'))
 <div class="alert alert-primary">
   {{ session('success') }}
 </div>
 @endif
-<div class="container mt-4" >
-
+<a href="{{route('employees')}}" type="button" class="btn btn-primary float-end">⬅️ Back to masterlist</a>
 <h1 class="mt-2 mb-4 fw-bold"> Basic Information </h1>
-<form class="row g-3 needs-validation" method="POST" action="{{ route('createemployee') }}"  novalidate>
+<form class="row g-3 needs-validation" method="POST" action="{{ route('addemployee') }}"  novalidate>
   @csrf
   <div class="col-md-12">
     <label for="firstname" class="form-label">First name</label>

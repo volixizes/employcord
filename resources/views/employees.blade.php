@@ -4,8 +4,12 @@
 
 <div class="container">
 
-<a href="{{route('addemployee')}}" type="button" class="btn btn-primary float-end">+ Add Employee</a>
-<h1 class="fw-bold" >Employees' Masterlist</h1>
+<a href="{{route('addemployee')}}" type="button" class="btn btn-primary float-end">➕ Add Employee</a>
+<h1 class="fw-bold" style="background: #5404C4;
+background: linear-gradient(to top right, #5404C4 37%, #5865F2 58%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+">Employees' Masterlist</h1>
 
 <div class="card" style="border-radius: 15px;">
   <div class="card-body">
@@ -24,20 +28,21 @@
     </tr>
   </thead>
   <tbody>
+    @foreach($employees as $employee)
     <tr>
-      <td style="vertical-align: middle;">0001</td>
-      <td style="vertical-align: middle;">Angeles</td>
-      <td style="vertical-align: middle;">Patrick Jerowin</td>
-      <td style="vertical-align: middle;">February 13, 2023</td>
-      <td style="vertical-align: middle;">Associate Software Engineer</td></td>
-      <td style="vertical-align: middle;">Regular</td>
-      <td style="vertical-align: middle;">Accenture Department</td>
+      <td style="vertical-align: middle;">{{ $employee->id }}</td>
+      <td style="vertical-align: middle;">{{ $employee->last_name }}</td>
+      <td style="vertical-align: middle;">{{ $employee->first_name }}</td>
+      <td style="vertical-align: middle;">{{ $employee->date_hire }}</td>
+      <td style="vertical-align: middle;">{{ $employee->Job_Title }}</td></td>
+      <td style="vertical-align: middle;">{{ $employee->employment_status }}</td>
+      <td style="vertical-align: middle;">{{ $employee->department }}</td>
       <td style="text-align: center;">
         <a href="#" type="button" class="btn btn-success me-2"><i class="fa fa-eye"></i></a>
         <a href="#" type="button" class="btn btn-warning"><i class="fa fa-edit"></i></a>
       </td>
     </tr>
-   
+   @endforeach
     
 </table>
   </div>

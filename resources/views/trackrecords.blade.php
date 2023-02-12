@@ -8,7 +8,7 @@
       <h1 class="p-0 fw-bold">Track Records</h1>
     </div>
     <div class="mt-3 me-2">
-      <p>Select Employee</p>
+      <p>Search Employee</p>
     </div>
     <div class="">
         <select class="form-select" aria-label="Default select example" id="select2" style="width:200px">

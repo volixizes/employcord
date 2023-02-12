@@ -47,6 +47,7 @@ Route::post('/create-announcement', [AnnouncementController::class,'create'])->n
 
 Route::post('/addemployee', [EmployeeController::class,'create'])->name('addemployee');
 
+
 Route::controller(DocumentController::class)->group(function() {
     Route::get('/track-records', 'display')->name('track-records');
     Route::post('/upload-image', 'store')->name('upload-image');
@@ -72,11 +73,14 @@ Route::post('/create-announcement', [AnnouncementController::class,'create'
 Route::post('/createemployee', [EmployeeController::class,'create'
     ])->name('createemployee');
 
-Route::get('/confirmemployee', [EmployeeController::class,'confirm'
-    ])->name('storeemployee');
+// Route::get('/confirmemployee', [EmployeeController::class,'confirm'
+//     ])->name('storeemployee');
 
-Route::post('/updateemployee/{id}', [EmployeeController::class,'update'
+Route::post('/updateemployee', [EmployeeController::class,'update'
     ])->name('updateemployee');
+
+Route::get('/employees', [EmployeeController::class,'index'
+    ])->name('employees');
     
 // Document routes
 Route::controller(DocumentController::class)->group(function() {

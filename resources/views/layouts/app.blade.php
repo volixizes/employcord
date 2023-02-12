@@ -45,7 +45,7 @@
         justify-content: center;
         height: 50px;
         bottom:0;
-
+        position: relative;
         width: 100%;
         color: #5404c4;
         font-weight: bold;
@@ -59,23 +59,21 @@
         }
 
         /* ===== Scrollbar CSS ===== */
-  /* Firefox */
 
+        /* Chrome, Edge, and Safari */
+        *::-webkit-scrollbar {
+            width: 16px;
+        }
 
-  /* Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
-    width: 16px;
-  }
+        *::-webkit-scrollbar-track {
+            background: #bfbfbf;
+        }
 
-  *::-webkit-scrollbar-track {
-    background: #bfbfbf;
-  }
-
-  *::-webkit-scrollbar-thumb {
-    background-color: #5661f5;
-    border-radius: 5px;
-    border: 0px solid #5865f2;
-  }
+        *::-webkit-scrollbar-thumb {
+            background-color: #5661f5;
+            border-radius: 5px;
+            border: 0px solid #5865f2;
+        }
 
     </style>
     

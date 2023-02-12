@@ -14,7 +14,7 @@
              @endif
         </div>
         <div class="col-md-6"> 
-            <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: 33rem;">
+            <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: auto;">
                 <div class="card-header fs-3 fw-bold" style="color: #5865f2;">
                     📢 Announcements
                 </div>
@@ -34,7 +34,7 @@
                     <div class="card mt-2" style="border-radius: 20px;">
                         <div class="card-body"> 
                             <h6 class="fw-bold">👨 {{$announcement->user->name}} </h6> <small class="text-muted  float-end">{{ $announcement->created_at->diffForHumans() }}</small>
-                            <p style="color: black" class="fs-5">
+                            <p style="color: black" class="fs-5 m-2">
                             {{ $announcement->message }}
                             </p>
                         </div>
