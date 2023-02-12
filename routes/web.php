@@ -33,6 +33,10 @@ Route::get('/trackrecords', function(){
     return view('trackrecords');
 })->name('trackrecords');
 
+Route::get('/addemployee', function(){
+    return view('addemployee');
+})->name('addemployee');
+
 Route::post('/createannouncement', [AnnouncementController::class, 'create'])->name('createannouncement');
 
 Route::get('/home', [HomeController::class,'index'])->name('home');
@@ -41,7 +45,7 @@ Route::get('/home', [HomeController::class,'index'])->name('home');
 // Announcement routes
 Route::post('/create-announcement', [AnnouncementController::class,'create'])->name('create-announcement');
 
-Route::post('/createemployee', [EmployeeController::class,'create'])->name('createemployee');
+Route::post('/addemployee', [EmployeeController::class,'create'])->name('addemployee');
 
 Route::controller(DocumentController::class)->group(function() {
     Route::get('/track-records', 'display')->name('track-records');

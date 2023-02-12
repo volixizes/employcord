@@ -5,10 +5,10 @@
 <div class="container mt-2" >
   <div class="d-flex  align-items-center justify-content-center">
     <div class="me-auto">
-      <h1 class="p-0">Track Records</h1>
+      <h1 class="p-0 fw-bold">Track Records</h1>
     </div>
     <div class="mt-3 me-2">
-      <p>Search Employee</p>
+      <p>Select Employee</p>
     </div>
     <div class="">
         <select class="form-select" aria-label="Default select example" id="select2" style="width:200px">
@@ -22,22 +22,24 @@
   <section class="content">
     <div class="container">
       <div class="row">
+        
         <div class="col-md-3">
-          <div class="card mb-2">
-            <div class="card-body">
+
+          <!-- //Profile Picture -->
+          <div class="card mb-2" style="border-radius: 20px;">
+            <div class="card-body" >
               <div class="text-center">
                 <img class="profile-user-img img-fluid img-circle"
                       src="{{url('/images/male-avatar-profile-picture-vector.webp')}}"
                       alt="User profile picture"/>
               </div>
               @if (count($employees) > 0)
-              <h3 class="profile-username text-center">{{ $employees->first()->getFullname()  }}</h3>
-              
+              <h3 class="profile-username text-center fw-bold mt-2">{{ $employees->first()->getFullname()  }}</h3>
               <p class="text-muted text-center">{{ $employees->first()->Job_Title  }}</p>
+
               <ul class="list-group list-group-unbordered mb-3">
                 <li class="list-group-item">
-                  <p>Employment Date</p>
-                  <p class="text-center">{{ $employees->first()->date_hire }}</p>
+                  <p>Employment Date: <span>{{ $employees->first()->date_hire }}</span></p>
                 </li>
                 {{-- <li class="list-group-item">
                 </li>
@@ -50,8 +52,10 @@
             <!-- /.card-body -->
           </div>
         </div>
+
+
         <div class="col-md-9 p-0">
-          <div class="card">
+          <div class="card" style="border-radius: 10px;">
             <div class="card-header">
               <ul class="nav nav-pills" id="pills-tab" role="tablist">
                 <li class="nav-item" role="presentation">

@@ -40,7 +40,7 @@
                                     {{ __('Register') }}
                                 </button>
                             </div>
-                            <a class="btn btn-link mt-3" style="text-decoration: none;" href="{{ route('login') }}">⬅️ Back to Log in</a>
+                            <a class="btn btn-link mt-3" style="text-decoration: none;" href="{{ route('login') }}">⬅️ Back to Login</a>
                     </form>
                 @endsection
 
