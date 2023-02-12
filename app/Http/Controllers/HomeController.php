@@ -26,7 +26,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $totalEmployees = Employee::count();
+        $totalEmployees = Employee::where('isActive', '=', 'Active')->count();
         $announcements = Announcement::orderBy('created_at', 'desc')->simplePaginate(3);
         
         return view('home')->with('announcements', $announcements)
