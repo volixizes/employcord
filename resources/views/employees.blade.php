@@ -5,11 +5,7 @@
 <div class="container">
 
 <a href="{{route('addemployee')}}" type="button" class="btn btn-primary float-end">➕ Add Employee</a>
-<h1 class="fw-bold" style="background: #5404C4;
-background: linear-gradient(to top right, #5404C4 37%, #5865F2 58%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-">Employees' Masterlist</h1>
+<h1 class="fw-bold" style="background: #5404C4; background: linear-gradient(to top right, #5404C4 37%, #5865F2 58%)-webkit-background-clip: text;-webkit-text-fill-color: transparent;">Employees' Masterlist</h1>
 
 <div class="card" style="border-radius: 15px;">
   <div class="card-body">
@@ -39,7 +35,7 @@ background: linear-gradient(to top right, #5404C4 37%, #5865F2 58%);
       <td style="vertical-align: middle;">{{ $employee->department }}</td>
       <td style="text-align: center;">
         <a href="#" type="button" class="btn btn-success me-2"><i class="fa fa-eye"></i></a>
-        <a href="#" type="button" class="btn btn-warning"><i class="fa fa-edit"></i></a>
+        <a href="{{ route('edit', $employee->id) }}" type="button" class="btn btn-warning"><i class="fa fa-edit"></i></a>
       </td>
     </tr>
    @endforeach

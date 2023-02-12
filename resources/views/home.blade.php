@@ -163,11 +163,11 @@
         <div class="col-md-6"> 
         <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: 33rem;">
             <div class="card-header fs-3 fw-bold " style="color: #5404c4;">
-                👨‍💼 Headcount
+                👨‍💼 Total Headcount
             </div>
             <div class="card-body" style="display: flex; align-items: center; justify-content: center; ">
                         
-            <p class="fw-bold" style="font-size: 80px; color: #5865f2">250</p>
+            <p class="fw-bold" style="font-size: 80px; color: #5865f2"></p>
             <br>
             <p class="fw-bold ms-4" style="font-size: 20px; color: #5865f2"> Active Employees </p>
                         

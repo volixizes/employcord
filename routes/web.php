@@ -41,12 +41,17 @@ Route::post('/createannouncement', [AnnouncementController::class, 'create'])->n
 
 Route::get('/home', [HomeController::class,'index'])->name('home');
 
+Route::get('/home', [HomeController::class,'headcount'])->name('home');
+
 
 // Announcement routes
 Route::post('/create-announcement', [AnnouncementController::class,'create'])->name('create-announcement');
 
+//Employee routes
 Route::post('/addemployee', [EmployeeController::class,'create'])->name('addemployee');
+Route::get('/editemployee/{id}', [EmployeeController::class,'edit'])->name('edit');
 
+Route::post('/update', [EmployeeController::class,'update'])->name('update');
 
 Route::controller(DocumentController::class)->group(function() {
     Route::get('/track-records', 'display')->name('track-records');
@@ -72,12 +77,12 @@ Route::post('/create-announcement', [AnnouncementController::class,'create'
 // Employee registration routes
 Route::post('/createemployee', [EmployeeController::class,'create'
     ])->name('createemployee');
+    
 
 // Route::get('/confirmemployee', [EmployeeController::class,'confirm'
 //     ])->name('storeemployee');
 
-Route::post('/updateemployee', [EmployeeController::class,'update'
-    ])->name('updateemployee');
+
 
 Route::get('/employees', [EmployeeController::class,'index'
     ])->name('employees');
