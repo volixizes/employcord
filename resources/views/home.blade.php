@@ -15,7 +15,7 @@
         </div>
         <div class="col-md-6"> 
             <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: 33rem;">
-                <div class="card-header fs-5 fw-bold" style="color: #285430;">
+                <div class="card-header fs-3 fw-bold" style="color: #5865f2;">
                     📢 Announcements
                 </div>
                 <div class="card-body">
@@ -33,8 +33,8 @@
                     @foreach($announcements as $announcement)
                     <div class="card mt-2" style="border-radius: 20px;">
                         <div class="card-body"> 
-                            <h6>👨 {{$announcement->user->name}} </h6> <small class="text-muted  float-end">{{ $announcement->created_at->diffForHumans() }}</small>
-                            <p style="color: blue">
+                            <h6 class="fw-bold">👨 {{$announcement->user->name}} </h6> <small class="text-muted  float-end">{{ $announcement->created_at->diffForHumans() }}</small>
+                            <p style="color: black" class="fs-5">
                             {{ $announcement->message }}
                             </p>
                         </div>
@@ -50,7 +50,7 @@
          <!--Who's On Leave?-->
          <div class="col-md-6"> 
             <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: auto;">
-            <div class="card-header fs-5 fw-bold" style="color: #285430;">
+            <div class="card-header fs-3 fw-bold" style="color: #5865f2;">
                 🗓️ Who's On Leave
             </div>
             <div class="card-body">
@@ -117,7 +117,7 @@
         <!--Birthday Corner-->
         <div class="col-md-6"> 
             <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: 33rem;">
-            <div class="card-header fs-5 fw-bold" style="color: #285430;">
+            <div class="card-header fs-3 fw-bold" style="color: #5404c4;">
                 🎂 Birthday Corner
             </div>
             <div class="card-body">
@@ -162,32 +162,14 @@
         <!--Headcount-->
         <div class="col-md-6"> 
         <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: 33rem;">
-            <div class="card-header fs-5 fw-bold " style="color: #285430;">
+            <div class="card-header fs-3 fw-bold " style="color: #5404c4;">
                 👨‍💼 Headcount
             </div>
-            <div class="card-body">
-                        <p class="fw-bold text-muted">Create an announcement</p>
-                        <form action="#">
-                                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                                    <input class="form-control" placeholder="Type an announcement here..." type="text">
-                                    <button class="btn btn-primary me-md-2" type="button">Post</button>
-                                    </div>
-                        </form>
-                        <p class="fw-bold mt-4 text-muted">Recent Announcements</p>
-                        <div class="card mt-2" style="border-radius: 20px;">
-                            <div class="card-body"> 
-                                <h6>👨 Patrick Angeles</h6> <small class="text-muted">5 minutes ago</small>
-                                <p style="color: blue">General Assembly for the month of February 2023</p>
-                                
-                            </div>
-                        </div>
-                        <div class="card mt-2" style="border-radius: 20px;">
-                            <div class="card-body"> 
-                                <h6>👨 Val Everson Sienes</h6> <small class="text-muted">1h ago</small>
-                                <p style="color: blue">ISO Surveillance Audit</p>
-                                
-                            </div>
-                        </div>
+            <div class="card-body" style="display: flex; align-items: center; justify-content: center; ">
+                        
+            <p class="fw-bold" style="font-size: 80px; color: #5865f2">250</p>
+            <br>
+            <p class="fw-bold ms-4" style="font-size: 20px; color: #5865f2"> Active Employees </p>
                         
             </div>
         </div>

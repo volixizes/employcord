@@ -20,6 +20,9 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+
+        
+        <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
         
         {{-- <link rel="stylesheet" href="{{ asset('css/app.css') }}" type="text/css"> --}}
     <style>
@@ -47,6 +50,33 @@
         color: #5404c4;
         font-weight: bold;
         }
+
+        .user-pic {
+            width: 60px;
+            border-radius: 50%;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+
+        /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #bfbfbf;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #5661f5;
+    border-radius: 3px;
+    border: 0px solid #5865f2;
+  }
+
     </style>
     
         @vite(['resources/sass/app.scss', 'resources/js/app.js'])
@@ -56,7 +86,7 @@
         <nav class="navbar navbar-expand-md navbar-dark shadow-sm " style="background-color: #5404C4;">
 
             <div class="container-fluid">
-            {{-- navbar logo --}}
+                {{-- navbar logo --}}
                 <div class="navbar-brand d-flex">
                     <img src="/images/logowhite.png" alt="Logo" class="img-fluid d-none d-xxl-block d-xl-none" style="width: auto; height: 2.5em;">
                 </div>
@@ -83,38 +113,39 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
+                            <!-- Authentication Links --> 
+                             @guest
+                                @if (Route::has('login'))
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    </li>
+                                @endif
 
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif
-                        @else
+                                @if (Route::has('register'))
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    </li>
+                                @endif
+                            @else
+                                
+                                
+                           @endguest 
+
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                    <a  class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
+                                        
                                     {{ Auth::user()->name }}
-                                </a>
-
-                                
-                                
-                                
+                                        <img src="/images/male-avatar-profile-picture-vector.webp" class="user-pic">
+                                        
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a onclick="event.preventDefault(); document.getElementById('logout-form').submit();" type="button" class="dropdown-item">Logout</a></li>
+                                    </ul>
                             </li>
-                            <button onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                                    class="btn btn-light btn-sm">← Logout</button>
-
+                    </ul>             
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
-                        @endguest
-                    </ul>
-                
             </div>
             
         </nav>
@@ -123,7 +154,7 @@
             @yield('content')
         </main>
         <footer class="footer">
-                <p>&copy; 2023 Copyright. All Rights Reserved. Designed by: Mick ● Patrick ● Fin ● Mike </p>
+                <p class="fs-6">&copy; 2023 Copyright. All Rights Reserved. Designed by: Mick ● Patrick ● Fin ● Mike </p>
         </footer>
     </div>
 
@@ -437,6 +468,7 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous"></script>
 </body>
 </html>
