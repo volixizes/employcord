@@ -68,20 +68,6 @@
                     <form action="">
                     <div class="row">
                         <div class="col">
-                            <input type="text" class="form-control" placeholder="First name" aria-label="First name">
-                        </div>
-                        <div class="col">
-                            <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
-                        </div>
-                        </div>
-                        <div class="col-md-6 mt-3">
-                        <input type="email" class="form-control" placeholder="Email Address">
-                    </div>
-                    <div class="col-12 mt-3">
-                        <input type="text" class="form-control" id="inputAddress" placeholder="Full Address">
-                    </div>
-                    <div class="row">
-                        <div class="col">
                             <label for="date-leave">Leave Date</label>
                             <input type="date" class="form-control" placeholder="mm/dd/yy">
                         </div>
@@ -91,13 +77,30 @@
                         </div>
                         </div>
                         <div class="col-12 mt-3 form-floating">
-                        <textarea type="text" class="form-control" id="reason" style="height: 165px"></textarea>
+                        <textarea type="text" class="form-control" id="reason" style="height: 80px"></textarea>
                         <label for="reason">Reason</label>
                         </div>
                     <div class="col-12 mt-4">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                     </form>
+                    <hr>
+                        <p class="fw-bold text-muted">Approved Leaves</p>
+
+                        <div class="card mt-2" style="border-radius: 20px;">
+                            <div class="card-body"> 
+                                <small class="text-muted float-end">TOMORROW (1)</small>
+                                <p style="color: blue">👨 Patrick Angeles</p>
+                            </div>
+                        </div>
+                        <div class="card mt-2" style="border-radius: 20px;">
+                            
+                            <div class="card-body"> 
+                                <small class="text-muted float-end">February 7, 2023</small>
+                                <p style="color: blue">👨 Mick Bautista</p>
+                                
+                            </div>
+                        </div>
             </div>
         </div>  
         </div>
