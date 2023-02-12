@@ -26,15 +26,19 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $announcements = Announcement::orderBy('created_at', 'desc')->simplePaginate(3);
-        return view('home')->with('announcements', $announcements);
-    }
-
-    public function headcount()
-    {
         $totalEmployees = Employee::count();
+        $announcements = Announcement::orderBy('created_at', 'desc')->simplePaginate(3);
+        
+        return view('home')->with('announcements', $announcements)
+                            ->with('totalEmployees', $totalEmployees);
 
-        return view('home', compact('totalEmployees'));
     }
+
+    // public function headcount()
+    // {
+    //     $totalEmployees = Employee::count();
+
+    //     return view('home', compact('totalEmployees'));
+    // }
 }
 

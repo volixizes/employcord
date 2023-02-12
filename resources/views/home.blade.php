@@ -225,6 +225,7 @@
         <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: 33rem;">
             <div class="card-header fs-3 fw-bold " style="color: #5404c4;">
                 👨‍💼 Total Headcount
+                {{$totalEmployees}}
             </div>
             <div class="card-body" style="display: flex; align-items: center; justify-content: center; ">
                         
