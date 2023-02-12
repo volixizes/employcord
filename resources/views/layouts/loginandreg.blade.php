@@ -118,7 +118,7 @@
                     
                       
                                 <div class="col-lg-5 mt-5">
-                                    <div class="card shadow p-4" style="border-radius: 1rem; height: auto">
+                                    <div class="card shadow p-4" style="border-radius: 1rem; height: 28rem">
                                         <div class="card-body">
                                             @yield('content')
                                             
@@ -134,7 +134,7 @@
             </div>
 
             <footer class="footer">
-                <p>&copy; 2023 Copyright. All Rights Reserved. Designed by: Mick ● Patrick ● Fin ● Mike </p>
-            </footer>
+                <p class="fs-6">&copy; 2023 Copyright. All Rights Reserved. Designed by: Mick ● Patrick ● Fin ● Mike </p>
+        </footer>
     </body>
 </html>

@@ -58,7 +58,24 @@
             margin-left: 10px;
         }
 
-        
+        /* ===== Scrollbar CSS ===== */
+  /* Firefox */
+
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 16px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #bfbfbf;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #5661f5;
+    border-radius: 3px;
+    border: 0px solid #5865f2;
+  }
 
     </style>
     

@@ -15,7 +15,7 @@
         </div>
         <div class="col-md-6"> 
             <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: 33rem;">
-                <div class="card-header fs-3 fw-bold" style="color: #5404c4;">
+                <div class="card-header fs-3 fw-bold" style="color: #5865f2;">
                     📢 Announcements
                 </div>
                 <div class="card-body">
@@ -33,8 +33,8 @@
                     @foreach($announcements as $announcement)
                     <div class="card mt-2" style="border-radius: 20px;">
                         <div class="card-body"> 
-                            <h6>👨 {{$announcement->user->name}} </h6> <small class="text-muted  float-end">{{ $announcement->created_at->diffForHumans() }}</small>
-                            <p style="color: blue">
+                            <h6 class="fw-bold">👨 {{$announcement->user->name}} </h6> <small class="text-muted  float-end">{{ $announcement->created_at->diffForHumans() }}</small>
+                            <p style="color: black" class="fs-5">
                             {{ $announcement->message }}
                             </p>
                         </div>
@@ -50,7 +50,7 @@
          <!--Who's On Leave?-->
          <div class="col-md-6"> 
             <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: auto;">
-            <div class="card-header fs-3 fw-bold" style="color: #5404c4;">
+            <div class="card-header fs-3 fw-bold" style="color: #5865f2;">
                 🗓️ Who's On Leave
             </div>
             <div class="card-body">
@@ -167,9 +167,9 @@
             </div>
             <div class="card-body" style="display: flex; align-items: center; justify-content: center; ">
                         
-            <p class="fw-bold" style="font-size: 80px">250</p>
+            <p class="fw-bold" style="font-size: 80px; color: #5865f2">250</p>
             <br>
-            <p class="fw-bold ms-4" style="font-size: 20px"> Active Employees </p>
+            <p class="fw-bold ms-4" style="font-size: 20px; color: #5865f2"> Active Employees </p>
                         
             </div>
         </div>
