@@ -194,6 +194,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+
                                 @if(isset($bday_of_month))
                                     @foreach($bday_of_month as $birthday)
                                         <td>{{ $birthday->first_name }}</td>
@@ -203,9 +204,9 @@
                                     @endforeach
                                 @else
                                 
+                                @endif
                                </table>
                                <h1 class="text-center justify-content-center">No celebrant found this month.</h1>
-                               @endif
                             </div>
                         </div>
                         
