@@ -20,7 +20,7 @@ EmployCord is a employee management system capstone project of Group 9 led by Ma
 - Know the current headcount of active employees.
 
 - Client (Employees)
-- Can able to request leaves to admin with type of leave, reason & credit leaves availability.
+- Can able to request leaves to admin.
 - Can able to view his/her own records.
 - Can able to view the announcement posted by the Admin.
 - Can able to view the current headcount of active employees.
