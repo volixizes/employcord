@@ -2,17 +2,25 @@
 @section('title', 'Update Employee')
 @section('content')
 
-<div class="container mt-4" >
+<div style="position: absolute; top: 110; right: 110;">
+  <a href="{{route('employees')}}" type="button" class="btn btn-primary">⬅️ Back to masterlist</a>
+</div>
+
+<div class="container mt-5" style="position: relative;" >
 
 @if(session('success'))
 <div class="alert alert-primary">
   {{ session('success') }}
 </div>
 @endif
-<a href="{{route('employees')}}" type="button" class="btn btn-primary float-end">⬅️ Back to masterlist</a>
-<h1 class="mt-2 mb-4 fw-bold"> Update Employee </h1>
-<h1 class="mt-2 mb-4 fw-bold"> Basic Information </h1>
-<form class="row g-3 needs-validation" method="POST" action="{{ route('update') }}"  novalidate>
+
+
+
+  <div class="card" style="border-radius: 20px;">
+    <div class="card-body">
+    <h3 class="card-title text-center fw-bold mt-3 mb-5">Update Employee Information</h3>
+    <h4 class="card-subtitle mb-2 text-muted mb-3 fw-bold">Basic Information</h4>
+    <form class="row g-3 needs-validation" method="POST" action="{{ route('update') }}"  novalidate>
   @csrf
   <div class="col-md-12">
     <label for="firstname" class="form-label">First name</label>
@@ -41,7 +49,7 @@
         <input type="date" class="form-control" placeholder="mm/dd/yy" id="birthday" name="birthday"  value="{{ $employee->birthday }}" required>
     </div>
   </div>
-  <div class="col-md-4" style="margin-left:18%">
+  <div class="col-md-4">
     <label for="gender" class="form-label">Gender</label>
     <select class="form-select" id="gender" name="gender"  value="{{ $employee->gender }}" required>
       <option selected disabled value="">...</option>
@@ -65,7 +73,7 @@
       Marital Status is required
     </div>
   </div>
-  <div class="col-md-5" style="margin-left:18%">
+  <div class="col-md-4">
     <label for="contactNo" class="form-label">Contact No.</label>
     <div class="input-group has-validation">
       <span class="input-group-text" id="contactStart" value="+63">+63</span>
@@ -82,7 +90,7 @@
       Street is required
     </div>
   </div>
-  <div class="col-md-4" style="margin-left:18%">
+  <div class="col-md-4">
     <label for="brgyVillage" class="form-label">Barangay / Village</label>
     <input type="text" class="form-control" id="brgyVillage" placeholder="Barangay / Village" name="barangay"  value="{{ $employee->barangay }}" required>
     <div class="invalid-feedback">
@@ -96,7 +104,7 @@
       Municipality / City is required
     </div>
   </div>
-  <div class="col-md-4" style="margin-left:18%">
+  <div class="col-md-4">
     <label for="province" class="form-label">Province</label>
     <input type="text" class="form-control" id="province" placeholder="Province" name="province"  value="{{ $employee->province }}" required>
     <div class="invalid-feedback">
@@ -104,8 +112,8 @@
     </div>
   </div>
   <hr>
-  <h1 class="mt-2 fw-bold"> Employment Record </h1>
-  <div class="col-md-4" style="margin-right: 40%">
+  <h4 class="card-subtitle mb-2 text-muted fw-bold">Employment Information</h4>
+  <div class="col-md-4">
     <label for="datehire" class="form-label">Date Hire</label>
     <div class="input-group mb-3">
         <input type="date" class="form-control" placeholder="mm/dd/yy" id="datehire" name="date_hire"  value="{{ $employee->date_hire }}" required>
@@ -123,7 +131,7 @@
       Employment Status is required
     </div>
   </div>
-  <div class="col-md-4" style="margin-left:18%">
+  <div class="col-md-4">
     <label for="activeResigned" class="form-label">Active / Resigned</label>
     <select class="form-select" id="activeResigned" name="isActive"  value="{{ $employee->isActive }}" required>
       <option selected disabled value="">...</option>
@@ -141,7 +149,7 @@
         <div id="jobtitle_error"></div>
     </div>
   </div>
-  <div class="col-md-4" style="margin-left: 18%" id="dateResign">
+  <div class="col-md-4" id="dateResign">
     <label for="dateResign" class="form-label">If resigned, specify the separation date:</label>
     <div class="input-group mb-3">
         <input type="date" class="form-control" placeholder="mm/dd/yy" id="dateResigned" name="isResigned" value="{{ $employee->isResigned }}" required>
@@ -157,7 +165,7 @@
         <div id="rank_error"></div>
     </div>
   </div>
-  <div class="col-md-4" style="margin-left: 18%">
+  <div class="col-md-4">
     <label for="department" class="form-label">Department</label>
     <input type="text" class="form-control" id="department" name="department"  value="{{ $employee->department }}" required>
     <div class="invalid-feedback">
@@ -165,7 +173,7 @@
     </div>
   </div>
   <hr>
-  <h1 class="mt-2 fw-bold"> EmployCord Account </h1>
+  <h4 class="card-subtitle mb-2 text-muted fw-bold">EmployCord Account</h4>
   <div class="col-md-4" style="margin-right: 40%">
     <label for="email" class="form-label">Email Address</label>
     <input type="text" class="form-control" id="email" name="email"  value="{{ $employee->email }}" required>
@@ -176,7 +184,7 @@
         <div class="alert alert-danger mt-2">{{ session('error') }}</div>
     @endif
   </div>
-  <div class="col-md-4" style="margin-right: 40%">
+  <div class="col-md-4" style="margin-right: 50%">
     <label for="empPassword" class="form-label">Password</label>
       <div class="input-group">
       <input type="password" class="form-control" id="empPassword" name="password"  value="{{ $employee->password }}" required>
@@ -210,4 +218,10 @@
 
 </div>
 @endsection
+    </div>
+
+</div>
+
+
+
 

@@ -2,33 +2,36 @@
 @section('title', 'Employees')
 @section('content')
 
-<div class="container mt-4" >
+<div style="position: absolute; top: 110; right: 110;">
+<a href="{{route('employees')}}" type="button" class="btn btn-primary float-end">⬅️ Back to masterlist</a>
+</div>
+<div class="container mt-5" style="position: relative;" >
 
 @if(session('success'))
 <div class="alert alert-primary">
   {{ session('success') }}
 </div>
 @endif
-<a href="{{route('employees')}}" type="button" class="btn btn-primary float-end">⬅️ Back to masterlist</a>
-<h1 class="mt-2 mb-4 fw-bold"> Basic Information </h1>
+
+<div class="card" style="border-radius: 20px;">
+    <div class="card-body">
+    <h3 class="card-title text-center fw-bold mt-3 mb-5">Employee Registration</h3>
+    <h4 class="card-subtitle mb-2 text-muted mb-3 fw-bold"> Basic Information </h4>
 <form class="row g-3 needs-validation" method="POST" action="{{ route('addemployee') }}"  novalidate>
   @csrf
   <div class="col-md-12">
-    <label for="firstname" class="form-label">First name</label>
     <input type="text" class="form-control" id="firstname" placeholder="First Name" name="first_name" required>
     <div class="invalid-feedback">
       <div id="firstname_error"></div>
     </div>
   </div>
   <div class="col-md-12">
-    <label for="middlename" class="form-label">Middle Name</label>
     <input type="text" class="form-control" id="middlename" placeholder="Middle Name" name="middle_name" required>
     <div class="invalid-feedback">
       <div id="middlename_error"></div>
     </div>
   </div>
   <div class="col-md-12">
-    <label for="lastname" class="form-label">Last name</label>
     <input type="text" class="form-control" id="lastname" placeholder="Last Name" name="last_name" required>
     <div class="invalid-feedback">
       <div id="lastname_error"></div>
@@ -40,7 +43,7 @@
         <input type="date" class="form-control" placeholder="mm/dd/yy" id="birthday" name="birthday" required>
     </div>
   </div>
-  <div class="col-md-4" style="margin-left:18%">
+  <div class="col-md-4">
     <label for="gender" class="form-label">Gender</label>
     <select class="form-select" id="gender" name="gender" required>
       <option selected disabled value="">...</option>
@@ -64,7 +67,7 @@
       Marital Status is required
     </div>
   </div>
-  <div class="col-md-5" style="margin-left:18%">
+  <div class="col-md-4">
     <label for="contactNo" class="form-label">Contact No.</label>
     <div class="input-group has-validation">
       <span class="input-group-text" id="contactStart" value="+63">+63</span>
@@ -81,7 +84,7 @@
       Street is required
     </div>
   </div>
-  <div class="col-md-4" style="margin-left:18%">
+  <div class="col-md-4">
     <label for="brgyVillage" class="form-label">Barangay / Village</label>
     <input type="text" class="form-control" id="brgyVillage" placeholder="Barangay / Village" name="barangay" required>
     <div class="invalid-feedback">
@@ -95,7 +98,7 @@
       Municipality / City is required
     </div>
   </div>
-  <div class="col-md-4" style="margin-left:18%">
+  <div class="col-md-4">
     <label for="province" class="form-label">Province</label>
     <input type="text" class="form-control" id="province" placeholder="Province" name="province" required>
     <div class="invalid-feedback">
@@ -103,8 +106,8 @@
     </div>
   </div>
   <hr>
-  <h1 class="mt-2 fw-bold"> Employment Record </h1>
-  <div class="col-md-4" style="margin-right: 40%">
+  <h4 class="card-subtitle mb-2 text-muted fw-bold">Employment Information</h4>
+  <div class="col-md-4">
     <label for="datehire" class="form-label">Date Hire</label>
     <div class="input-group mb-3">
         <input type="date" class="form-control" placeholder="mm/dd/yy" id="datehire" name="date_hire" required>
@@ -122,7 +125,7 @@
       Employment Status is required
     </div>
   </div>
-  <div class="col-md-4" style="margin-left:18%">
+  <div class="col-md-4">
     <label for="activeResigned" class="form-label">Active / Resigned</label>
     <select class="form-select" id="activeResigned" name="isActive" required>
       <option selected disabled value="">...</option>
@@ -140,7 +143,7 @@
         <div id="jobtitle_error"></div>
     </div>
   </div>
-  <div class="col-md-4" style="margin-left: 18%" id="dateResign">
+  <div class="col-md-4" id="dateResign">
     <label for="dateResign" class="form-label">If resigned, specify the separation date:</label>
     <div class="input-group mb-3">
         <input type="date" class="form-control" placeholder="mm/dd/yy" id="dateResigned" name="isResigned" required>
@@ -156,7 +159,7 @@
         <div id="rank_error"></div>
     </div>
   </div>
-  <div class="col-md-4" style="margin-left: 18%">
+  <div class="col-md-4" >
     <label for="department" class="form-label">Department</label>
     <input type="text" class="form-control" id="department" name="department" required>
     <div class="invalid-feedback">
@@ -164,7 +167,7 @@
     </div>
   </div>
   <hr>
-  <h1 class="mt-2 fw-bold"> EmployCord Account </h1>
+  <h4 class="card-subtitle mb-2 text-muted fw-bold">EmployCord Account</h4>
   <div class="col-md-4" style="margin-right: 40%">
     <label for="email" class="form-label">Email Address</label>
     <input type="text" class="form-control" id="email" name="email" required>
@@ -209,3 +212,6 @@
 </div>
 @endsection
 
+</div>
+
+</div>
