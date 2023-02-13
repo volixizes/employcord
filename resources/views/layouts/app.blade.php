@@ -21,7 +21,7 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
         <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.css">
         
@@ -59,6 +59,58 @@
             cursor: pointer;
             margin-left: 10px;
         }
+
+        .profilepic {
+            height: 250px;
+            width: 250px;
+            position: relative;
+            border: 5px solid #fff;
+            border-radius: 50%;
+            background: url('/images/male-avatar-profile-picture-vector.webp');
+            background-size: 100% 100%;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+
+        .my_file{
+            position: absolute;
+            bottom: 0;
+            outline: none;
+            color: transparent;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 15px 120px;
+            transition: 0.5s;
+            background: rgba(0,0,0,0.5);
+            text-align: center;
+        }
+
+        .my_file::-webkit-file-upload-button{
+            visibility: hidden;
+        }
+        
+        .my_file::before{
+            content: 'upload';
+            font-family: arial;
+            font-size: 15px;
+            color: #fff;
+            display: inline-block;
+            -webkit-user-select:none;
+
+        }
+
+        .my_file::after{
+            content: 'Update';
+            font-family: 'arial';
+            font-weight: bold;
+            color: #fff;
+            display: block;
+            top: 70px;
+            font-size: 14px;
+            position: absolute;
+        }
+
+       
 
         /* ===== Scrollbar CSS ===== */
 
