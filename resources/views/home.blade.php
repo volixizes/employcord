@@ -222,7 +222,7 @@
             </div>
             <div class="card-body" style="display: flex; align-items: center; justify-content: center; ">
                         
-            <p class="fw-bold" style="font-size: 80px; color: #5865f2"></p>
+            <p class="fw-bold" style="font-size: 80px; color: #5865f2">{{ $totalEmployees}}</p>
             <br>
             <p class="fw-bold ms-4" style="font-size: 20px; color: #5865f2"> Active Employees </p>
                         
