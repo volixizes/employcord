@@ -1,6 +1,6 @@
 
 @extends('layouts.app')
-@section('title', 'Admin Dashboard')
+@section('title', 'Dashboard')
 @section('content')
 <div class="container-fluid">
     <div class="row mx-3 my-3">
@@ -61,8 +61,8 @@
                   <!--Who's On Leave?-->
          <div class="col-md-6"> 
             <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: auto;">
-            <div class="card-header fs-5 fw-bold" style="color: #285430;">
-                🗓️ Who's On Leave
+            <div class="card-header fs-3 fw-bold" style="color: #5865f2;">
+                🗓️ Request Leave
             </div>
             <div class="card-body">
                     <form action="">
@@ -165,8 +165,7 @@
                                 <p style="color: blue">👨 Mick Bautista</p>
                                 
                             </div>
-                        </div>
-                        
+                        </div>                        
             </div>
         </div>  
         </div>        
@@ -186,7 +185,7 @@
                             <div class="card-body"> 
                                <table class="table">
                                 <thead>
-                                <h1 class="text-center">Birthday List for {{ date('F') }}</h1>
+                                <h2 class="text-center fw-bold mt-1 mb-4">Birthday Celebrants for {{ date('F') }}</h2>
                                     <tr>
                                         <th>First Name</th>
                                         <th>Last Name</th>

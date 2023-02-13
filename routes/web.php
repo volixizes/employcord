@@ -41,8 +41,6 @@ Route::post('/createannouncement', [AnnouncementController::class, 'create'])->n
 
 Route::get('/home', [HomeController::class,'index'])->name('home');
 
-Route::get('/home', [HomeController::class,'headcount'])->name('home');
-
 
 // Announcement routes
 Route::post('/create-announcement', [AnnouncementController::class,'create'])->name('create-announcement');

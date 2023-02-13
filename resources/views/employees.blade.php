@@ -10,7 +10,7 @@
 <div class="card" style="border-radius: 15px;">
   <div class="card-body">
 
-  <table class="table table-hover table-bordered mt-4" >
+  <table class="table table-hover table-bordered mt-4" id="masterlist">
   <thead class="fw-bold" style="background-color: #5404c4; text-align: center; color: white">
     <tr>
       <th>ID</th>
@@ -40,7 +40,10 @@
     </tr>
    @endforeach
     
+   
 </table>
+
+
   </div>
 </div>
 
