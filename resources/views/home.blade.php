@@ -14,7 +14,7 @@
              @endif
         </div>
         <div class="col-md-6"> 
-            <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: auto;">
+            <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: 33rem;">
                 <div class="card-header fs-3 fw-bold" style="color: #5865f2;">
                     📢 Announcements
                 </div>
@@ -60,7 +60,7 @@
         @if(Auth::user()->employee_id)
                   <!--Who's On Leave?-->
          <div class="col-md-6"> 
-            <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: auto;">
+            <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: 33rem;">
             <div class="card-header fs-3 fw-bold" style="color: #5865f2;">
                 🗓️ Request Leave
             </div>
@@ -107,7 +107,7 @@
         @else
                <!--Who's On Leave?-->
          <div class="col-md-6"> 
-            <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: auto;">
+            <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: 33rem;">
             <div class="card-header fs-3 fw-bold" style="color: #5865f2;">
                 🗓️ Who's On Leave
             </div>
