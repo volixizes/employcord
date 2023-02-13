@@ -68,38 +68,33 @@
     </div>
   </div>
   <div class="col-md-4">
-    <label for="contactNo" class="form-label">Contact No.</label>
     <div class="input-group has-validation">
-      <span class="input-group-text" id="contactStart" value="+63">+63</span>
-      <input type="text" class="form-control" id="contactNo" aria-describedby="inputGroupPrepend" name="contact_no" required>
+      <span class="input-group-text" id="contactStart"  value="+63">+63</span>
+      <input type="text" class="form-control" placeholder="Contact No." id="contactNo" aria-describedby="inputGroupPrepend" name="contact_no" required>
       <div class="invalid-feedback">
         <div id="contactno_error"></div>
       </div>
     </div>
   </div>
   <div class="col-md-4">
-    <label for="street" class="form-label">Street</label>
     <input type="text" class="form-control" id="street" placeholder="Street" name="street" required>
     <div class="invalid-feedback">
       Street is required
     </div>
   </div>
   <div class="col-md-4">
-    <label for="brgyVillage" class="form-label">Barangay / Village</label>
     <input type="text" class="form-control" id="brgyVillage" placeholder="Barangay / Village" name="barangay" required>
     <div class="invalid-feedback">
       Barangay / Village is required
     </div>
   </div>
   <div class="col-md-4">
-    <label for="municipalityCity" class="form-label">Municipality / City</label>
     <input type="text" class="form-control" id="municipalityCity" placeholder="Municipality / City" name="city" required>
     <div class="invalid-feedback">
       Municipality / City is required
     </div>
   </div>
   <div class="col-md-4">
-    <label for="province" class="form-label">Province</label>
     <input type="text" class="form-control" id="province" placeholder="Province" name="province" required>
     <div class="invalid-feedback">
       Province is required
