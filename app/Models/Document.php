@@ -18,7 +18,7 @@ class Document extends Model
         'image_path',
         'image_type',
         'expiration',
-        // 'status'
+        'image_name'
     ];
 
     public function employee() {

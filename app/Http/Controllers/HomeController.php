@@ -28,9 +28,13 @@ class HomeController extends Controller
     {
         $totalEmployees = Employee::where('isActive', '=', 'Active')->count();
         $announcements = Announcement::orderBy('created_at', 'desc')->simplePaginate(3);
+        $bday_of_month = Employee::whereMonth('birthday', now()->month)
+                                    ->orderBy('birthday')
+                                    ->get();
         
         return view('home')->with('announcements', $announcements)
-                            ->with('totalEmployees', $totalEmployees);
+                            ->with('totalEmployees', $totalEmployees)
+                            ->with('bday_of_month', $bday_of_month);
 
     }
 

@@ -190,28 +190,21 @@
                                     <tr>
                                         <th>First Name</th>
                                         <th>Last Name</th>
-                                        <th>Middle Name</th>
-                                        <th>Birthday</th>
+                                        <th>Birthdate</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                @if(isset($birthdays))
-                                    @foreach($birthdays as $birthday)
-                                    <tr>
+                                @if(isset($bday_of_month))
+                                    @foreach($bday_of_month as $birthday)
                                         <td>{{ $birthday->first_name }}</td>
                                         <td>{{ $birthday->last_name }}</td>
-                                        <td>{{ $birthday->middle_name }}</td>
-                                        <td>{{ $birthday->birthday->format('d-m-Y') }}</td>
+                                        <td>{{ $birthday->birthday }}</td>
                                     </tr>
                                     @endforeach
                                 @else
-                                <tr>
-
-                                </tr>
-                                    
-
+                                
                                </table>
-                               <h1 class="text-center justify-content-center">No employees found.</h1>
+                               <h1 class="text-center justify-content-center">No celebrant found this month.</h1>
                                @endif
                             </div>
                         </div>
@@ -225,7 +218,6 @@
         <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: 33rem;">
             <div class="card-header fs-3 fw-bold " style="color: #5404c4;">
                 👨‍💼 Total Headcount
-                {{$totalEmployees}}
             </div>
             <div class="card-body" style="display: flex; align-items: center; justify-content: center; ">
                         

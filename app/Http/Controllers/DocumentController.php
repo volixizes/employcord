@@ -19,32 +19,21 @@ class DocumentController extends Controller
     public function display() {
         $employees = Employee::all();
         $documents = Document::all();
-        $contract = $documents->sortByDesc('created_at')->where('image_type', 'Contract')->first();
-        $police = $documents->sortByDesc('expiration')->where('image_type', 'Police Clearance')->first();
-        $nbi = $documents->sortByDesc('expiration')->where('image_type', 'NBI Clearance')->first();
-        $brgy = $documents->sortByDesc('created_at')->where('image_type', 'Brgy. Clearance')->first();
-        $clearances = collect([$police, $nbi, $brgy]) ;
-        // if ($police =! null){
-        //      $clearances = collect([$police]);
-        //     }
-        // if ($nbi =! null) {$clearances = collect([$nbi]);}
-        // if ($brgy =! null) {$clearances = collect([$brgy]);}
         
-        // dd($clearances);
-        // $police = Document::orderBy('created_at', 'desc')->where('image_type', 'Police Clearance')->first();
-        // $nbi = Document::orderBy('created_at', 'desc')->where('image_type', 'Police NBI Clearance')->first();
-        // $brgy = Document::orderBy('created_at', 'desc')->where('image_type', 'Brgy. Crealance')->first();
-        // $clearances = Document::orderBy('created_at', 'desc')->where('image_type', 'Brgy. Crealance')
-        //                                                     ->where('image_type', 'Police Crealance')
-        //                                                     ->where('image_type', 'NBI Crealance')
-        //                                                     ->first();
-
+        $police = $documents->sortByDesc('created_at')->where('image_type', 'Police Clearance')->first();
+        $nbi = $documents->sortByDesc('created_at')->where('image_type', 'NBI Clearance')->first();
+        $brgy = $documents->sortByDesc('created_at')->where('image_type', 'Brgy. Clearance')->first();
+        $clearances = collect([$police, $nbi, $brgy]) ; 
+        
+        $memos = $documents->sortByDesc('created_at')->where('image_type', 'Memo');
+        $certificates = $documents->sortByDesc('created_at')->where('image_type', 'Cert');
+        $contract = $documents->sortByDesc('created_at')->where('image_type', 'Contract')->first();
+        
         return view('trackrecords')->with('employees', $employees)
-                                    ->with('contract', $contract)
-                                    // ->with('police', $police)
-                                    // ->with('nbi', $nbi)
-                                    // ->with('brgy', $brgy)
-                                    ->with('clearances', $clearances);
+                                    ->with('clearances', $clearances)
+                                    ->with('memos', $memos)
+                                    ->with('certs', $certificates)
+                                    ->with('contract', $contract);
     }
 
     /**
@@ -68,9 +57,10 @@ class DocumentController extends Controller
         $document = new Document;
         $document->employee_id = $request->employee_id;
         $document->expiration = $request->expiration;
+        $document->image_name = $request->image_name;
         if($request->hasFile('image')){
             $request->validate([
-                'image' => 'required|image|mimes:jpeg,jpg,png,gif|max:2048',
+                'image' => 'required|image|mimes:pdf,jpeg,jpg,png,gif|max:2048',
             ]);
 
             $image = $request->file('image');
@@ -97,9 +87,10 @@ class DocumentController extends Controller
      * @param  \App\Models\document  $document
      * @return \Illuminate\Http\Response
      */
-    public function show(document $document)
+    public function view($id)
     {
-        //
+        $image = Document::find($id);
+        return view('view_image')->with('image', $image);
     }
 
     /**

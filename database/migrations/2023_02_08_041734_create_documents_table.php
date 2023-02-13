@@ -19,7 +19,8 @@ return new class extends Migration
             // $table->('image_type', ['Police Clearance'], ['NBI Clearnce'], 'Barangay Clearnce');
             $table->string('image_type');
             $table->string('image_path');
-            $table->date('expiration');
+            $table->date('expiration')->nullable();
+            $table->string('image_name')->nullable();
             // $table->enum('status', ['Current', 'Processing', 'Expired'])->default('Current');
             // $table->string('status')->default('Current');
 
