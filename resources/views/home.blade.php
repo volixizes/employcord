@@ -204,9 +204,9 @@
                                     @endforeach
                                 @else
                                 
+                                <h1 class="text-center justify-content-center">No celebrant found this month.</h1>
                                 @endif
                                </table>
-                               <h1 class="text-center justify-content-center">No celebrant found this month.</h1>
                             </div>
                         </div>
                         
