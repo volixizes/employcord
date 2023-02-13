@@ -14,7 +14,7 @@ EmployCord is a employee management system capstone project of Group 9 led by Ma
 - Can able to approve employees' leave requests. 
 - Can able to announce company updates.
 - Can able to register new employees in the company.
-- Can able Be able to update records of employees.
+- Can able to update records of employees.
 - Can able to track records of employees. 
 - Know the birthdays of employees in a monthly basis.
 - Know the current headcount of active employees.
