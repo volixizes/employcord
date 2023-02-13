@@ -34,7 +34,7 @@
       <td style="vertical-align: middle;">{{ $employee->employment_status }}</td>
       <td style="vertical-align: middle;">{{ $employee->department }}</td>
       <td style="text-align: center;">
-        <a href="#" type="button" class="btn btn-success me-2"><i class="fa fa-eye"></i></a>
+        <a href="{{ route('generatepdf', $employee->id) }}" target="_blank" type="button" class="btn btn-success me-2"><i class="fa fa-eye"></i></a>
         <a href="{{ route('edit', $employee->id) }}" type="button" class="btn btn-warning"><i class="fa fa-edit"></i></a>
       </td>
     </tr>

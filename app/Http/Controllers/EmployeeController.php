@@ -9,6 +9,8 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 
+use PDF;
+
 class EmployeeController extends Controller
 {
 
@@ -68,14 +70,6 @@ class EmployeeController extends Controller
         // }
      }
 
-     public function confirm(){
-
-            
-            $employees = Employee::all();
-            return view('confirmemployee')->with('employees', $employees)
-            ->with('success', 'New employees added!');
-        
-     }
 
      public function birthday(Request $request){
         // $birthdays = DB::table('employees')->select('first_name','middle_name', 'last_name', 'birthday')->get();
@@ -84,11 +78,6 @@ class EmployeeController extends Controller
             Carbon::now()->endOfWeek()
         ])->simplePaginate(3);
         
-        // $birthdays->first_name = $request->first_name;
-        // $birthdays->last_name = $request->last_name;
-        // $birthdays->middle_name = $request->middle_name;
-        // $birthdays->birthday = $request->birthday;
-
         return view('home')->with('birthdays', $birthdays);
     }
 
@@ -136,6 +125,34 @@ class EmployeeController extends Controller
 
     public function index(){
         return view('employees')->with('employees', Employee::latest()->simplePaginate(15));
+    }
+
+    public function generatepdf(Request $request)
+    {
+        $employee = Employee::find($request->id); 
+
+        $html = '<h1>Employee Information</h1>';
+        $html .= '<p><b>First Name:</b> ' . $employee->first_name . '</p>';
+        $html .= '<p><b>Middle Name:</b> ' . $employee->middle_name . '</p>';
+        $html .= '<p><b>Last Name:</b> ' . $employee->last_name . '</p>';
+        $html .= '<p><b>Birthday:</b> ' . $employee->birthday . '</p>';
+        $html .= '<p><b>Gender:</b> ' . $employee->gender . '</p>';
+        $html .= '<p><b>Marital Status:</b> ' . $employee->marital_status . '</p>';
+        $html .= '<p><b>Contact Number:</b> ' . $employee->contact_no . '</p>';
+        $html .= '<p><b>Street:</b> ' . $employee->street . '</p>';
+        $html .= '<p><b>Barangay:</b> ' . $employee->barangay . '</p>';
+        $html .= '<p><b>City:</b> ' . $employee->city . '</p>';
+        $html .= '<p><b>Province:</b> ' . $employee->province . '</p>';
+        $html .= '<p><b>Date Hired:</b> ' . $employee->date_hire . '</p>';
+        $html .= '<p><b>Employment Status:</b> ' . $employee->employment_status . '</p>';
+        $html .= '<p><b>Active Status:</b> ' . $employee->isActive . '</p>';
+        $html .= '<p><b>Job Title:</b> ' . $employee->Job_Title . '</p>';
+        $html .= '<p><b>Rank:</b> ' . $employee->rank . '</p>';
+        $html .= '<p><b>Department:</b> ' . $employee->department . '</p>';
+        $html .= '<p><b>Email:</b> ' . $employee->email . '</p>';
+
+        $pdf = PDF::loadHTML($html);
+        return $pdf->stream('employcord.pdf');
     }
 
 }

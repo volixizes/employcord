@@ -48,6 +48,7 @@ Route::post('/create-announcement', [AnnouncementController::class,'create'])->n
 //Employee routes
 Route::post('/addemployee', [EmployeeController::class,'create'])->name('addemployee');
 Route::get('/editemployee/{id}', [EmployeeController::class,'edit'])->name('edit');
+Route::get('/generate-pdf/{id}', [EmployeeController::class,'generatepdf'])->name('generatepdf');
 
 Route::post('/update', [EmployeeController::class,'update'])->name('update');
 
