@@ -154,9 +154,11 @@
                             <li class="nav-item" >
                                 <a class="nav-link {{ Request::is('home') ? 'active':'' }} fw-bold" href="{{ route('home') }}">Dashboard</a>
                             </li>
+                            @if(Auth::user()->isAdmin == 1)
                             <li class="nav-item">
                                 <a class="nav-link {{ Request::is('employees') ? 'active':'' }} fw-bold" href="{{ route('employees') }}">Employees</a>
                             </li>
+                           @endif
                             <li class="nav-item">
                                 <a class="nav-link {{ Request::is('track-records') ? 'active':'' }} fw-bold" href="{{ route('track-records') }}">Track Records</a>
                             </li>
@@ -185,8 +187,12 @@
                             
                             <li class="nav-item dropdown">
                                     <a  class="nav-link" href="#" role="button" data-bs-toggle="dropdown">
-                                        
-                                    <span>Hi, Admin </span> 
+                                    
+                                    @if(Auth::user()->isAdmin == 1)
+                                    <span>Hi, Admin: </span> 
+                                    @else
+                                    <span>Hi, User: </span> 
+                                    @endif
                                     {{ Auth::user()->name }}
                                         <img src="/images/male-avatar-profile-picture-vector.webp" class="user-pic">
                                         

@@ -220,7 +220,7 @@
                     <input type="hidden" name="type" value="Contract" class="form-control">
 
                     <div class="col-md-6">
-                      <label for="validationDefault01" class="form-label" >Upload contract</label>
+                      <label for="validationDefault01" class="form-label" >Upload Contract</label>
                       <input type="file" class="form-control" id="validationDefault01" name="image" accept=".gif,.jpg,.jpeg,.png" required>
                     </div>
                     <div class="col-md-4">
