@@ -14,7 +14,7 @@
              @endif
         </div>
         <div class="col-md-6"> 
-            <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: 33rem;">
+            <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: 36rem;">
                 <div class="card-header fs-3 fw-bold" style="color: #5865f2;">
                     📢 Announcements
                 </div>
@@ -59,25 +59,27 @@
         
         @if(Auth::user()->employee_id)
                   <!--Who's On Leave?-->
+         
          <div class="col-md-6"> 
-            <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: 33rem;">
+            <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: 36rem;">
             <div class="card-header fs-3 fw-bold" style="color: #5865f2;">
                 🗓️ Request Leave
             </div>
             <div class="card-body">
-                    <form action="">
+                    <form action="{{ route('leave') }}" method="POST">
+                        @csrf
                     <div class="row">
                         <div class="col">
-                            <label for="date-leave">Leave Date</label>
-                            <input type="date" class="form-control" placeholder="mm/dd/yy">
+                            <label for="date-leave">From</label>
+                            <input type="date" name="datefrom" class="form-control" placeholder="mm/dd/yy" >
                         </div>
                         <div class="col">
-                            <label for="date-leave">Date of return</label>
-                            <input type="date" class="form-control" placeholder="mm/dd/yy">
+                            <label for="date-leave">To</label>
+                            <input type="date" name="dateto" class="form-control" placeholder="mm/dd/yy" >
                         </div>
                         </div>
                         <div class="col-12 mt-3 form-floating">
-                        <textarea type="text" class="form-control" id="reason" style="height: 80px"></textarea>
+                        <input type="text" name="reason" class="form-control" id="reason" style="height: 80px" required></input>
                         <label for="reason">Reason</label>
                         </div>
                     <div class="col-12 mt-4">
@@ -107,7 +109,7 @@
         @else
                <!--Who's On Leave?-->
          <div class="col-md-6"> 
-            <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: 33rem;">
+            <div class="card mt-4 shadow" style="border-radius: 20px; background-color: #F2F1F0; height: 36rem;">
             <div class="card-header fs-3 fw-bold" style="color: #5865f2;">
                 🗓️ Who's On Leave
             </div>
@@ -116,37 +118,27 @@
                         <table class="table">
                             <thead>
                                 <tr>
-                                    <th>No.</th>
                                     <th>Last Name</th>
                                     <th>First Name</th>
-                                    <th>Middle Name</th>
-                                    <th>Date of Leave</th>
+                                    <th>From</th>
+                                    <th>To</th>
+                                    <th>Reason</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>1</td>
                                     <td>Sienes</td>
                                     <td>Val Everson</td>
-                                    <td>Cruz</td>
+                                    <td>January 1, 2023</td>
                                     <td>February 2, 2023</td>
+                                    <td>Family Reunion</td>
                                     <td>
-                                        <button type="button" class="btn btn-primary">✔</button>
+                                        <button type="button" class="btn btn-primary me-1">✔</button>
                                         <button type="button" class="btn btn-danger">✘</button>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>Denum</td>
-                                    <td>Mike</td>
-                                    <td>Ibarra</td>
-                                    <td>February 5, 2023</td>
-                                    <td>
-                                        <button type="button" class="btn btn-primary">✔</button>
-                                        <button type="button" class="btn btn-danger">✘</button>
-                                    </td>
-                                </tr>
+                                
                             </tbody>
                         </table>
                         <hr>

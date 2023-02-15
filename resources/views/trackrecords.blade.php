@@ -27,10 +27,17 @@
             <div class="card-body">
               
             <!-- Upload Profile Pic -->
+            
+            <form action="{{ route('images.store', $employee->id) }}" method="POST" enctype="multipart/form-data">
+              @csrf
               <div class="profilepic">
-                <input type="file" class="my_file"/></i>
+
+              
+                <input type="file" name="image" accept=".gif,.jpg,.jpeg" required class="my_file"/></i>
               </div>
-                         
+              <button type="submit">Upload</button>
+            </form>     
+
               @if (count($employees) > 0)
 
               <h3 class="profile-username text-center fw-bold mb-3">{{ $employees->first()->getFullname()  }}</h3>

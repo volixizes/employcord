@@ -13,9 +13,9 @@
 </div>
 @endif
 
-<div class="card" style="border-radius: 20px;">
+<div class="card p-5" style="border-radius: 20px;">
     <div class="card-body">
-    <h3 class="card-title text-center fw-bold mt-3 mb-5">Employee Registration</h3>
+    <h3 class="card-title text-center fw-bold  mb-5">Employee Registration</h3>
         <h4 class="card-subtitle mb-2 text-muted mb-3 fw-bold"> Basic Information </h4>
           <form class="row g-3 needs-validation" method="POST" action="{{ route('addemployee') }}"  novalidate>
             @csrf

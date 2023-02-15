@@ -48,4 +48,14 @@ class Employee extends Model
     {
         return $this->hasOne(User::class);
     }
+
+    public function images()
+    {
+        return $this->hasMany(Image::class);
+    }
+    
+    public function leaves()
+    {
+        return $this->hasMany(Leave::class);
+    }
 }

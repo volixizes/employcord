@@ -66,7 +66,6 @@
             position: relative;
             border: 5px solid #fff;
             border-radius: 50%;
-            background: url('/images/male-avatar-profile-picture-vector.webp');
             background-size: 100% 100%;
             margin: 20px auto;
             overflow: hidden;
@@ -90,7 +89,7 @@
         }
         
         .my_file::before{
-            content: 'upload';
+            content: '';
             font-family: arial;
             font-size: 15px;
             color: #fff;
@@ -193,7 +192,7 @@
                                     @else
                                     <span>Hi, User: </span> 
                                     @endif
-                                    {{ Auth::user()->name }}
+                                    <strong>{{ Auth::user()->name }}</strong>
                                         <img src="/images/male-avatar-profile-picture-vector.webp" class="user-pic">
                                         
                                     </a>

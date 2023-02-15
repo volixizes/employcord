@@ -22,32 +22,32 @@ class EmployeeController extends Controller
 
         // try {
             DB::beginTransaction();
-            $contactValue = "+63";
-            $employees = new Employee;
-            $employees->first_name = $request->first_name;
-            $employees->middle_name = $request->middle_name;
-            $employees->last_name= $request->last_name;
-            $employees->birthday = $request->birthday;
-            $employees->gender = $request->gender;
-            $employees->marital_status = $request->marital_status;
-            $employees->contact_no = $contactValue . $request->contact_no;
-            $employees->street = $request->street;
-            $employees->barangay = $request->barangay;
-            $employees->city = $request->city;
-            $employees->province = $request->province;
-            $employees->date_hire = $request->date_hire;
-            $employees->employment_status = $request->employment_status;
-            $employees->isActive = $request->isActive;
-            $employees->Job_Title = $request->Job_Title;
+            $contactValue                   = "+63";
+            $employees                      = new Employee;
+            $employees->first_name          = $request->first_name;
+            $employees->middle_name         = $request->middle_name;
+            $employees->last_name           = $request->last_name;
+            $employees->birthday            = $request->birthday;
+            $employees->gender              = $request->gender;
+            $employees->marital_status      = $request->marital_status;
+            $employees->contact_no          = $contactValue . $request->contact_no;
+            $employees->street              = $request->street;
+            $employees->barangay            = $request->barangay;
+            $employees->city                = $request->city;
+            $employees->province            = $request->province;
+            $employees->date_hire           = $request->date_hire;
+            $employees->employment_status   = $request->employment_status;
+            $employees->isActive            = $request->isActive;
+            $employees->Job_Title           = $request->Job_Title;
             if ($request->isActive === "Active") {
                 $employees->isResigned = null;
             } else {
-                $employees->isResigned = $request->isResigned;
+                $employees->isResigned      = $request->isResigned;
             }
-            $employees->rank = $request->rank;
-            $employees->department = $request->department;
-            $employees->email = $request->email;
-            $employees->password = $request->password;
+            $employees->rank                = $request->rank;
+            $employees->department          = $request->department;
+            $employees->email               = $request->email;
+            $employees->password            = $request->password;
             $employees->save();
             
             $employee_login = [
@@ -131,7 +131,7 @@ class EmployeeController extends Controller
     {
         $employee = Employee::find($request->id); 
 
-        $html = '<h1>Employee Information</h1>';
+        $html  = '<h1>Employee Information</h1>';
         $html .= '<p><b>First Name:</b> ' . $employee->first_name . '</p>';
         $html .= '<p><b>Middle Name:</b> ' . $employee->middle_name . '</p>';
         $html .= '<p><b>Last Name:</b> ' . $employee->last_name . '</p>';

@@ -6,6 +6,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\DocumentController;
+use App\Http\Controllers\ImageController;
+
+use App\Http\Controllers\LeaveController;
 
 /*
 |--------------------------------------------------------------------------
@@ -92,12 +95,11 @@ Route::controller(DocumentController::class)->group(function() {
     Route::post('/upload-image', 'store')->name('upload-image');
     });
 
-// Route::controller(DocumentController::class)->group(function() {
-//     Route::get('/track-records', [
-//         'middleware' => 'auth', 'uses' => 'display'
-//         ])->name('track-records');
-//     Route::post('/upload-image', [
-//         'middleware' => 'auth', 'uses' => 'store'
-//         ])->name('upload-image');
-// });
+Route::post('/employees/{id}/images', [ImageController::class, 'store'])->name('images.store');
+
+
+//Leave Request
+
+Route::post('/leave', [LeaveController::class,'create'])->name('leave');
+Route::post('/', [LeaveController::class,'index'])->name('indexleave');
 
