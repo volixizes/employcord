@@ -79,30 +79,13 @@
                         </div>
                         </div>
                         <div class="col-12 mt-3 form-floating">
-                        <input type="text" name="reason" class="form-control" id="reason" style="height: 80px" required></input>
+                        <input type="text" name="reason" class="form-control" id="reason" style="height: 200px" required></input>
                         <label for="reason">Reason</label>
                         </div>
                     <div class="col-12 mt-4">
                         <button type="submit" class="btn btn-primary">Submit</button>
                     </div>
                     </form>
-                    <hr>
-                        <p class="fw-bold text-muted">Approved Leaves</p>
-
-                        <div class="card mt-2" style="border-radius: 20px;">
-                            <div class="card-body"> 
-                                <small class="text-muted float-end">TOMORROW (1)</small>
-                                <p style="color: blue">👨 Patrick Angeles</p>
-                            </div>
-                        </div>
-                        <div class="card mt-2" style="border-radius: 20px;">
-                            
-                            <div class="card-body"> 
-                                <small class="text-muted float-end">February 7, 2023</small>
-                                <p style="color: blue">👨 Mick Bautista</p>
-                                
-                            </div>
-                        </div>
             </div>
         </div>  
         </div>
@@ -145,19 +128,10 @@
                         <p class="fw-bold mt-4 text-muted">Approved Leaves</p>
 
                         <div class="card mt-2" style="border-radius: 20px;">
-                            <div class="card-body"> 
-                                <small class="text-muted float-end">TOMORROW (1)</small>
-                                <p style="color: blue">👨 Patrick Angeles</p>
+                            <div class="card-body" style="height: 50px"> 
+
                             </div>
-                        </div>
-                        <div class="card mt-2" style="border-radius: 20px;">
-                            
-                            <div class="card-body"> 
-                                <small class="text-muted float-end">February 7, 2023</small>
-                                <p style="color: blue">👨 Mick Bautista</p>
-                                
-                            </div>
-                        </div>                        
+                        </div>            
             </div>
         </div>  
         </div>        
