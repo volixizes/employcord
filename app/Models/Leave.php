@@ -15,6 +15,7 @@ class Leave extends Model
         'datefrom',
         'dateto',
         'reason',
+        'isApproved',
         'employees_id',
     ];
 

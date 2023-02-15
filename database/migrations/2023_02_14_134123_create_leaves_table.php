@@ -18,6 +18,7 @@ return new class extends Migration
             $table->date('datefrom')->nullable();
             $table->date('dateto')->nullable();
             $table->string('reason');
+            $table->boolean('isApproved')->default(0); // 0-denied 1-approved
             $table->timestamps();
             $table->integer('employees_id');
         });
