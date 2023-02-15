@@ -196,7 +196,7 @@
                     <div href="#" class="list-group-item list-group-item-action" data-bs-toggle="list" aria-current="true">
                       <div class="d-flex w-100 justify-content-between">
                         <h5 class=" col-5">{{ $cert->image_type }}</h5>
-                        <a href="{{ route('view-image', $cert->id)}}" class="btn btn-primary btn-small">View</a>
+                        
                         {{-- <p class="text col-2"> <span class="badge text-bg-warning">{{$cert->getStatus()}}</span></p> --}}
                       </div>
                     
